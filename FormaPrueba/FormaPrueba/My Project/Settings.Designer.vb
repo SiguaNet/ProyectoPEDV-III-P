@@ -64,9 +64,9 @@ Namespace My
     Friend Module MySettingsProperty
 
         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")> _
-        Friend ReadOnly Property Settings() As Global.InicioSiguaNet.My.MySettings
+        Friend ReadOnly Property Settings() As Global.FormaPrueba.My.MySettings
             Get
-                Return Global.InicioSiguaNet.My.MySettings.Default
+                Return Global.FormaPrueba.My.MySettings.Default
             End Get
         End Property
     End Module
