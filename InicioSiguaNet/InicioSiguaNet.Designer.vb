@@ -67,24 +67,24 @@ Partial Class InicioSiguaNet
         '
         'btnCerrarSesion
         '
-        Me.btnCerrarSesion.Location = New System.Drawing.Point(754, 466)
+        Me.btnCerrarSesion.Location = New System.Drawing.Point(794, 498)
         Me.btnCerrarSesion.Name = "btnCerrarSesion"
         Me.btnCerrarSesion.Size = New System.Drawing.Size(174, 39)
         Me.btnCerrarSesion.TabIndex = 4
         Me.btnCerrarSesion.Text = "Cerrar sesión"
         Me.btnCerrarSesion.UseVisualStyleBackColor = True
         '
-        'Form1
+        'InicioSiguaNet
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(940, 517)
+        Me.ClientSize = New System.Drawing.Size(980, 549)
         Me.Controls.Add(Me.btnCerrarSesion)
         Me.Controls.Add(Me.btnInventario)
         Me.Controls.Add(Me.btnFichaCliente)
         Me.Controls.Add(Me.btnEstadoFinanciero)
         Me.Controls.Add(Me.btnGestionTickets)
-        Me.Name = "Form1"
+        Me.Name = "InicioSiguaNet"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
 
