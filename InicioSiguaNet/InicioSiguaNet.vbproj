@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FA32375C-1E8A-4FFF-91F0-C77306AEC1ED}</ProjectGuid>
+    <ProjectGuid>{7A1DB0BC-B5AC-47DC-A250-FB2B9703A792}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>FormaPrueba.My.MyApplication</StartupObject>
-    <RootNamespace>FormaPrueba</RootNamespace>
-    <AssemblyName>FormaPrueba</AssemblyName>
+    <StartupObject>InicioSiguaNet.My.MyApplication</StartupObject>
+    <RootNamespace>InicioSiguaNet</RootNamespace>
+    <AssemblyName>InicioSiguaNet</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -22,7 +22,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>FormaPrueba.xml</DocumentationFile>
+    <DocumentationFile>InicioSiguaNet.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -32,7 +32,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>FormaPrueba.xml</DocumentationFile>
+    <DocumentationFile>InicioSiguaNet.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -73,11 +73,23 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="EstadoFinanciero.Designer.vb">
+      <DependentUpon>EstadoFinanciero.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoFinanciero.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="InicioSiguaNet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InicioSiguaNet.Designer.vb">
+      <DependentUpon>InicioSiguaNet.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionTickets.Designer.vb">
+      <DependentUpon>GestionTickets.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GestionTickets.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -97,8 +109,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="EstadoFinanciero.resx">
+      <DependentUpon>EstadoFinanciero.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InicioSiguaNet.resx">
+      <DependentUpon>InicioSiguaNet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionTickets.resx">
+      <DependentUpon>GestionTickets.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
