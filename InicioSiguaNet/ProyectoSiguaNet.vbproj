@@ -73,6 +73,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BD Conexion\Conexion.vb" />
     <Compile Include="EstadoFinanciero.Designer.vb">
       <DependentUpon>EstadoFinanciero.vb</DependentUpon>
     </Compile>
