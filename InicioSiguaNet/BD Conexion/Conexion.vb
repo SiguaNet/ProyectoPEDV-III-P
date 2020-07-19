@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class Conexion
-    Public conexion As SqlConnection = New SqlConnection("Data Source=HACKNEL;Initial Catalog=bd_VoyVolandoCeiba;Integrated Security=True")
+    Public conexion As SqlConnection = New SqlConnection("SU CADENA DE CONEXION DE LA BASE")
     Public adaptador As SqlDataAdapter
     Public tablaDatos1 As DataTable
     Public lectorVariables As SqlDataReader
@@ -63,11 +63,11 @@ Public Class Conexion
         End Try
     End Sub
 
-    Function comprobarExistenciaTelefono(ByVal id As String)
+    Function comprobarExistencias(ByVal instruccion As String)
         Try
             conexion.Open()
             Dim comando As SqlCommand = conexion.CreateCommand()
-            comando.CommandText = ("select telefono from ENTIDADES where telefono = '" & id & "'")
+            comando.CommandText = instruccion
             Dim existe As Integer = CInt(comando.ExecuteScalar())
             If existe > 0 Then
                 conexion.Close()
@@ -84,6 +84,7 @@ Public Class Conexion
         End Try
     End Function
 
+    'Obtiene solo un valor entero de la base
     Function obtenerVariableEntera(ByVal instruccion As String, columnas As String)
         Try
             conexion.Open()
@@ -165,6 +166,9 @@ Public Class Conexion
     Sub limpiar(cont As Object)
         For Each control As Control In cont.Controls
             If TypeOf control Is TextBox Then
+                control.Text = String.Empty
+            End If
+            If TypeOf control Is MaskedTextBox Then
                 control.Text = String.Empty
             End If
         Next
