@@ -1,12 +1,17 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Security.Cryptography
+Imports System.Text
+
 Public Class Conexion
-    Public conexion As SqlConnection = New SqlConnection("SU CADENA DE CONEXION DE LA BASE")
+
+    Public conexion As SqlConnection = New SqlConnection("Data Source=HACKNEL;Initial Catalog=bd_SiguaNet;Integrated Security=True")
     Public adaptador As SqlDataAdapter
     Public tablaDatos1 As DataTable
     Public lectorVariables As SqlDataReader
     Public comando As SqlCommand
+    Public sskey As String = "qualityi"
 
-    Sub abrirConexion()
+    Public Sub abrirConexion()
         Try
             conexion.Open()
             conexion.Close()
@@ -16,7 +21,7 @@ Public Class Conexion
         End Try
     End Sub
 
-    Sub LlenarDGVHistorial(ByVal dgv As DataGridView, instruccion As String)
+    Public Sub LlenarDGVHistorial(ByVal dgv As DataGridView, instruccion As String)
         Try
             conexion.Open()
             adaptador = New SqlDataAdapter(instruccion, conexion)
@@ -30,7 +35,7 @@ Public Class Conexion
         End Try
     End Sub
 
-    Sub llenarComboBox(ByVal cmb As ComboBox, instruccion As String, columnas As String)
+    Public Sub llenarComboBox(ByVal cmb As ComboBox, instruccion As String, columnas As String)
         Try
             conexion.Open()
             comando = New SqlCommand(instruccion, conexion)
@@ -47,7 +52,7 @@ Public Class Conexion
 
     End Sub
 
-    Sub llenarTextBox(ByVal text As TextBox, instruccion As String, columnas As String)
+    Public Sub llenarTextBox(ByVal text As TextBox, instruccion As String, columnas As String)
         Try
             conexion.Open()
             comando = New SqlCommand(instruccion, conexion)
@@ -63,16 +68,15 @@ Public Class Conexion
         End Try
     End Sub
 
-    Function comprobarExistencias(ByVal instruccion As String)
+    Public Function comprobarExistencias(ByVal instruccion As String) As Integer
         Try
             conexion.Open()
             Dim comando As SqlCommand = conexion.CreateCommand()
             comando.CommandText = instruccion
-            Dim existe As Integer = CInt(comando.ExecuteScalar())
-            If existe > 0 Then
+            Dim existe As String = CStr(comando.ExecuteScalar())
+            If existe <> "" Then
                 conexion.Close()
                 Return 1
-
             Else
                 conexion.Close()
                 Return 2
@@ -85,7 +89,7 @@ Public Class Conexion
     End Function
 
     'Obtiene solo un valor entero de la base
-    Function obtenerVariableEntera(ByVal instruccion As String, columnas As String)
+    Public Function obtenerVariableEntera(ByVal instruccion As String, columnas As String) As Integer
         Try
             conexion.Open()
             Dim valor As Integer
@@ -104,7 +108,7 @@ Public Class Conexion
         End Try
     End Function
 
-    Function obtenerVariableDecimal(ByVal instruccion As String, columnas As String)
+    Public Function obtenerVariableDecimal(ByVal instruccion As String, columnas As String) As Double
         Try
             conexion.Open()
             Dim valor As Double
@@ -123,7 +127,7 @@ Public Class Conexion
         End Try
     End Function
 
-    Function obtenerVariableCadena(ByVal instruccion As String, columnas As String)
+    Public Function obtenerVariableCadena(ByVal instruccion As String, columnas As String) As String
         Try
             conexion.Open()
             Dim valorS As String
@@ -145,7 +149,7 @@ Public Class Conexion
     End Function
 
 
-    Function EjecutarComando(ByVal instruccion As String)
+    Public Function EjecutarComando(ByVal instruccion As String) As Integer
         Try
             comando = New SqlCommand(instruccion, conexion)
             conexion.Open()
@@ -163,7 +167,117 @@ Public Class Conexion
         End Try
     End Function
 
-    Sub limpiar(cont As Object)
+    'Funcion para encriptar datos
+    Public Function Encriptar(ByVal Input As String) As String
+
+        Dim IV() As Byte = ASCIIEncoding.ASCII.GetBytes(sskey)
+        Dim EncryptionKey() As Byte = Convert.FromBase64String("rpaSPvIvVLlrcmtzPU9/c67Gkj7yL1S5")
+        Dim buffer() As Byte = Encoding.UTF8.GetBytes(Input)
+        Dim des As TripleDESCryptoServiceProvider = New TripleDESCryptoServiceProvider
+        des.Key = EncryptionKey
+        des.IV = IV
+
+        Return Convert.ToBase64String(des.CreateEncryptor().TransformFinalBlock(buffer, 0, buffer.Length()))
+
+    End Function
+
+    'Funcion para desencriptar datos
+    Public Function Desencriptar(ByVal Input As String) As String
+
+        Dim IV() As Byte = ASCIIEncoding.ASCII.GetBytes(sskey)
+        Dim EncryptionKey() As Byte = Convert.FromBase64String("rpaSPvIvVLlrcmtzPU9/c67Gkj7yL1S5")
+        Dim buffer() As Byte = Encoding.UTF8.GetBytes(Input)
+        Dim des As TripleDESCryptoServiceProvider = New TripleDESCryptoServiceProvider
+        des.Key = EncryptionKey
+        des.IV = IV
+
+        Return Convert.ToBase64String(des.CreateDecryptor().TransformFinalBlock(buffer, 0, buffer.Length()))
+
+    End Function
+
+    Public Function comprobarUsuario(ByVal usua As String, ByVal contra As String) As Boolean
+
+        conexion.Open()
+        Dim sqlcomando As String = "SELECT count(*) FROM ADMINISTRADORES WHERE numeroIdentidad = '" & usua & "' And contrasena ='" & contra & "' "
+        comando = conexion.CreateCommand
+        comando.CommandText = sqlcomando
+
+        Dim t As Object = CInt(comando.ExecuteScalar())
+
+        conexion.Close()
+        If t = 0 Then
+            Return False
+        End If
+
+        Return True
+
+    End Function
+
+    'Funcion para insertar usuarios de personal
+    Function PAinsertarUsuarioLogin(ByVal numeroIdent As String, ByVal nombres As String, ByVal primerApellido As String,
+                                    ByVal segundoApellido As String, ByVal numeroTelefono As Integer, ByVal numeroCasa As Integer, ByVal idSector As Integer, ByVal refDireccion As String,
+                                    ByVal idVehiculo As Integer)
+        Try
+            conexion.Close()
+            Dim comando As SqlCommand = conexion.CreateCommand()
+            comando.CommandText = "OperacionesPersonaPE"
+            comando.CommandType = CommandType.StoredProcedure
+
+            comando.Parameters.AddWithValue("@numeroIdentidad", numeroIdent)
+            comando.Parameters.AddWithValue("@nombres", nombres)
+            comando.Parameters.AddWithValue("@primerApellido", primerApellido)
+            comando.Parameters.AddWithValue("@segundoApellido", segundoApellido)
+            comando.Parameters.AddWithValue("@numeroTelefono", numeroTelefono)
+            comando.Parameters.AddWithValue("@numeroCasa", numeroCasa)
+            comando.Parameters.AddWithValue("@idSector", idSector)
+            comando.Parameters.AddWithValue("@referenciasDireccion", refDireccion)
+            comando.Parameters.AddWithValue("@idVehiculo", idVehiculo)
+            comando.Parameters.AddWithValue("@estado", "Libre")
+            comando.Parameters.AddWithValue("@codigoOP", 1)
+            conexion.Open()
+            If comando.ExecuteNonQuery() Then
+                conexion.Close()
+                Return 0
+            Else
+                MessageBox.Show("Error de Insercion Usuario", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                conexion.Close()
+                Return 1
+            End If
+        Catch ex As Exception
+            conexion.Close()
+            MessageBox.Show("Error de Base de datos! " & vbCrLf + ex.ToString)
+            Return 1
+        End Try
+    End Function
+
+    'Funcion para insertar usuarios de personal administrativo
+    Function PAinsertarContrasenaLogin(ByVal numeroIdent As String, ByVal contra As String)
+        Try
+            conexion.Close()
+            Dim comando As SqlCommand = conexion.CreateCommand()
+            comando.CommandText = "OperacionesAdministradores"
+            comando.CommandType = CommandType.StoredProcedure
+
+            comando.Parameters.AddWithValue("@numeroIdentidad", numeroIdent)
+            comando.Parameters.AddWithValue("@contrasena", contra)
+            comando.Parameters.AddWithValue("@codigoOP", 1)
+            conexion.Open()
+            If comando.ExecuteNonQuery() Then
+                conexion.Close()
+                Return 0
+            Else
+                MessageBox.Show("Error de Insercion Contraseña", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                conexion.Close()
+                Return 1
+            End If
+        Catch ex As Exception
+            conexion.Close()
+            MessageBox.Show("Error de Base de datos! " & vbCrLf + ex.ToString)
+            Return 1
+        End Try
+    End Function
+
+    Public Sub limpiar(cont As Object)
         For Each control As Control In cont.Controls
             If TypeOf control Is TextBox Then
                 control.Text = String.Empty
@@ -173,4 +287,5 @@ Public Class Conexion
             End If
         Next
     End Sub
+
 End Class
