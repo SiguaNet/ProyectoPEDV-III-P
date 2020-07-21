@@ -15,10 +15,10 @@
             'If IsNumeric(txtIdentidad) = True And IsNumeric(txtNombre) = False And IsNumeric(txtPrimerApe) = False And IsNumeric(txtSegundoApell) = False And
             'IsNumeric(txtNumTel) = True And IsNumeric(cmbBarri) = True And IsNumeric(cmbIdVehiculo) = True Then
             If btnRegistar.Enabled = True Then
-                If Conexion.PAinsertarUsuarioLogin(txtIdentidad.Text, txtNombre.Text, txtPrimerApe.Text, txtSegundoApell.Text,
+                If Conexion.PAOperacionesUsuarioPersonal(txtIdentidad.Text, txtNombre.Text, txtPrimerApe.Text, txtSegundoApell.Text,
                                                     Val(txtNumTel.Text), Val(txtNumCasa.Text), cmbIdVehiculo.SelectedIndex + 1, txtRefDireccion.Text,
-                                                       cmbIdVehiculo.SelectedIndex + 1) = 0 Then
-                    If Conexion.PAinsertarContrasenaLogin(txtIdentidad.Text, Conexion.Encriptar(txtContrasena.Text)) = 0 Then
+                                                       cmbIdVehiculo.SelectedIndex + 1, 1) = 0 Then
+                    If Conexion.PAOperacionesUsuarioLogin(txtIdentidad.Text, Conexion.Encriptar(txtContrasena.Text), 1) = 0 Then
                         MessageBox.Show("Registro Realizado Correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Me.Close()
                     End If

@@ -214,9 +214,9 @@ Public Class Conexion
     End Function
 
     'Funcion para insertar usuarios de personal
-    Function PAinsertarUsuarioLogin(ByVal numeroIdent As String, ByVal nombres As String, ByVal primerApellido As String,
+    Function PAOperacionesUsuarioPersonal(ByVal numeroIdent As String, ByVal nombres As String, ByVal primerApellido As String,
                                     ByVal segundoApellido As String, ByVal numeroTelefono As Integer, ByVal numeroCasa As Integer, ByVal idSector As Integer, ByVal refDireccion As String,
-                                    ByVal idVehiculo As Integer)
+                                    ByVal idVehiculo As Integer, ByVal opcion As Integer)
         Try
             conexion.Close()
             Dim comando As SqlCommand = conexion.CreateCommand()
@@ -233,7 +233,12 @@ Public Class Conexion
             comando.Parameters.AddWithValue("@referenciasDireccion", refDireccion)
             comando.Parameters.AddWithValue("@idVehiculo", idVehiculo)
             comando.Parameters.AddWithValue("@estado", "Libre")
-            comando.Parameters.AddWithValue("@codigoOP", 1)
+            If opcion = 1 Then
+                comando.Parameters.AddWithValue("@codigoOP", 1)
+            ElseIf opcion = 2 Then
+                comando.Parameters.AddWithValue("@codigoOP", 2)
+            End If
+
             conexion.Open()
             If comando.ExecuteNonQuery() Then
                 conexion.Close()
@@ -251,7 +256,7 @@ Public Class Conexion
     End Function
 
     'Funcion para insertar usuarios de personal administrativo
-    Function PAinsertarContrasenaLogin(ByVal numeroIdent As String, ByVal contra As String)
+    Function PAOperacionesUsuarioLogin(ByVal numeroIdent As String, ByVal contra As String, ByVal opcion As Integer)
         Try
             conexion.Close()
             Dim comando As SqlCommand = conexion.CreateCommand()
@@ -260,7 +265,12 @@ Public Class Conexion
 
             comando.Parameters.AddWithValue("@numeroIdentidad", numeroIdent)
             comando.Parameters.AddWithValue("@contrasena", contra)
-            comando.Parameters.AddWithValue("@codigoOP", 1)
+            If opcion = 1 Then
+                comando.Parameters.AddWithValue("@codigoOP", 1)
+            ElseIf opcion = 2 Then
+                comando.Parameters.AddWithValue("@codigoOP", 2)
+            End If
+
             conexion.Open()
             If comando.ExecuteNonQuery() Then
                 conexion.Close()
