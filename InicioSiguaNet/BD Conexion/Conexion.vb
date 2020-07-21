@@ -21,7 +21,7 @@ Public Class Conexion
         End Try
     End Sub
 
-    Public Sub LlenarDGVHistorial(ByVal dgv As DataGridView, instruccion As String)
+    Public Sub LlenarDGV(ByVal dgv As DataGridView, instruccion As String)
         Try
             conexion.Open()
             adaptador = New SqlDataAdapter(instruccion, conexion)
