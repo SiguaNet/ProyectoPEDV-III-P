@@ -21,6 +21,7 @@
         Try
             conexion.PAinsertarUsuarioLogin(txtID.Text, txtNombres.Text, txtPrimer.Text, txtSegundo.Text, Val(txtTelefono.Text),
                                         Val(txtCasa.Text), cmbSector.SelectedIndex + 1, txtReferencia.Text, cmbVehiculo.SelectedIndex + 1)
+            MessageBox.Show("Usuario se añadio exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Catch ex As Exception
             MessageBox.Show("Error", "Error de insercion", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -30,10 +31,9 @@
         Try
             conexion.PAmodificarPersonal(txtID.Text, txtNombres.Text, txtPrimer.Text, txtSegundo.Text, Val(txtTelefono.Text),
                                         Val(txtCasa.Text), cmbSector.SelectedIndex + 1, txtReferencia.Text, cmbVehiculo.SelectedIndex + 1)
+            MessageBox.Show("Usuario se modifico exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Catch ex As Exception
-            MessageBox.Show("Error", "Error de insercion", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error", "Error de modificacion", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-        conexion.PAmodificarPersonal(txtID.Text, txtNombres.Text, txtPrimer.Text, txtSegundo.Text, Val(txtTelefono.Text),
-                                        Val(txtCasa.Text), cmbSector.SelectedIndex + 1, txtReferencia.Text, cmbVehiculo.SelectedIndex + 1)
     End Sub
 End Class

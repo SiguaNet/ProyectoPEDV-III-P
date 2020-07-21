@@ -23,7 +23,6 @@ Partial Class Recursos
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.btnInicio = New System.Windows.Forms.Button()
-        Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.dgvRecursos = New System.Windows.Forms.DataGridView()
@@ -33,30 +32,24 @@ Partial Class Recursos
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtMatricula = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnIndividual = New System.Windows.Forms.Button()
+        Me.btnTodo = New System.Windows.Forms.Button()
+        Me.btnTablas = New System.Windows.Forms.Button()
         CType(Me.dgvRecursos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnInicio
         '
-        Me.btnInicio.Location = New System.Drawing.Point(429, 183)
+        Me.btnInicio.Location = New System.Drawing.Point(429, 470)
         Me.btnInicio.Name = "btnInicio"
         Me.btnInicio.Size = New System.Drawing.Size(75, 23)
         Me.btnInicio.TabIndex = 21
         Me.btnInicio.Text = "Inicio"
         Me.btnInicio.UseVisualStyleBackColor = True
         '
-        'btnEliminar
-        '
-        Me.btnEliminar.Location = New System.Drawing.Point(429, 137)
-        Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(75, 23)
-        Me.btnEliminar.TabIndex = 20
-        Me.btnEliminar.Text = "Eliminar"
-        Me.btnEliminar.UseVisualStyleBackColor = True
-        '
         'btnModificar
         '
-        Me.btnModificar.Location = New System.Drawing.Point(429, 87)
+        Me.btnModificar.Location = New System.Drawing.Point(429, 246)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(75, 23)
         Me.btnModificar.TabIndex = 19
@@ -65,7 +58,7 @@ Partial Class Recursos
         '
         'btnNuevo
         '
-        Me.btnNuevo.Location = New System.Drawing.Point(429, 43)
+        Me.btnNuevo.Location = New System.Drawing.Point(429, 217)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(75, 23)
         Me.btnNuevo.TabIndex = 18
@@ -75,7 +68,7 @@ Partial Class Recursos
         'dgvRecursos
         '
         Me.dgvRecursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvRecursos.Location = New System.Drawing.Point(34, 239)
+        Me.dgvRecursos.Location = New System.Drawing.Point(34, 289)
         Me.dgvRecursos.Name = "dgvRecursos"
         Me.dgvRecursos.RowHeadersWidth = 51
         Me.dgvRecursos.RowTemplate.Height = 24
@@ -130,14 +123,43 @@ Partial Class Recursos
         Me.Label1.TabIndex = 22
         Me.Label1.Text = "Modelo:"
         '
+        'btnIndividual
+        '
+        Me.btnIndividual.Location = New System.Drawing.Point(429, 149)
+        Me.btnIndividual.Name = "btnIndividual"
+        Me.btnIndividual.Size = New System.Drawing.Size(75, 48)
+        Me.btnIndividual.TabIndex = 27
+        Me.btnIndividual.Text = "Consulta Indiv."
+        Me.btnIndividual.UseVisualStyleBackColor = True
+        '
+        'btnTodo
+        '
+        Me.btnTodo.Location = New System.Drawing.Point(429, 95)
+        Me.btnTodo.Name = "btnTodo"
+        Me.btnTodo.Size = New System.Drawing.Size(75, 48)
+        Me.btnTodo.TabIndex = 26
+        Me.btnTodo.Text = "Consulta Todo"
+        Me.btnTodo.UseVisualStyleBackColor = True
+        '
+        'btnTablas
+        '
+        Me.btnTablas.Location = New System.Drawing.Point(429, 41)
+        Me.btnTablas.Name = "btnTablas"
+        Me.btnTablas.Size = New System.Drawing.Size(75, 48)
+        Me.btnTablas.TabIndex = 25
+        Me.btnTablas.Text = "Consulta Tablas"
+        Me.btnTablas.UseVisualStyleBackColor = True
+        '
         'Recursos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(535, 450)
+        Me.ClientSize = New System.Drawing.Size(535, 505)
+        Me.Controls.Add(Me.btnIndividual)
+        Me.Controls.Add(Me.btnTodo)
+        Me.Controls.Add(Me.btnTablas)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnInicio)
-        Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.btnNuevo)
         Me.Controls.Add(Me.dgvRecursos)
@@ -155,7 +177,6 @@ Partial Class Recursos
     End Sub
 
     Friend WithEvents btnInicio As Button
-    Friend WithEvents btnEliminar As Button
     Friend WithEvents btnModificar As Button
     Friend WithEvents btnNuevo As Button
     Friend WithEvents dgvRecursos As DataGridView
@@ -165,4 +186,7 @@ Partial Class Recursos
     Friend WithEvents Label2 As Label
     Friend WithEvents txtMatricula As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents btnIndividual As Button
+    Friend WithEvents btnTodo As Button
+    Friend WithEvents btnTablas As Button
 End Class

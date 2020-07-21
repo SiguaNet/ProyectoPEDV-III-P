@@ -28,6 +28,7 @@ Partial Class InicioSiguaNet
         Me.btnInventario = New System.Windows.Forms.Button()
         Me.btnCerrarSesion = New System.Windows.Forms.Button()
         Me.btnPersonal = New System.Windows.Forms.Button()
+        Me.btnRecursos = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnGestionTickets
@@ -84,11 +85,21 @@ Partial Class InicioSiguaNet
         Me.btnPersonal.Text = "Personal"
         Me.btnPersonal.UseVisualStyleBackColor = True
         '
+        'btnRecursos
+        '
+        Me.btnRecursos.Location = New System.Drawing.Point(501, 328)
+        Me.btnRecursos.Name = "btnRecursos"
+        Me.btnRecursos.Size = New System.Drawing.Size(287, 59)
+        Me.btnRecursos.TabIndex = 6
+        Me.btnRecursos.Text = "Recursos"
+        Me.btnRecursos.UseVisualStyleBackColor = True
+        '
         'InicioSiguaNet
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(980, 549)
+        Me.Controls.Add(Me.btnRecursos)
         Me.Controls.Add(Me.btnPersonal)
         Me.Controls.Add(Me.btnCerrarSesion)
         Me.Controls.Add(Me.btnInventario)
@@ -107,4 +118,5 @@ Partial Class InicioSiguaNet
     Friend WithEvents btnInventario As Button
     Friend WithEvents btnCerrarSesion As Button
     Friend WithEvents btnPersonal As Button
+    Friend WithEvents btnRecursos As Button
 End Class

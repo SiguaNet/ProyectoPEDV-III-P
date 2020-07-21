@@ -264,6 +264,63 @@ Public Class Conexion
             Return 1
         End Try
     End Function
+
+    'Funcion para insertar en vehiculos
+    Function PAinsertarVehiculos(ByVal idVehiculo As Integer, ByVal matricula As String, ByVal modelo As String)
+        Try
+            conexion.Close()
+            Dim comando As SqlCommand = conexion.CreateCommand()
+            comando.CommandText = "OperacionesRecursosMotores"
+            comando.CommandType = CommandType.StoredProcedure
+
+            comando.Parameters.AddWithValue("@idVehiculo", idVehiculo)
+            comando.Parameters.AddWithValue("@matricula", matricula)
+            comando.Parameters.AddWithValue("@modelo", modelo)
+            comando.Parameters.AddWithValue("@codigoOP", 1)
+            conexion.Open()
+            If comando.ExecuteNonQuery() Then
+                conexion.Close()
+                Return 0
+            Else
+                MessageBox.Show("Error de Insercion Recurso", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                conexion.Close()
+                Return 1
+            End If
+        Catch ex As Exception
+            conexion.Close()
+            MessageBox.Show("Error de Base de datos! " & vbCrLf + ex.ToString)
+            Return 1
+        End Try
+    End Function
+
+    'Funcion para modificar vehiculos
+    Function PAmodificarVehiculos(ByVal idVehiculo As Integer, ByVal matricula As String, ByVal modelo As String)
+        Try
+            conexion.Close()
+            Dim comando As SqlCommand = conexion.CreateCommand()
+            comando.CommandText = "OperacionesRecursosMotores"
+            comando.CommandType = CommandType.StoredProcedure
+
+            comando.Parameters.AddWithValue("@idVehiculo", idVehiculo)
+            comando.Parameters.AddWithValue("@matricula", matricula)
+            comando.Parameters.AddWithValue("@modelo", modelo)
+            comando.Parameters.AddWithValue("@codigoOP", 2)
+            conexion.Open()
+            If comando.ExecuteNonQuery() Then
+                conexion.Close()
+                Return 0
+            Else
+                MessageBox.Show("Error de Insercion Recurso", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                conexion.Close()
+                Return 1
+            End If
+        Catch ex As Exception
+            conexion.Close()
+            MessageBox.Show("Error de Base de datos! " & vbCrLf + ex.ToString)
+            Return 1
+        End Try
+    End Function
+
     'Funcion para modificar personal
     Function PAmodificarPersonal(ByVal numeroIdent As String, ByVal nombres As String, ByVal primerApellido As String,
                                     ByVal segundoApellido As String, ByVal numeroTelefono As Integer, ByVal numeroCasa As Integer, ByVal idSector As Integer, ByVal refDireccion As String,
