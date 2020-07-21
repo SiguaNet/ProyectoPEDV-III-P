@@ -18,4 +18,9 @@
     Private Sub btnCerrarSesion_Click(sender As Object, e As EventArgs) Handles btnCerrarSesion.Click
 
     End Sub
+
+    Private Sub btnPersonal_Click(sender As Object, e As EventArgs) Handles btnPersonal.Click
+        Personal.Show()
+        Me.Hide()
+    End Sub
 End Class
