@@ -27,6 +27,8 @@ Partial Class InicioSiguaNet
         Me.btnFichaCliente = New System.Windows.Forms.Button()
         Me.btnInventario = New System.Windows.Forms.Button()
         Me.btnCerrarSesion = New System.Windows.Forms.Button()
+        Me.btnPersonal = New System.Windows.Forms.Button()
+        Me.btnRecursos = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnGestionTickets
@@ -74,11 +76,31 @@ Partial Class InicioSiguaNet
         Me.btnCerrarSesion.Text = "Cerrar sesión"
         Me.btnCerrarSesion.UseVisualStyleBackColor = True
         '
+        'btnPersonal
+        '
+        Me.btnPersonal.Location = New System.Drawing.Point(501, 209)
+        Me.btnPersonal.Name = "btnPersonal"
+        Me.btnPersonal.Size = New System.Drawing.Size(287, 59)
+        Me.btnPersonal.TabIndex = 5
+        Me.btnPersonal.Text = "Personal"
+        Me.btnPersonal.UseVisualStyleBackColor = True
+        '
+        'btnRecursos
+        '
+        Me.btnRecursos.Location = New System.Drawing.Point(501, 328)
+        Me.btnRecursos.Name = "btnRecursos"
+        Me.btnRecursos.Size = New System.Drawing.Size(287, 59)
+        Me.btnRecursos.TabIndex = 6
+        Me.btnRecursos.Text = "Recursos"
+        Me.btnRecursos.UseVisualStyleBackColor = True
+        '
         'InicioSiguaNet
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(980, 549)
+        Me.Controls.Add(Me.btnRecursos)
+        Me.Controls.Add(Me.btnPersonal)
         Me.Controls.Add(Me.btnCerrarSesion)
         Me.Controls.Add(Me.btnInventario)
         Me.Controls.Add(Me.btnFichaCliente)
@@ -95,4 +117,6 @@ Partial Class InicioSiguaNet
     Friend WithEvents btnFichaCliente As Button
     Friend WithEvents btnInventario As Button
     Friend WithEvents btnCerrarSesion As Button
+    Friend WithEvents btnPersonal As Button
+    Friend WithEvents btnRecursos As Button
 End Class

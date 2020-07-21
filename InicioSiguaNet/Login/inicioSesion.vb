@@ -18,7 +18,8 @@
 
             ElseIf Conexion.comprobarUsuario(txtUsuario.Text, Conexion.Encriptar(txtContrasena.Text)) = True Then
                 MsgBox("hola q ase")
-                Else
+                InicioSiguaNet.Show()
+            Else
                 MessageBox.Show("Usuario o Contraseña incorrectos!", "Error de Ingreso", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
             Else
