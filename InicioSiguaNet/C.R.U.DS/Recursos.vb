@@ -15,7 +15,7 @@
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         Try
-            conexion.PAinsertarVehiculos(txtVehiculo.Text, txtMatricula.Text, txtModelo.Text)
+            conexion.PAOperacionesRecursosMotores(txtVehiculo.Text, txtMatricula.Text, txtModelo.Text, 1)
             MessageBox.Show("Recurso se añadio exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Catch ex As Exception
             MessageBox.Show("Error", "Error de insercion", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -25,7 +25,7 @@
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         Try
-            conexion.PAmodificarVehiculos(txtVehiculo.Text, txtMatricula.Text, txtModelo.Text)
+            conexion.PAOperacionesRecursosMotores(txtVehiculo.Text, txtMatricula.Text, txtModelo.Text, 2)
             MessageBox.Show("Recurso se modifico exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Catch ex As Exception
             MessageBox.Show("Error", "Error de modificacion", MessageBoxButtons.OK, MessageBoxIcon.Error)

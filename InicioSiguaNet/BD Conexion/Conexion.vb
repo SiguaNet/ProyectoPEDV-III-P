@@ -4,7 +4,7 @@ Imports System.Text
 
 Public Class Conexion
 
-    Public conexion As SqlConnection = New SqlConnection("Data Source=DESKTOP-SRS9O5V\SQLSERVER;Initial Catalog=bd_SiguaNet;Integrated Security=True")
+    Public conexion As SqlConnection = New SqlConnection("Data Source=HACKNEL;Initial Catalog=bd_SiguaNet;Integrated Security=True")
     Public adaptador As SqlDataAdapter
     Public tablaDatos1 As DataTable
     Public lectorVariables As SqlDataReader
@@ -34,6 +34,27 @@ Public Class Conexion
             MessageBox.Show("Error de Base de datos! " & vbCrLf + ex.ToString)
         End Try
     End Sub
+
+    Public Sub LlenarDGVPorIdentidad(dgv As DataGridView, ByVal nombrePA As String, ByVal parametroPA As String, ByVal identidad As String)
+        Try
+            conexion.Open()
+            comando = New SqlCommand(nombrePA, conexion)
+            comando.CommandType = CommandType.StoredProcedure
+            adaptador = New SqlDataAdapter(comando)
+            tablaDatos1 = New DataTable
+            With comando.Parameters
+                .Add(New SqlParameter(parametroPA, identidad))
+            End With
+            adaptador.Fill(tablaDatos1)
+            dgv.DataSource = tablaDatos1
+            conexion.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            conexion.Close()
+        End Try
+    End Sub
+
     'Consulta individualmente el personal
     'Function PAconsultaIndividual(ByVal dgv As DataGridView, ByVal numeroIdent As String)
     '    Try
@@ -231,7 +252,7 @@ Public Class Conexion
     'Funcion para insertar usuarios de personal
     Function PAOperacionesUsuarioPersonal(ByVal numeroIdent As String, ByVal nombres As String, ByVal primerApellido As String,
                                     ByVal segundoApellido As String, ByVal numeroTelefono As Integer, ByVal numeroCasa As Integer, ByVal idSector As Integer, ByVal refDireccion As String,
-                                    ByVal idVehiculo As Integer, ByVal opcion As Integer)
+                                    ByVal idVehiculo As Integer, ByVal estado As String, ByVal opcion As Integer)
         Try
             conexion.Close()
             Dim comando As SqlCommand = conexion.CreateCommand()
@@ -247,7 +268,7 @@ Public Class Conexion
             comando.Parameters.AddWithValue("@idSector", idSector)
             comando.Parameters.AddWithValue("@referenciasDireccion", refDireccion)
             comando.Parameters.AddWithValue("@idVehiculo", idVehiculo)
-            comando.Parameters.AddWithValue("@estado", "Libre")
+            comando.Parameters.AddWithValue("@estado", estado)
             If opcion = 1 Then
                 comando.Parameters.AddWithValue("@codigoOP", 1)
             ElseIf opcion = 2 Then
@@ -271,7 +292,7 @@ Public Class Conexion
     End Function
 
     'Funcion para insertar en vehiculos
-    Function PAinsertarVehiculos(ByVal idVehiculo As Integer, ByVal matricula As String, ByVal modelo As String)
+    Function PAOperacionesRecursosMotores(ByVal idVehiculo As Integer, ByVal matricula As String, ByVal modelo As String, ByVal opcion As Integer)
         Try
             conexion.Close()
             Dim comando As SqlCommand = conexion.CreateCommand()
@@ -281,78 +302,18 @@ Public Class Conexion
             comando.Parameters.AddWithValue("@idVehiculo", idVehiculo)
             comando.Parameters.AddWithValue("@matricula", matricula)
             comando.Parameters.AddWithValue("@modelo", modelo)
-            comando.Parameters.AddWithValue("@codigoOP", 1)
+            If opcion = 1 Then
+                comando.Parameters.AddWithValue("@codigoOP", 1)
+            ElseIf opcion = 2 Then
+                comando.Parameters.AddWithValue("@codigoOP", 2)
+            End If
+
             conexion.Open()
             If comando.ExecuteNonQuery() Then
                 conexion.Close()
                 Return 0
             Else
                 MessageBox.Show("Error de Insercion Recurso", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                conexion.Close()
-                Return 1
-            End If
-        Catch ex As Exception
-            conexion.Close()
-            MessageBox.Show("Error de Base de datos! " & vbCrLf + ex.ToString)
-            Return 1
-        End Try
-    End Function
-
-    'Funcion para modificar vehiculos
-    Function PAmodificarVehiculos(ByVal idVehiculo As Integer, ByVal matricula As String, ByVal modelo As String)
-        Try
-            conexion.Close()
-            Dim comando As SqlCommand = conexion.CreateCommand()
-            comando.CommandText = "OperacionesRecursosMotores"
-            comando.CommandType = CommandType.StoredProcedure
-
-            comando.Parameters.AddWithValue("@idVehiculo", idVehiculo)
-            comando.Parameters.AddWithValue("@matricula", matricula)
-            comando.Parameters.AddWithValue("@modelo", modelo)
-            comando.Parameters.AddWithValue("@codigoOP", 2)
-            conexion.Open()
-            If comando.ExecuteNonQuery() Then
-                conexion.Close()
-                Return 0
-            Else
-                MessageBox.Show("Error de Insercion Recurso", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                conexion.Close()
-                Return 1
-            End If
-        Catch ex As Exception
-            conexion.Close()
-            MessageBox.Show("Error de Base de datos! " & vbCrLf + ex.ToString)
-            Return 1
-        End Try
-    End Function
-
-    'Funcion para modificar personal
-    Function PAmodificarPersonal(ByVal numeroIdent As String, ByVal nombres As String, ByVal primerApellido As String,
-                                    ByVal segundoApellido As String, ByVal numeroTelefono As Integer, ByVal numeroCasa As Integer, ByVal idSector As Integer, ByVal refDireccion As String,
-                                    ByVal idVehiculo As Integer)
-        Try
-            conexion.Close()
-            Dim comando As SqlCommand = conexion.CreateCommand()
-            comando.CommandText = "OperacionesPersonaPE"
-            comando.CommandType = CommandType.StoredProcedure
-
-            comando.Parameters.AddWithValue("@numeroIdentidad", numeroIdent)
-            comando.Parameters.AddWithValue("@nombres", nombres)
-            comando.Parameters.AddWithValue("@primerApellido", primerApellido)
-            comando.Parameters.AddWithValue("@segundoApellido", segundoApellido)
-            comando.Parameters.AddWithValue("@numeroTelefono", numeroTelefono)
-            comando.Parameters.AddWithValue("@numeroCasa", numeroCasa)
-            comando.Parameters.AddWithValue("@idSector", idSector)
-            comando.Parameters.AddWithValue("@referenciasDireccion", refDireccion)
-            comando.Parameters.AddWithValue("@idVehiculo", idVehiculo)
-            comando.Parameters.AddWithValue("@estado", "Libre")
-            comando.Parameters.AddWithValue("@codigoOP", 2)
-            conexion.Open()
-            If comando.ExecuteNonQuery() Then
-                conexion.Close()
-                Return 0
-            Else
-                MessageBox.Show("Error de Insercion Usuario", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 conexion.Close()
                 Return 1
             End If
@@ -385,6 +346,38 @@ Public Class Conexion
                 Return 0
             Else
                 MessageBox.Show("Error de Insercion Contraseña", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                conexion.Close()
+                Return 1
+            End If
+        Catch ex As Exception
+            conexion.Close()
+            MessageBox.Show("Error de Base de datos! " & vbCrLf + ex.ToString)
+            Return 1
+        End Try
+    End Function
+
+    Function PAOperacionesFactura(ByVal idFactura As Integer, ByVal numeroIdentidad As String, ByVal fechaPago As String, ByVal opcion As Integer)
+        Try
+            conexion.Close()
+            Dim comando As SqlCommand = conexion.CreateCommand()
+            comando.CommandText = "OperacionesFactura"
+            comando.CommandType = CommandType.StoredProcedure
+
+            comando.Parameters.AddWithValue("@idFactura", idFactura)
+            comando.Parameters.AddWithValue("@numeroIdentidadC", numeroIdentidad)
+            comando.Parameters.AddWithValue("@fechaPago", fechaPago)
+            If opcion = 1 Then
+                comando.Parameters.AddWithValue("@codigoOP", 1)
+            ElseIf opcion = 2 Then
+                comando.Parameters.AddWithValue("@codigoOP", 2)
+            End If
+
+            conexion.Open()
+            If comando.ExecuteNonQuery() Then
+                conexion.Close()
+                Return 0
+            Else
+                MessageBox.Show("Error de Operacion de Facturas", "Error de Factura", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 conexion.Close()
                 Return 1
             End If

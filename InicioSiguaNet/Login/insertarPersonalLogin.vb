@@ -17,7 +17,7 @@
             If btnRegistar.Enabled = True Then
                 If Conexion.PAOperacionesUsuarioPersonal(txtIdentidad.Text, txtNombre.Text, txtPrimerApe.Text, txtSegundoApell.Text,
                                                     Val(txtNumTel.Text), Val(txtNumCasa.Text), cmbIdVehiculo.SelectedIndex + 1, txtRefDireccion.Text,
-                                                       cmbIdVehiculo.SelectedIndex + 1, 1) = 0 Then
+                                                       cmbIdVehiculo.SelectedIndex + 1, "Libre", 1) = 0 Then
                     If Conexion.PAOperacionesUsuarioLogin(txtIdentidad.Text, Conexion.Encriptar(txtContrasena.Text), 1) = 0 Then
                         MessageBox.Show("Registro Realizado Correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Me.Close()

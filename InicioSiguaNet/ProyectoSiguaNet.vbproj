@@ -81,6 +81,12 @@
     <Compile Include="EstadoFinanciero.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Facturas y Conta\PagosFacturas.Designer.vb">
+      <DependentUpon>PagosFacturas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Facturas y Conta\PagosFacturas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="InicioSiguaNet.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -122,22 +128,25 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Personal.Designer.vb">
+    <Compile Include="C.R.U.DS\Personal.Designer.vb">
       <DependentUpon>Personal.vb</DependentUpon>
     </Compile>
-    <Compile Include="Personal.vb">
+    <Compile Include="C.R.U.DS\Personal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Recursos.Designer.vb">
+    <Compile Include="C.R.U.DS\Recursos.Designer.vb">
       <DependentUpon>Recursos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Recursos.vb">
+    <Compile Include="C.R.U.DS\Recursos.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="EstadoFinanciero.resx">
       <DependentUpon>EstadoFinanciero.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facturas y Conta\PagosFacturas.resx">
+      <DependentUpon>PagosFacturas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InicioSiguaNet.resx">
       <DependentUpon>InicioSiguaNet.vb</DependentUpon>
@@ -157,10 +166,10 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Personal.resx">
+    <EmbeddedResource Include="C.R.U.DS\Personal.resx">
       <DependentUpon>Personal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Recursos.resx">
+    <EmbeddedResource Include="C.R.U.DS\Recursos.resx">
       <DependentUpon>Recursos.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
