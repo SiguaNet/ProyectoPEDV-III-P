@@ -35,6 +35,11 @@ Public Class Conexion
         End Try
     End Sub
 
+    'Función que llena dataGridView apartir de procedimientos almacenados.       
+    'dgv = dataGridView que se quiere llenar.               
+    'nombrePA = nombre del procedimiento almacenado que se llamará.            
+    'parametrosPA = que parámetro necesita la funcion por ejemplo si está especificada @numeroIdentidad, literal llamarla como ”@numeroIdentidad".             
+    'identidad = identificador que se le envía a la función
     Public Sub LlenarDGVPorIdentidad(dgv As DataGridView, ByVal nombrePA As String, ByVal parametroPA As String, ByVal identidad As String)
         Try
             conexion.Open()
@@ -356,6 +361,10 @@ Public Class Conexion
         End Try
     End Function
 
+
+    'Función que trabaja la parte de modificación y inserción de factura    
+    'OJO    
+    'si se quiere llamar para inserción o modificación especificar que operación es mediante 1 ó 2, no crear otra nueva funcion
     Function PAOperacionesFactura(ByVal idFactura As Integer, ByVal numeroIdentidad As String, ByVal fechaPago As String, ByVal opcion As Integer)
         Try
             conexion.Close()
