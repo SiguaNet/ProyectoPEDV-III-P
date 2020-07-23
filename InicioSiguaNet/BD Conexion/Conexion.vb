@@ -51,6 +51,14 @@ Public Class Conexion
                 .Add(New SqlParameter(parametroPA, identidad))
             End With
             adaptador.Fill(tablaDatos1)
+
+            'Recorre tabla de datos de la consulta y asigna a variables los valores requeridos
+            'If tablaDatos1.Rows.Count > 0 Then
+            '    For i As Integer = 0 To tablaDatos1.Columns.Count - 1
+            '        MsgBox(tablaDatos1.Rows(0)(i))
+            '    Next
+            'End If
+            tablaDatosG = tablaDatos1
             dgv.DataSource = tablaDatos1
             conexion.Close()
         Catch ex As Exception
