@@ -87,6 +87,24 @@
     <Compile Include="Facturas y Conta\PagosFacturas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Ficha del cliente\FichaCliente.Designer.vb">
+      <DependentUpon>FichaCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ficha del cliente\FichaCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ficha del cliente\GestionFacturas.Designer.vb">
+      <DependentUpon>GestionFacturas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ficha del cliente\GestionFacturas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ficha del cliente\GestionTicket.Designer.vb">
+      <DependentUpon>GestionTicket.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ficha del cliente\GestionTicket.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="InicioSiguaNet.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +165,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Facturas y Conta\PagosFacturas.resx">
       <DependentUpon>PagosFacturas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ficha del cliente\FichaCliente.resx">
+      <DependentUpon>FichaCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ficha del cliente\GestionFacturas.resx">
+      <DependentUpon>GestionFacturas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ficha del cliente\GestionTicket.resx">
+      <DependentUpon>GestionTicket.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InicioSiguaNet.resx">
       <DependentUpon>InicioSiguaNet.vb</DependentUpon>
