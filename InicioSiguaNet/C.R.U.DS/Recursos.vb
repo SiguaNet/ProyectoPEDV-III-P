@@ -10,7 +10,7 @@
     End Sub
 
     Private Sub btnIndividual_Click(sender As Object, e As EventArgs) Handles btnIndividual.Click
-
+        conexion.LlenarDGVPorIdentidad(dgvRecursos, "consultaRecursosMotores", "@idVehiculo", txtVehiculo.Text)
     End Sub
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
@@ -30,5 +30,9 @@
         Catch ex As Exception
             MessageBox.Show("Error", "Error de modificacion", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+
+    Private Sub Recursos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class
