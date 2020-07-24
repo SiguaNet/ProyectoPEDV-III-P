@@ -85,6 +85,12 @@
     </Compile>
     <Compile Include="BD Conexion\Conexion.vb" />
     <Compile Include="BD Conexion\variablesGlobales.vb" />
+    <Compile Include="Bienvenida\Bienvenida.Designer.vb">
+      <DependentUpon>Bienvenida.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bienvenida\Bienvenida.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Ejemplo.Designer.vb">
       <DependentUpon>Ejemplo.vb</DependentUpon>
     </Compile>
@@ -191,6 +197,9 @@
     <EmbeddedResource Include="AgregarCliente.resx">
       <DependentUpon>AgregarCliente.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Bienvenida\Bienvenida.resx">
+      <DependentUpon>Bienvenida.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ejemplo.resx">
       <DependentUpon>Ejemplo.vb</DependentUpon>
     </EmbeddedResource>
@@ -266,6 +275,25 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Login\mensajeCorreo.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

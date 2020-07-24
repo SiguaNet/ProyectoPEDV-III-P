@@ -21,12 +21,8 @@
     End Sub
 
     Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles BtnAgregar.Click
-        TxtNombres.Text = ""
-        TxtPrimerApellido.Text = ""
-        TxtSegundoApellido.Text = ""
-        TxtId.Text = ""
-        TxtDireccion.Text = ""
-        TxtTelefono.Text = ""
+        Me.Close()
+        AgregarCliente.Show()
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -47,6 +43,10 @@
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+
+    End Sub
+
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
         InicioSiguaNet.Show()
         variablesGlobales.numeroIdentidad = ""
