@@ -240,7 +240,7 @@ Public Class Conexion
     'Funcion para encriptar datos
     Public Function Encriptar(ByVal Input As String) As String
 
-        Dim IV() As Byte = ASCIIEncoding.ASCII.GetBytes(sskey)
+        Dim IV() As Byte = ASCIIEncoding.ASCII.GetBytes("qualityi")
         Dim EncryptionKey() As Byte = Convert.FromBase64String("rpaSPvIvVLlrcmtzPU9/c67Gkj7yL1S5")
         Dim buffer() As Byte = Encoding.UTF8.GetBytes(Input)
         Dim des As TripleDESCryptoServiceProvider = New TripleDESCryptoServiceProvider
@@ -251,19 +251,18 @@ Public Class Conexion
 
     End Function
 
-    'Funcion para desencriptar datos
     Public Function Desencriptar(ByVal Input As String) As String
 
-        Dim IV() As Byte = ASCIIEncoding.ASCII.GetBytes(sskey)
+        Dim IV() As Byte = ASCIIEncoding.ASCII.GetBytes("qualityi")
         Dim EncryptionKey() As Byte = Convert.FromBase64String("rpaSPvIvVLlrcmtzPU9/c67Gkj7yL1S5")
-        Dim buffer() As Byte = Encoding.UTF8.GetBytes(Input)
+        Dim buffer() As Byte = Convert.FromBase64String(Input)
         Dim des As TripleDESCryptoServiceProvider = New TripleDESCryptoServiceProvider
         des.Key = EncryptionKey
         des.IV = IV
-
-        Return Convert.ToBase64String(des.CreateDecryptor().TransformFinalBlock(buffer, 0, buffer.Length()))
+        Return Encoding.UTF8.GetString(des.CreateDecryptor().TransformFinalBlock(buffer, 0, buffer.Length()))
 
     End Function
+
 
     Public Function comprobarUsuario(ByVal usua As String, ByVal contra As String) As Boolean
 
@@ -286,7 +285,7 @@ Public Class Conexion
     'Funcion para insertar usuarios de personal
     Function PAOperacionesUsuarioPersonal(ByVal numeroIdent As String, ByVal nombres As String, ByVal primerApellido As String,
                                     ByVal segundoApellido As String, ByVal numeroTelefono As Integer, ByVal numeroCasa As Integer, ByVal idSector As Integer, ByVal refDireccion As String,
-                                    ByVal idVehiculo As Integer, ByVal estado As String, ByVal opcion As Integer)
+                                    ByVal idVehiculo As Object, ByVal estado As String, ByVal opcion As Integer)
         Try
             conexion.Close()
             Dim comando As SqlCommand = conexion.CreateCommand()

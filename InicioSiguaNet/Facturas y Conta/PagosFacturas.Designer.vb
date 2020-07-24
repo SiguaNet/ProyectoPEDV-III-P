@@ -33,7 +33,9 @@ Partial Class PagosFacturas
         Me.Label3 = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.impresoraFacturas = New System.Drawing.Printing.PrintDocument()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         CType(Me.dgvFacturas, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -93,7 +95,7 @@ Partial Class PagosFacturas
         '
         'btnPagar
         '
-        Me.btnPagar.Location = New System.Drawing.Point(567, 165)
+        Me.btnPagar.Location = New System.Drawing.Point(567, 174)
         Me.btnPagar.Name = "btnPagar"
         Me.btnPagar.Size = New System.Drawing.Size(85, 28)
         Me.btnPagar.TabIndex = 7
@@ -112,6 +114,10 @@ Partial Class PagosFacturas
         'impresoraFacturas
         '
         '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
+        '
         'PagosFacturas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -128,6 +134,7 @@ Partial Class PagosFacturas
         Me.Name = "PagosFacturas"
         Me.Text = "PagosFacturas"
         CType(Me.dgvFacturas, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -143,4 +150,5 @@ Partial Class PagosFacturas
     Friend WithEvents Label3 As Label
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents impresoraFacturas As Printing.PrintDocument
+    Friend WithEvents ErrorProvider1 As ErrorProvider
 End Class

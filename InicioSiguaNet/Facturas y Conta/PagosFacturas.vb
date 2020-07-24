@@ -1,6 +1,10 @@
-﻿Public Class PagosFacturas
+﻿Imports System.ComponentModel
+
+Public Class PagosFacturas
 
     Dim Conexion As Conexion = New Conexion
+    Public dineroEntregado As Double
+    Public dineroCambio As Double
 
     Private Sub PagosFacturas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         btnBuscar.Enabled = False
@@ -21,10 +25,25 @@
                 Dim cant As Integer = Val(Conexion.obtenerVariableEntera("select pagosCliente FROM CLIENTES where numeroIdentidad = '" & txtIdentidad.Text & "'", "pagosCliente")) + 1
 
                 If cant = cmbMesPago.SelectedIndex + 1 Then
-                    Conexion.EjecutarComando("update CLIENTES set pagosCliente = '" & cant & "' where numeroIdentidad = '" & txtIdentidad.Text & "'")
-                    Conexion.PAOperacionesFactura(0, txtIdentidad.Text, String.Format("{0:G}", DateTime.Now), 1)
-                    Conexion.LlenarDGVPorIdentidad(dgvFacturas, "consultaInformacionFacturas", "@numeroIdentidad", txtIdentidad.Text)
-                    impresoraFacturas.Print()
+                    Dim valorEfectivo As String = (InputBox("Ingrese el valor de su pago(Efectivo)", "Gestion de Pagos"))
+                    If IsNumeric(valorEfectivo) = True Then
+                        Dim valorPago As Double = Conexion.obtenerVariableDecimal("select pli.precio from PLANES_INTERNET pli  inner join CLIENTES c ON pli.idPaquete = c.idPaquete inner join FACTURA f on c.numeroIdentidad = f.numeroIdentidadC where c.numeroIdentidad = '" & txtIdentidad.Text & "'", "precio")
+                        If Val(valorEfectivo) >= valorPago Then
+                            dineroEntregado = Val(valorEfectivo)
+                            dineroCambio = Val(valorEfectivo) - valorPago
+                            If Conexion.EjecutarComando("update CLIENTES set pagosCliente = '" & cant & "' where numeroIdentidad = '" & txtIdentidad.Text & "'") = 0 Then
+                                If Conexion.PAOperacionesFactura(0, txtIdentidad.Text, String.Format("{0:G}", DateTime.Now), 1) = 0 Then
+                                    Conexion.LlenarDGVPorIdentidad(dgvFacturas, "consultaInformacionFacturas", "@numeroIdentidad", txtIdentidad.Text)
+
+                                    impresoraFacturas.Print()
+                                End If
+                            End If
+                        Else
+                            MessageBox.Show("El monto que intenta ingresar es menor al del pago de su factura!", "Error de Pago", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        End If
+                    Else
+                        MessageBox.Show("Ingrese valores correctos de efectivo!", "Error de Pago", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
                 Else
                     MessageBox.Show("El mes seleccionado no concuerda con su respectivo pago!", "Error de Pago", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
@@ -50,7 +69,7 @@
     End Sub
 
     Private Sub impresoraFacturas_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles impresoraFacturas.PrintPage
-
+        Dim nombreEncargado As String = Conexion.obtenerVariableCadena("select nombres from DATOS_PERSONAS where numeroIdentidad = '" & identidadPersonalEntro & "'", "nombres")
         Dim datos(7) As Object
         Dim cantRows As Integer = tablaDatosG.Rows.Count - 1
         If tablaDatosG.Rows.Count > 0 Then
@@ -62,21 +81,8 @@
 
         Dim fuente As System.Drawing.Font = New Font("consolas", 15)
         Dim topMargin As Double = e.MarginBounds.Top
-        Dim yPos As Double = 0
-        Dim count As Integer = 0
-        Dim texto As String = ""
-        Dim unidad As Byte = 0
-        Dim detalle As String = ""
-        Dim valor As Decimal = 0
-        Dim tabulacion As String = ""
-        Dim compensador As Integer = 0
-        Dim total As Decimal = 0
-        Dim Lvalor As Integer
-        Dim lineaTotal As String
-
 
         ' Imprime la cabecera
-        yPos = 10
         Dim printFont As System.Drawing.Font = New Font("consolas", 9)
         e.Graphics.DrawImage(My.Resources.logoF, 70, 0, 150, 150)
         e.Graphics.DrawString(("SiguaNet"), fuente, Brushes.Black, 100, 140)
@@ -88,37 +94,22 @@
         e.Graphics.DrawString(("Ident C: ") & datos(1).ToString, printFont, Brushes.Black, 5, 280)
         e.Graphics.DrawString("Nombre C: " & datos(2).ToString, printFont, Brushes.Black, 5, 300)
         e.Graphics.DrawString("Paquete: " & datos(3).ToString, printFont, Brushes.Black, 5, 320)
-        e.Graphics.DrawString("Precio: " & datos(4).ToString & " Lempiras", printFont, Brushes.Black, 5, 340)
+        e.Graphics.DrawString("Precio: " & Format(CDec(datos(4).ToString), "0.00L"), printFont, Brushes.Black, 5, 340)
         e.Graphics.DrawString("Fecha y Hora: " & datos(5).ToString, printFont, Brushes.Black, 5, 360)
         e.Graphics.DrawString("Mes Pago: " & datos(6).ToString, printFont, Brushes.Black, 5, 380)
         e.Graphics.DrawString("---------------------------------", printFont, Brushes.Black, 5, 400)
+        e.Graphics.DrawString("Entregado Efectivo: " & Format(CDec(dineroEntregado.ToString), "0.00L"), printFont, Brushes.Black, 5, 420)
+        e.Graphics.DrawString("Su cambio efectivo: " & Format(CDec(dineroCambio.ToString), "0.00L"), printFont, Brushes.Black, 5, 440)
+        e.Graphics.DrawString("---------------------------------", printFont, Brushes.Black, 5, 460)
 
-
-        ''For Each row As DataGridViewRow In Grilla.Rows
-        'unidad = row.Cells(0).Value : detalle = row.Cells(1).Value : valor = row.Cells(2).FormattedValue
-        '    Lvalor = Len(row.Cells(2).FormattedValue.ToString)
-        '    compensador = Len(row.Cells(1).Value)
-        '    tabulacion = StrDup(22 - compensador, " ")
-
-        texto = unidad & "    " & detalle & tabulacion & StrDup(8 - Lvalor, " ") & valor 'Configura la linea
-        yPos = 120 + topMargin + (count * printFont.GetHeight(e.Graphics)) ' Calcula la posición en la que se escribe la línea
-        ' Imprime la línea con el objeto Graphics
-        'If Not row.IsNewRow Then
-        'e.Graphics.DrawString(texto, printFont, System.Drawing.Brushes.Black, 10, yPos)
-        'total += valor
-        'End If
-        count += 1
-        'Next
-        yPos += 10
-        'e.Graphics.DrawString("                           _______", printFont, System.Drawing.Brushes.Black, 10, yPos)
-        Dim XXX As Integer = 0
-        XXX = Len(total.ToString)
-        lineaTotal = StrDup(28 - XXX, ".")
-        yPos += 20
-        'e.Graphics.DrawString("Total" & lineaTotal & total, printFont, System.Drawing.Brushes.Black, 10, yPos)
-        yPos += 30
-        e.Graphics.DrawString("Atendido por: Luis", printFont, System.Drawing.Brushes.Black, 10, 420)
-        'e.Graphics.DrawString(("Coletilla"), printFont, Brushes.Black, 10, yPos + 20)
+        e.Graphics.DrawString("Atendido por: " & nombreEncargado.ToString, printFont, System.Drawing.Brushes.Black, 10, 480)
     End Sub
 
+    Private Sub txtIdentidad_Validating(sender As Object, e As CancelEventArgs) Handles txtIdentidad.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.ErrorProvider1.SetError(sender, "")
+        Else
+            Me.ErrorProvider1.SetError(sender, "Es un campo obligatorio")
+        End If
+    End Sub
 End Class

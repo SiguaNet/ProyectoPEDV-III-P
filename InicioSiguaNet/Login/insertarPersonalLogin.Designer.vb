@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class insertarPersonalLogin
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class insertarPersonalLogin
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -44,11 +44,13 @@ Partial Class insertarPersonalLogin
         Me.txtNumTel = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.btnRegistar = New System.Windows.Forms.Button()
-        Me.erroresCon = New System.Windows.Forms.ToolTip(Me.components)
         Me.cmbIdVehiculo = New System.Windows.Forms.ComboBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.txtCorreo = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -254,6 +256,10 @@ Partial Class insertarPersonalLogin
         Me.Label12.TabIndex = 22
         Me.Label12.Text = "Correo"
         '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
+        '
         'insertarPersonalLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -286,6 +292,7 @@ Partial Class insertarPersonalLogin
         Me.Controls.Add(Me.Label1)
         Me.Name = "insertarPersonalLogin"
         Me.Text = "insertarPersonalLogin"
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -312,9 +319,10 @@ Partial Class insertarPersonalLogin
     Friend WithEvents txtNumTel As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents btnRegistar As Button
-    Friend WithEvents erroresCon As ToolTip
     Friend WithEvents cmbIdVehiculo As ComboBox
     Friend WithEvents Label11 As Label
     Friend WithEvents txtCorreo As TextBox
     Friend WithEvents Label12 As Label
+    Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents ErrorProvider1 As ErrorProvider
 End Class
