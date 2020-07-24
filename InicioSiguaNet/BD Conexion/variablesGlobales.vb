@@ -3,4 +3,5 @@
     Public usuario As String = "admin"
     Public contrasena As String = "admin"
     Public numeroIdentidad As String
+    Public tablaDatosG As DataTable
 End Module

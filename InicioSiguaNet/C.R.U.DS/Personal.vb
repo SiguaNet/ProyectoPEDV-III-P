@@ -14,7 +14,7 @@
     End Sub
 
     Private Sub btnIndividual_Click(sender As Object, e As EventArgs) Handles btnIndividual.Click
-        'conexion.PAconsultaIndividual(dgvPersonal, Val(txtID.Text))
+        conexion.LlenarDGVPorIdentidad(dgvPersonal, "consultaPersonal", "@idPersonal", txtID.Text)
     End Sub
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click

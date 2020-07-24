@@ -4,7 +4,7 @@ Imports System.Text
 
 Public Class Conexion
 
-    Public conexion As SqlConnection = New SqlConnection("Data Source=DESKTOP-9JQIMLJ;Initial Catalog=bd_SiguaNet;Integrated Security=True")
+    Public conexion As SqlConnection = New SqlConnection("Data Source=DESKTOP-SRS9O5V\SQLSERVER;Initial Catalog=bd_SiguaNet;Integrated Security=True")
     Public adaptador As SqlDataAdapter
     Public tablaDatos1 As DataTable
     Public lectorVariables As SqlDataReader
@@ -51,6 +51,14 @@ Public Class Conexion
                 .Add(New SqlParameter(parametroPA, identidad))
             End With
             adaptador.Fill(tablaDatos1)
+
+            'Recorre tabla de datos de la consulta y asigna a variables los valores requeridos
+            'If tablaDatos1.Rows.Count > 0 Then
+            '    For i As Integer = 0 To tablaDatos1.Columns.Count - 1
+            '        MsgBox(tablaDatos1.Rows(0)(i))
+            '    Next
+            'End If
+            tablaDatosG = tablaDatos1
             dgv.DataSource = tablaDatos1
             conexion.Close()
         Catch ex As Exception
