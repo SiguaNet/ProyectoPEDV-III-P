@@ -32,4 +32,18 @@
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
     End Sub
+
+    Private Sub TxtNombres_TextChanged(sender As Object, e As EventArgs) Handles TxtNombres.TextChanged
+
+    End Sub
+
+    Private Sub FichaCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        TxtId.Text = variablesGlobales.numeroIdentidad
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Me.Close()
+        InicioSiguaNet.Show()
+        variablesGlobales.numeroIdentidad = ""
+    End Sub
 End Class
