@@ -1,16 +1,6 @@
 ﻿Public Class InicioSiguaNet
     Dim Conexion As Conexion = New Conexion
 
-    Private Sub btnPersonal_Click(sender As Object, e As EventArgs) Handles btnPersonal.Click
-        Personal.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub btnRecursos_Click(sender As Object, e As EventArgs) Handles btnRecursos.Click
-        Recursos.Show()
-        Me.Hide()
-    End Sub
-
     Private Sub InicioSiguaNet_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Conexion.LlenarDGV(DbgClientes, "consultaInformacionClientes")
     End Sub
@@ -19,5 +9,30 @@
         variablesGlobales.numeroIdentidad = DbgClientes.CurrentRow.Cells(0).Value.ToString()
         Me.Hide()
         FichaCliente.Show()
+    End Sub
+
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs)
+        End
+
+    End Sub
+
+    Private Sub btnGestionTickets_Click_1(sender As Object, e As EventArgs) Handles btnGestionTickets.Click
+        Me.Hide()
+        GestionTickets.Show()
+
+    End Sub
+
+    Private Sub btnRecursos_Click_1(sender As Object, e As EventArgs) Handles btnRecursos.Click
+        Recursos.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btnPersonal_Click_1(sender As Object, e As EventArgs) Handles btnPersonal.Click
+        Personal.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        End
     End Sub
 End Class

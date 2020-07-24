@@ -4,7 +4,7 @@ Imports System.Text
 
 Public Class Conexion
 
-    Public conexion As SqlConnection = New SqlConnection("Data Source=HACKNEL;Initial Catalog=bd_SiguaNet;Integrated Security=True")
+    Public conexion As SqlConnection = New SqlConnection("Data Source=DESKTOP-9JQIMLJ;Initial Catalog=bd_SiguaNet;Integrated Security=True")
     Public adaptador As SqlDataAdapter
     Public tablaDatos1 As DataTable
     Public lectorVariables As SqlDataReader
@@ -416,6 +416,142 @@ Public Class Conexion
                 Return 0
             Else
                 MessageBox.Show("Error de Operacion de Facturas", "Error de Factura", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                conexion.Close()
+                Return 1
+            End If
+        Catch ex As Exception
+            conexion.Close()
+            MessageBox.Show("Error de Base de datos! " & vbCrLf + ex.ToString)
+            Return 1
+        End Try
+    End Function
+
+    'Funcion para consultar la información de un sólo cliente por numero de indentidad
+    Public Function PAConsultarInformacionCliente(ByVal numeroIdentidad As String) As Boolean
+        Try
+            conexion.Open()
+            comando = New SqlCommand("consultaInformacionCliente", conexion)
+            comando.CommandType = CommandType.StoredProcedure
+            comando.Parameters.AddWithValue("@numeroIdentidad", numeroIdentidad)
+
+            If comando.ExecuteNonQuery() Then
+                conexion.Close()
+
+                Return 0
+
+            Else
+                MessageBox.Show("No existe ningun usuario con ese numero ID", "Error busqueda", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                conexion.Close()
+                Return 1
+            End If
+        Catch ex As Exception
+            conexion.Close()
+            MessageBox.Show("Error de Base de datos! " & vbCrLf + ex.ToString)
+            Return 1
+        End Try
+
+    End Function
+
+    'Función para llenar textbox por medio de un procedimiento almacenado de consulta
+    Public Function LlenarTablaPorIdentidad(ByVal nombrePA As String, ByVal parametroPA As String, ByVal identidad As String)
+        Try
+            conexion.Open()
+            comando = New SqlCommand(nombrePA, conexion)
+            comando.CommandType = CommandType.StoredProcedure
+            adaptador = New SqlDataAdapter(comando)
+            tablaDatos1 = New DataTable
+
+            With comando.Parameters
+                .Add(New SqlParameter(parametroPA, identidad))
+            End With
+            adaptador.Fill(tablaDatos1)
+            tablaDatosG = tablaDatos1
+            conexion.Close()
+            Return 0
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return 1
+        Finally
+            conexion.Close()
+
+        End Try
+    End Function
+
+    'Función para insertar/actualizar clientes
+    Public Function PAOperacionesPersonaCL(ByVal numeroIdentidad As String, ByVal nombres As String, ByVal primerApellido As String,
+                                  ByVal segundoApellido As String, ByVal numeroTelefono As Integer, ByVal numeroCasa As Integer, ByVal idSector As Integer, ByVal refDireccion As String,
+                                  ByVal idPaquete As Integer, ByVal pagosCliente As Integer, ByVal estadoC As String, ByVal opcion As Integer)
+        Try
+            conexion.Close()
+            Dim comando As SqlCommand = conexion.CreateCommand()
+            comando.CommandText = "operacionesPersonaCL"
+            comando.CommandType = CommandType.StoredProcedure
+
+            comando.Parameters.AddWithValue("@numeroIdentidad", numeroIdentidad)
+            comando.Parameters.AddWithValue("@nombres", nombres)
+            comando.Parameters.AddWithValue("@primerApellido", primerApellido)
+            comando.Parameters.AddWithValue("@segundoApellido", segundoApellido)
+            comando.Parameters.AddWithValue("@numeroTelefono", numeroTelefono)
+            comando.Parameters.AddWithValue("@numeroCasa", numeroCasa)
+            comando.Parameters.AddWithValue("@idSector", idSector)
+            comando.Parameters.AddWithValue("@referenciasDireccion", refDireccion)
+            comando.Parameters.AddWithValue("@idPaquete", idPaquete)
+            comando.Parameters.AddWithValue("@pagosCliente", pagosCliente)
+            comando.Parameters.AddWithValue("@estadoC", estadoC)
+
+            If opcion = 1 Then
+                comando.Parameters.AddWithValue("@codigoOP", 1)
+            ElseIf opcion = 2 Then
+                comando.Parameters.AddWithValue("@codigoOP", 2)
+            End If
+
+            conexion.Open()
+            If comando.ExecuteNonQuery() Then
+                conexion.Close()
+                Return 0
+            Else
+                MessageBox.Show("Error de Insercion Usuario", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                conexion.Close()
+                Return 1
+            End If
+        Catch ex As Exception
+            conexion.Close()
+            MessageBox.Show("Error de Base de datos! " & vbCrLf + ex.ToString)
+            Return 1
+        End Try
+    End Function
+
+    'Función para insertar/actualizar tickets
+    Public Function PAOperacionesGestionTickets(ByVal idTicket As Integer, ByVal numeroIdentidadC As String, ByVal idPersonal As Integer, ByVal estado As String, ByVal prioridad As String,
+                                                ByVal idOperacion As Integer, ByVal nota As String, ByVal fechaInicio As String, ByVal fechaFin As String, ByVal opcion As Integer)
+        Try
+            conexion.Close()
+            Dim comando As SqlCommand = conexion.CreateCommand()
+            comando.CommandText = "OperacionesGestionTickets"
+            comando.CommandType = CommandType.StoredProcedure
+
+            comando.Parameters.AddWithValue("@idTicket", idTicket)
+            comando.Parameters.AddWithValue("@numeroIdentidadC", numeroIdentidadC)
+            comando.Parameters.AddWithValue("@idPersonal", idPersonal)
+            comando.Parameters.AddWithValue("@estado", estado)
+            comando.Parameters.AddWithValue("@prioridad", prioridad)
+            comando.Parameters.AddWithValue("@idOperacion", idOperacion)
+            comando.Parameters.AddWithValue("@nota", nota)
+            comando.Parameters.AddWithValue("@fechaInicio", fechaInicio)
+            comando.Parameters.AddWithValue("@fechaFin", fechaFin)
+
+            If opcion = 1 Then
+                comando.Parameters.AddWithValue("@codigoOP", 1)
+            ElseIf opcion = 2 Then
+                comando.Parameters.AddWithValue("@codigoOP", 2)
+            End If
+
+            conexion.Open()
+            If comando.ExecuteNonQuery() Then
+                conexion.Close()
+                Return 0
+            Else
+                MessageBox.Show("Error de Insercion Usuario", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 conexion.Close()
                 Return 1
             End If

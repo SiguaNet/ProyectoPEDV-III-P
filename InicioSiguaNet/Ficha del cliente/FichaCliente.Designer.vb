@@ -28,15 +28,12 @@ Partial Class FichaCliente
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.BtnAgregar = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TxtDireccion = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.TxtCelular = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.TxtTelefono = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TxtId = New System.Windows.Forms.TextBox()
@@ -48,14 +45,21 @@ Partial Class FichaCliente
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TxtNombres = New System.Windows.Forms.TextBox()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.DarkGray
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Button4)
         Me.Panel1.Controls.Add(Me.Button3)
         Me.Panel1.Controls.Add(Me.Button2)
@@ -68,49 +72,51 @@ Partial Class FichaCliente
         '
         'Button4
         '
+        Me.Button4.BackColor = System.Drawing.Color.Navy
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button4.ForeColor = System.Drawing.Color.White
         Me.Button4.Location = New System.Drawing.Point(18, 240)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(180, 35)
         Me.Button4.TabIndex = 4
         Me.Button4.Text = "Crear ticket"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.Button4.UseVisualStyleBackColor = False
         '
         'Button3
         '
+        Me.Button3.BackColor = System.Drawing.Color.Navy
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button3.ForeColor = System.Drawing.Color.White
         Me.Button3.Location = New System.Drawing.Point(18, 343)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(180, 35)
         Me.Button3.TabIndex = 3
         Me.Button3.Text = "Gestion de facturas"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.Button3.UseVisualStyleBackColor = False
         '
         'Button2
         '
+        Me.Button2.BackColor = System.Drawing.Color.Navy
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button2.ForeColor = System.Drawing.Color.White
         Me.Button2.Location = New System.Drawing.Point(18, 292)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(180, 35)
         Me.Button2.TabIndex = 2
         Me.Button2.Text = "Gestion de tickets"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'Button1
         '
+        Me.Button1.BackColor = System.Drawing.Color.Navy
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button1.ForeColor = System.Drawing.Color.White
         Me.Button1.Location = New System.Drawing.Point(18, 188)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(180, 35)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Informacion cliente"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(204, 222)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Panel2
         '
@@ -120,8 +126,6 @@ Partial Class FichaCliente
         Me.Panel2.Controls.Add(Me.Label8)
         Me.Panel2.Controls.Add(Me.TxtDireccion)
         Me.Panel2.Controls.Add(Me.Label7)
-        Me.Panel2.Controls.Add(Me.TxtCelular)
-        Me.Panel2.Controls.Add(Me.Label6)
         Me.Panel2.Controls.Add(Me.TxtTelefono)
         Me.Panel2.Controls.Add(Me.Label5)
         Me.Panel2.Controls.Add(Me.TxtId)
@@ -133,9 +137,9 @@ Partial Class FichaCliente
         Me.Panel2.Controls.Add(Me.TextBox2)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.TxtNombres)
-        Me.Panel2.Location = New System.Drawing.Point(203, 12)
+        Me.Panel2.Location = New System.Drawing.Point(191, 12)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(761, 562)
+        Me.Panel2.Size = New System.Drawing.Size(782, 574)
         Me.Panel2.TabIndex = 1
         '
         'Button5
@@ -185,24 +189,6 @@ Partial Class FichaCliente
         Me.Label7.Size = New System.Drawing.Size(68, 16)
         Me.Label7.TabIndex = 13
         Me.Label7.Text = "Direccion:"
-        '
-        'TxtCelular
-        '
-        Me.TxtCelular.Location = New System.Drawing.Point(505, 259)
-        Me.TxtCelular.Name = "TxtCelular"
-        Me.TxtCelular.Size = New System.Drawing.Size(160, 20)
-        Me.TxtCelular.TabIndex = 12
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(446, 260)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(53, 16)
-        Me.Label6.TabIndex = 11
-        Me.Label6.Text = "Celular:"
         '
         'TxtTelefono
         '
@@ -280,7 +266,7 @@ Partial Class FichaCliente
         '
         Me.TextBox2.BackColor = System.Drawing.Color.Lime
         Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(626, 21)
+        Me.TextBox2.Location = New System.Drawing.Point(629, 58)
         Me.TextBox2.Multiline = True
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(110, 24)
@@ -306,20 +292,83 @@ Partial Class FichaCliente
         Me.TxtNombres.Size = New System.Drawing.Size(221, 20)
         Me.TxtNombres.TabIndex = 0
         '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.Black
+        Me.Panel3.Controls.Add(Me.Label6)
+        Me.Panel3.Controls.Add(Me.PictureBox2)
+        Me.Panel3.Controls.Add(Me.btnCerrar)
+        Me.Panel3.Location = New System.Drawing.Point(-10, -1)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(983, 39)
+        Me.Panel3.TabIndex = 5
+        '
+        'btnCerrar
+        '
+        Me.btnCerrar.BackColor = System.Drawing.Color.Transparent
+        Me.btnCerrar.BackgroundImage = CType(resources.GetObject("btnCerrar.BackgroundImage"), System.Drawing.Image)
+        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCerrar.FlatAppearance.BorderSize = 0
+        Me.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
+        Me.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.Location = New System.Drawing.Point(945, 2)
+        Me.btnCerrar.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(32, 34)
+        Me.btnCerrar.TabIndex = 8
+        Me.btnCerrar.UseVisualStyleBackColor = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(204, 222)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(19, 3)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(35, 30)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 18
+        Me.PictureBox2.TabStop = False
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(56, 6)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(148, 24)
+        Me.Label6.TabIndex = 19
+        Me.Label6.Text = "Ficha del cliente"
+        '
         'FichaCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(973, 581)
+        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel2)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FichaCliente"
         Me.Text = "FichaCliente"
         Me.Panel1.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -330,10 +379,6 @@ Partial Class FichaCliente
     Friend WithEvents Button1 As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents TxtSegundoApellido As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents TxtPrimerApellido As TextBox
-    Friend WithEvents Label2 As Label
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents TxtNombres As TextBox
@@ -341,12 +386,18 @@ Partial Class FichaCliente
     Friend WithEvents Label4 As Label
     Friend WithEvents TxtDireccion As TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents TxtCelular As TextBox
-    Friend WithEvents Label6 As Label
     Friend WithEvents TxtTelefono As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Button5 As Button
     Friend WithEvents BtnAgregar As Button
     Friend WithEvents Button4 As Button
+    Friend WithEvents TxtSegundoApellido As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents TxtPrimerApellido As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents btnCerrar As Button
+    Friend WithEvents Label6 As Label
+    Friend WithEvents PictureBox2 As PictureBox
 End Class
