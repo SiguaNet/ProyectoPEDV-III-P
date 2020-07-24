@@ -48,10 +48,14 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\Universidad\BUNIFU UI\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -73,6 +77,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarCliente.Designer.vb">
+      <DependentUpon>AgregarCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="BD Conexion\Conexion.vb" />
     <Compile Include="BD Conexion\variablesGlobales.vb" />
     <Compile Include="Ejemplo.Designer.vb">
@@ -105,6 +115,18 @@
     <Compile Include="Ficha del cliente\GestionFacturas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Gestión Tickets\GenerarTicket.Designer.vb">
+      <DependentUpon>GenerarTicket.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestión Tickets\GenerarTicket.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestión Tickets\InicioGestion.Designer.vb">
+      <DependentUpon>InicioGestion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestión Tickets\InicioGestion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="InicioSiguaNet.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -112,10 +134,10 @@
       <DependentUpon>InicioSiguaNet.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GestionTickets.Designer.vb">
+    <Compile Include="Gestión Tickets\GestionTickets.Designer.vb">
       <DependentUpon>GestionTickets.vb</DependentUpon>
     </Compile>
-    <Compile Include="GestionTickets.vb">
+    <Compile Include="Gestión Tickets\GestionTickets.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login\inicioSesion.Designer.vb">
@@ -166,6 +188,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AgregarCliente.resx">
+      <DependentUpon>AgregarCliente.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ejemplo.resx">
       <DependentUpon>Ejemplo.vb</DependentUpon>
     </EmbeddedResource>
@@ -181,10 +206,16 @@
     <EmbeddedResource Include="Ficha del cliente\GestionFacturas.resx">
       <DependentUpon>GestionFacturas.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Gestión Tickets\GenerarTicket.resx">
+      <DependentUpon>GenerarTicket.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestión Tickets\InicioGestion.resx">
+      <DependentUpon>InicioGestion.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InicioSiguaNet.resx">
       <DependentUpon>InicioSiguaNet.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GestionTickets.resx">
+    <EmbeddedResource Include="Gestión Tickets\GestionTickets.resx">
       <DependentUpon>GestionTickets.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\inicioSesion.resx">
