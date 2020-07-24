@@ -24,29 +24,30 @@ Partial Class FichaCliente
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FichaCliente))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.TxtNombres = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.TxtPrimerApellido = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.TxtSegundoApellido = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TxtId = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.TxtTelefono = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.TxtCelular = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.TxtDireccion = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.BtnAgregar = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
+        Me.BtnAgregar = New System.Windows.Forms.Button()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.TxtDireccion = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.TxtCelular = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TxtTelefono = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TxtId = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TxtSegundoApellido = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TxtPrimerApellido = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TxtNombres = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -55,6 +56,7 @@ Partial Class FichaCliente
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.DarkGray
+        Me.Panel1.Controls.Add(Me.Button4)
         Me.Panel1.Controls.Add(Me.Button3)
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.Button1)
@@ -63,6 +65,33 @@ Partial Class FichaCliente
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(205, 585)
         Me.Panel1.TabIndex = 0
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(18, 240)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(180, 35)
+        Me.Button4.TabIndex = 4
+        Me.Button4.Text = "Crear ticket"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(18, 343)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(180, 35)
+        Me.Button3.TabIndex = 3
+        Me.Button3.Text = "Gestion de facturas"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(18, 292)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(180, 35)
+        Me.Button2.TabIndex = 2
+        Me.Button2.Text = "Gestion de tickets"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'Button1
         '
@@ -82,24 +111,6 @@ Partial Class FichaCliente
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(18, 251)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(180, 35)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Gestion de tickets"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(18, 312)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(180, 35)
-        Me.Button3.TabIndex = 3
-        Me.Button3.Text = "Gestion de facturas"
-        Me.Button3.UseVisualStyleBackColor = True
         '
         'Panel2
         '
@@ -127,23 +138,143 @@ Partial Class FichaCliente
         Me.Panel2.Size = New System.Drawing.Size(761, 562)
         Me.Panel2.TabIndex = 1
         '
-        'TxtNombres
+        'Button5
         '
-        Me.TxtNombres.Location = New System.Drawing.Point(135, 157)
-        Me.TxtNombres.Name = "TxtNombres"
-        Me.TxtNombres.Size = New System.Drawing.Size(221, 20)
-        Me.TxtNombres.TabIndex = 0
+        Me.Button5.Location = New System.Drawing.Point(431, 463)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(131, 32)
+        Me.Button5.TabIndex = 17
+        Me.Button5.Text = "Actualizar informacion"
+        Me.Button5.UseVisualStyleBackColor = True
         '
-        'Label1
+        'BtnAgregar
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(62, 157)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(67, 16)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Nombres:"
+        Me.BtnAgregar.Location = New System.Drawing.Point(246, 463)
+        Me.BtnAgregar.Name = "BtnAgregar"
+        Me.BtnAgregar.Size = New System.Drawing.Size(126, 32)
+        Me.BtnAgregar.TabIndex = 16
+        Me.BtnAgregar.Text = "Agregar Cliente"
+        Me.BtnAgregar.UseVisualStyleBackColor = True
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Location = New System.Drawing.Point(226, 58)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(336, 37)
+        Me.Label8.TabIndex = 15
+        Me.Label8.Text = "Informacion del cliente"
+        '
+        'TxtDireccion
+        '
+        Me.TxtDireccion.Location = New System.Drawing.Point(135, 311)
+        Me.TxtDireccion.Multiline = True
+        Me.TxtDireccion.Name = "TxtDireccion"
+        Me.TxtDireccion.Size = New System.Drawing.Size(576, 84)
+        Me.TxtDireccion.TabIndex = 14
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(59, 311)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(68, 16)
+        Me.Label7.TabIndex = 13
+        Me.Label7.Text = "Direccion:"
+        '
+        'TxtCelular
+        '
+        Me.TxtCelular.Location = New System.Drawing.Point(505, 259)
+        Me.TxtCelular.Name = "TxtCelular"
+        Me.TxtCelular.Size = New System.Drawing.Size(160, 20)
+        Me.TxtCelular.TabIndex = 12
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(446, 260)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(53, 16)
+        Me.Label6.TabIndex = 11
+        Me.Label6.Text = "Celular:"
+        '
+        'TxtTelefono
+        '
+        Me.TxtTelefono.Location = New System.Drawing.Point(135, 259)
+        Me.TxtTelefono.Name = "TxtTelefono"
+        Me.TxtTelefono.Size = New System.Drawing.Size(160, 20)
+        Me.TxtTelefono.TabIndex = 10
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(62, 260)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(65, 16)
+        Me.Label5.TabIndex = 9
+        Me.Label5.Text = "Telefono:"
+        '
+        'TxtId
+        '
+        Me.TxtId.Location = New System.Drawing.Point(505, 157)
+        Me.TxtId.Name = "TxtId"
+        Me.TxtId.Size = New System.Drawing.Size(206, 20)
+        Me.TxtId.TabIndex = 8
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(381, 158)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(118, 16)
+        Me.Label4.TabIndex = 7
+        Me.Label4.Text = "Numero identidad:"
+        '
+        'TxtSegundoApellido
+        '
+        Me.TxtSegundoApellido.Location = New System.Drawing.Point(505, 208)
+        Me.TxtSegundoApellido.Name = "TxtSegundoApellido"
+        Me.TxtSegundoApellido.Size = New System.Drawing.Size(206, 20)
+        Me.TxtSegundoApellido.TabIndex = 6
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(381, 209)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(118, 16)
+        Me.Label3.TabIndex = 5
+        Me.Label3.Text = "Segundo apellido:"
+        '
+        'TxtPrimerApellido
+        '
+        Me.TxtPrimerApellido.Location = New System.Drawing.Point(135, 208)
+        Me.TxtPrimerApellido.Name = "TxtPrimerApellido"
+        Me.TxtPrimerApellido.Size = New System.Drawing.Size(221, 20)
+        Me.TxtPrimerApellido.TabIndex = 4
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(27, 203)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(102, 16)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Primer apellido:"
         '
         'TextBox2
         '
@@ -157,143 +288,23 @@ Partial Class FichaCliente
         Me.TextBox2.Text = "Conectado"
         Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label2
+        'Label1
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(27, 203)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(102, 16)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Primer apellido:"
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(62, 157)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(67, 16)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Nombres:"
         '
-        'TxtPrimerApellido
+        'TxtNombres
         '
-        Me.TxtPrimerApellido.Location = New System.Drawing.Point(135, 208)
-        Me.TxtPrimerApellido.Name = "TxtPrimerApellido"
-        Me.TxtPrimerApellido.Size = New System.Drawing.Size(221, 20)
-        Me.TxtPrimerApellido.TabIndex = 4
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(381, 209)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(118, 16)
-        Me.Label3.TabIndex = 5
-        Me.Label3.Text = "Segundo apellido:"
-        '
-        'TxtSegundoApellido
-        '
-        Me.TxtSegundoApellido.Location = New System.Drawing.Point(505, 208)
-        Me.TxtSegundoApellido.Name = "TxtSegundoApellido"
-        Me.TxtSegundoApellido.Size = New System.Drawing.Size(206, 20)
-        Me.TxtSegundoApellido.TabIndex = 6
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(381, 158)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(118, 16)
-        Me.Label4.TabIndex = 7
-        Me.Label4.Text = "Numero identidad:"
-        '
-        'TxtId
-        '
-        Me.TxtId.Location = New System.Drawing.Point(505, 157)
-        Me.TxtId.Name = "TxtId"
-        Me.TxtId.Size = New System.Drawing.Size(206, 20)
-        Me.TxtId.TabIndex = 8
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(62, 260)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(65, 16)
-        Me.Label5.TabIndex = 9
-        Me.Label5.Text = "Telefono:"
-        '
-        'TxtTelefono
-        '
-        Me.TxtTelefono.Location = New System.Drawing.Point(135, 259)
-        Me.TxtTelefono.Name = "TxtTelefono"
-        Me.TxtTelefono.Size = New System.Drawing.Size(160, 20)
-        Me.TxtTelefono.TabIndex = 10
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(446, 260)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(53, 16)
-        Me.Label6.TabIndex = 11
-        Me.Label6.Text = "Celular:"
-        '
-        'TxtCelular
-        '
-        Me.TxtCelular.Location = New System.Drawing.Point(505, 259)
-        Me.TxtCelular.Name = "TxtCelular"
-        Me.TxtCelular.Size = New System.Drawing.Size(160, 20)
-        Me.TxtCelular.TabIndex = 12
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(59, 311)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(68, 16)
-        Me.Label7.TabIndex = 13
-        Me.Label7.Text = "Direccion:"
-        '
-        'TxtDireccion
-        '
-        Me.TxtDireccion.Location = New System.Drawing.Point(135, 311)
-        Me.TxtDireccion.Multiline = True
-        Me.TxtDireccion.Name = "TxtDireccion"
-        Me.TxtDireccion.Size = New System.Drawing.Size(576, 84)
-        Me.TxtDireccion.TabIndex = 14
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(226, 58)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(336, 37)
-        Me.Label8.TabIndex = 15
-        Me.Label8.Text = "Informacion del cliente"
-        '
-        'BtnAgregar
-        '
-        Me.BtnAgregar.Location = New System.Drawing.Point(246, 463)
-        Me.BtnAgregar.Name = "BtnAgregar"
-        Me.BtnAgregar.Size = New System.Drawing.Size(126, 32)
-        Me.BtnAgregar.TabIndex = 16
-        Me.BtnAgregar.Text = "Agregar Cliente"
-        Me.BtnAgregar.UseVisualStyleBackColor = True
-        '
-        'Button5
-        '
-        Me.Button5.Location = New System.Drawing.Point(431, 463)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(131, 32)
-        Me.Button5.TabIndex = 17
-        Me.Button5.Text = "Actualizar informacion"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.TxtNombres.Location = New System.Drawing.Point(135, 157)
+        Me.TxtNombres.Name = "TxtNombres"
+        Me.TxtNombres.Size = New System.Drawing.Size(221, 20)
+        Me.TxtNombres.TabIndex = 0
         '
         'FichaCliente
         '
@@ -337,4 +348,5 @@ Partial Class FichaCliente
     Friend WithEvents Label8 As Label
     Friend WithEvents Button5 As Button
     Friend WithEvents BtnAgregar As Button
+    Friend WithEvents Button4 As Button
 End Class

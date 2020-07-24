@@ -1,23 +1,5 @@
 ﻿Public Class InicioSiguaNet
-    Private Sub btnGestionTickets_Click(sender As Object, e As EventArgs) Handles btnGestionTickets.Click
-
-    End Sub
-
-    Private Sub btnEstadoFinanciero_Click(sender As Object, e As EventArgs) Handles btnEstadoFinanciero.Click
-
-    End Sub
-
-    Private Sub btnFichaCliente_Click(sender As Object, e As EventArgs) Handles btnFichaCliente.Click
-
-    End Sub
-
-    Private Sub btnInventario_Click(sender As Object, e As EventArgs) Handles btnInventario.Click
-
-    End Sub
-
-    Private Sub btnCerrarSesion_Click(sender As Object, e As EventArgs) Handles btnCerrarSesion.Click
-
-    End Sub
+    Dim Conexion As Conexion = New Conexion
 
     Private Sub btnPersonal_Click(sender As Object, e As EventArgs) Handles btnPersonal.Click
         Personal.Show()
@@ -27,5 +9,15 @@
     Private Sub btnRecursos_Click(sender As Object, e As EventArgs) Handles btnRecursos.Click
         Recursos.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub InicioSiguaNet_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Conexion.LlenarDGV(DbgClientes, "consultaInformacionClientes")
+    End Sub
+
+    Private Sub DbgClientes_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DbgClientes.CellContentDoubleClick
+        variablesGlobales.numeroIdentidad = DbgClientes.CurrentRow.Cells(0).Value.ToString()
+        Me.Hide()
+        FichaCliente.Show()
     End Sub
 End Class
