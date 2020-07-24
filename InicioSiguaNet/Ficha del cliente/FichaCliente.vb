@@ -1,4 +1,5 @@
 ﻿Public Class FichaCliente
+    Dim Conexion As Conexion = New Conexion
     Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
 
     End Sub
@@ -25,7 +26,6 @@
         TxtSegundoApellido.Text = ""
         TxtId.Text = ""
         TxtDireccion.Text = ""
-        TxtCelular.Text = ""
         TxtTelefono.Text = ""
     End Sub
 
@@ -39,6 +39,11 @@
 
     Private Sub FichaCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TxtId.Text = variablesGlobales.numeroIdentidad
+        Conexion.llenarTextBox(TxtNombres, "select nombres from DATOS_PERSONAS where numeroIdentidad = '" & TxtId.Text & "'", "nombres")
+        Conexion.llenarTextBox(TxtPrimerApellido, "select primerApellido from DATOS_PERSONAS where numeroIdentidad = '" & TxtId.Text & "'", "primerApellido")
+        Conexion.llenarTextBox(TxtSegundoApellido, "select segundoApellido from DATOS_PERSONAS where numeroIdentidad = '" & TxtId.Text & "'", "segundoApellido")
+        Conexion.llenarTextBox(TxtTelefono, "select numeroTelefono from DATOS_PERSONAS where numeroIdentidad = '" & TxtId.Text & "'", "numeroTelefono")
+        Conexion.llenarTextBox(TxtDireccion, "select referenciasDireccion from DATOS_PERSONAS where numeroIdentidad = '" & TxtId.Text & "'", "referenciasDireccion")
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click

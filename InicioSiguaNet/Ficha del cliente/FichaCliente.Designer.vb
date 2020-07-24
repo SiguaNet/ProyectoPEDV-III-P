@@ -35,19 +35,17 @@ Partial Class FichaCliente
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TxtDireccion = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.TxtCelular = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.TxtTelefono = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TxtId = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.TxtSegundoApellido = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.TxtPrimerApellido = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TxtNombres = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TxtPrimerApellido = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TxtSegundoApellido = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -120,8 +118,6 @@ Partial Class FichaCliente
         Me.Panel2.Controls.Add(Me.Label8)
         Me.Panel2.Controls.Add(Me.TxtDireccion)
         Me.Panel2.Controls.Add(Me.Label7)
-        Me.Panel2.Controls.Add(Me.TxtCelular)
-        Me.Panel2.Controls.Add(Me.Label6)
         Me.Panel2.Controls.Add(Me.TxtTelefono)
         Me.Panel2.Controls.Add(Me.Label5)
         Me.Panel2.Controls.Add(Me.TxtId)
@@ -186,24 +182,6 @@ Partial Class FichaCliente
         Me.Label7.TabIndex = 13
         Me.Label7.Text = "Direccion:"
         '
-        'TxtCelular
-        '
-        Me.TxtCelular.Location = New System.Drawing.Point(505, 259)
-        Me.TxtCelular.Name = "TxtCelular"
-        Me.TxtCelular.Size = New System.Drawing.Size(160, 20)
-        Me.TxtCelular.TabIndex = 12
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(446, 260)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(53, 16)
-        Me.Label6.TabIndex = 11
-        Me.Label6.Text = "Celular:"
-        '
         'TxtTelefono
         '
         Me.TxtTelefono.Location = New System.Drawing.Point(135, 259)
@@ -240,42 +218,6 @@ Partial Class FichaCliente
         Me.Label4.TabIndex = 7
         Me.Label4.Text = "Numero identidad:"
         '
-        'TxtSegundoApellido
-        '
-        Me.TxtSegundoApellido.Location = New System.Drawing.Point(505, 208)
-        Me.TxtSegundoApellido.Name = "TxtSegundoApellido"
-        Me.TxtSegundoApellido.Size = New System.Drawing.Size(206, 20)
-        Me.TxtSegundoApellido.TabIndex = 6
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(381, 209)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(118, 16)
-        Me.Label3.TabIndex = 5
-        Me.Label3.Text = "Segundo apellido:"
-        '
-        'TxtPrimerApellido
-        '
-        Me.TxtPrimerApellido.Location = New System.Drawing.Point(135, 208)
-        Me.TxtPrimerApellido.Name = "TxtPrimerApellido"
-        Me.TxtPrimerApellido.Size = New System.Drawing.Size(221, 20)
-        Me.TxtPrimerApellido.TabIndex = 4
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(27, 203)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(102, 16)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Primer apellido:"
-        '
         'TextBox2
         '
         Me.TextBox2.BackColor = System.Drawing.Color.Lime
@@ -306,6 +248,42 @@ Partial Class FichaCliente
         Me.TxtNombres.Size = New System.Drawing.Size(221, 20)
         Me.TxtNombres.TabIndex = 0
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(27, 203)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(102, 16)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Primer apellido:"
+        '
+        'TxtPrimerApellido
+        '
+        Me.TxtPrimerApellido.Location = New System.Drawing.Point(135, 208)
+        Me.TxtPrimerApellido.Name = "TxtPrimerApellido"
+        Me.TxtPrimerApellido.Size = New System.Drawing.Size(221, 20)
+        Me.TxtPrimerApellido.TabIndex = 4
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(381, 209)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(118, 16)
+        Me.Label3.TabIndex = 5
+        Me.Label3.Text = "Segundo apellido:"
+        '
+        'TxtSegundoApellido
+        '
+        Me.TxtSegundoApellido.Location = New System.Drawing.Point(505, 208)
+        Me.TxtSegundoApellido.Name = "TxtSegundoApellido"
+        Me.TxtSegundoApellido.Size = New System.Drawing.Size(206, 20)
+        Me.TxtSegundoApellido.TabIndex = 6
+        '
         'FichaCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -330,10 +308,6 @@ Partial Class FichaCliente
     Friend WithEvents Button1 As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents TxtSegundoApellido As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents TxtPrimerApellido As TextBox
-    Friend WithEvents Label2 As Label
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents TxtNombres As TextBox
@@ -341,12 +315,14 @@ Partial Class FichaCliente
     Friend WithEvents Label4 As Label
     Friend WithEvents TxtDireccion As TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents TxtCelular As TextBox
-    Friend WithEvents Label6 As Label
     Friend WithEvents TxtTelefono As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Button5 As Button
     Friend WithEvents BtnAgregar As Button
     Friend WithEvents Button4 As Button
+    Friend WithEvents TxtSegundoApellido As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents TxtPrimerApellido As TextBox
+    Friend WithEvents Label2 As Label
 End Class
