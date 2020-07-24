@@ -130,6 +130,12 @@
     <Compile Include="Login\insertarPersonalLogin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Login\RecuperacionContrasena.Designer.vb">
+      <DependentUpon>RecuperacionContrasena.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login\RecuperacionContrasena.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -187,6 +193,9 @@
     <EmbeddedResource Include="Login\insertarPersonalLogin.resx">
       <DependentUpon>insertarPersonalLogin.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Login\RecuperacionContrasena.resx">
+      <DependentUpon>RecuperacionContrasena.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
@@ -217,6 +226,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logoF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ocultarContra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\verContra1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Login\mensajeCorreo.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -4,7 +4,7 @@ Imports System.Text
 
 Public Class Conexion
 
-    Public conexion As SqlConnection = New SqlConnection("Data Source=DESKTOP-9JQIMLJ;Initial Catalog=bd_SiguaNet;Integrated Security=True")
+    Public conexion As SqlConnection = New SqlConnection("Data Source=HACKNEL;Initial Catalog=bd_SiguaNet;Integrated Security=True")
     Public adaptador As SqlDataAdapter
     Public tablaDatos1 As DataTable
     Public lectorVariables As SqlDataReader
@@ -60,6 +60,27 @@ Public Class Conexion
             'End If
             tablaDatosG = tablaDatos1
             dgv.DataSource = tablaDatos1
+            conexion.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            conexion.Close()
+        End Try
+    End Sub
+
+    Public Sub ObtenerVariablesPorIdentidad(ByVal nombrePA As String, ByVal parametroPA As String, ByVal identidad As String)
+        Try
+            conexion.Open()
+            comando = New SqlCommand(nombrePA, conexion)
+            comando.CommandType = CommandType.StoredProcedure
+            adaptador = New SqlDataAdapter(comando)
+            tablaDatos1 = New DataTable
+            With comando.Parameters
+                .Add(New SqlParameter(parametroPA, identidad))
+            End With
+            adaptador.Fill(tablaDatos1)
+
+            tablaDatosG = tablaDatos1
             conexion.Close()
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -273,15 +294,15 @@ Public Class Conexion
             comando.CommandType = CommandType.StoredProcedure
 
             comando.Parameters.AddWithValue("@numeroIdentidad", numeroIdent)
-            comando.Parameters.AddWithValue("@nombres", nombres)
-            comando.Parameters.AddWithValue("@primerApellido", primerApellido)
-            comando.Parameters.AddWithValue("@segundoApellido", segundoApellido)
+            comando.Parameters.AddWithValue("@nombres", fTexto(nombres))
+            comando.Parameters.AddWithValue("@primerApellido", fTexto(primerApellido))
+            comando.Parameters.AddWithValue("@segundoApellido", fTexto(segundoApellido))
             comando.Parameters.AddWithValue("@numeroTelefono", numeroTelefono)
             comando.Parameters.AddWithValue("@numeroCasa", numeroCasa)
             comando.Parameters.AddWithValue("@idSector", idSector)
             comando.Parameters.AddWithValue("@referenciasDireccion", refDireccion)
             comando.Parameters.AddWithValue("@idVehiculo", idVehiculo)
-            comando.Parameters.AddWithValue("@estado", estado)
+            comando.Parameters.AddWithValue("@estado", fTexto(estado))
             If opcion = 1 Then
                 comando.Parameters.AddWithValue("@codigoOP", 1)
             ElseIf opcion = 2 Then
@@ -338,15 +359,16 @@ Public Class Conexion
     End Function
 
     'Funcion para insertar usuarios de personal administrativo
-    Function PAOperacionesUsuarioLogin(ByVal numeroIdent As String, ByVal contra As String, ByVal opcion As Integer)
+    Function PAOperacionesUsuarioLogin(ByVal numeroIdent As String, ByVal contra As String, ByVal correo As String, ByVal opcion As Integer)
         Try
             conexion.Close()
             Dim comando As SqlCommand = conexion.CreateCommand()
             comando.CommandText = "OperacionesAdministradores"
             comando.CommandType = CommandType.StoredProcedure
 
-            comando.Parameters.AddWithValue("@numeroIdentidad", numeroIdent)
+            comando.Parameters.AddWithValue("@numeroIdentidad", Trim(numeroIdent))
             comando.Parameters.AddWithValue("@contrasena", contra)
+            comando.Parameters.AddWithValue("@correo", LCase(correo))
             If opcion = 1 Then
                 comando.Parameters.AddWithValue("@codigoOP", 1)
             ElseIf opcion = 2 Then
@@ -403,6 +425,10 @@ Public Class Conexion
             MessageBox.Show("Error de Base de datos! " & vbCrLf + ex.ToString)
             Return 1
         End Try
+    End Function
+
+    Public Function fTexto(ByVal str As String) As String
+        Return StrConv(str, VbStrConv.ProperCase)
     End Function
 
     Public Sub limpiar(cont As Object)
