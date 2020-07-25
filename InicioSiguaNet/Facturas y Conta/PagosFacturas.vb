@@ -14,10 +14,6 @@ Public Class PagosFacturas
         Conexion.LlenarDGVPorIdentidad(dgvFacturas, "consultaInformacionFacturas", "@numeroIdentidad", txtIdentidad.Text)
     End Sub
 
-    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbMesPago.SelectedIndexChanged
-
-    End Sub
-
     Private Sub btnPagar_Click(sender As Object, e As EventArgs) Handles btnPagar.Click
 
         If Me.ValidateChildren And txtIdentidad.Text <> String.Empty Then
@@ -36,6 +32,11 @@ Public Class PagosFacturas
                                     Conexion.LlenarDGVPorIdentidad(dgvFacturas, "consultaInformacionFacturas", "@numeroIdentidad", txtIdentidad.Text)
 
                                     impresoraFacturas.Print()
+                                    If cant >= variablesGlobales.cantMesesG Then
+                                        Conexion.EjecutarComando("update CLIENTES set estadoC = 'Al Dia' where numeroIdentidad = '" & txtIdentidad.Text & "'")
+                                    Else
+                                        Conexion.EjecutarComando("update CLIENTES set estadoC = 'En Mora' where numeroIdentidad = '" & txtIdentidad.Text & "'")
+                                    End If
                                 End If
                             End If
                         Else

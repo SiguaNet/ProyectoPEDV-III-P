@@ -16,18 +16,19 @@ Public Class AgregarCliente
         idSector = cmbBarrios.SelectedIndex + 1
         referenciasDireccion = LCase(txtRefDirec.Text)
         idPaquete = cmbPaquetes.SelectedIndex + 1
-        pagosCliente = 1
+        pagosCliente = variablesGlobales.cantMesesG
         estadoC = "Al día"
 
         Try
             If Me.ValidateChildren And txtNumeroID.Text <> String.Empty And txtNombres.Text <> String.Empty And txtPApellido.Text <> String.Empty And txtTelefono.Text <> String.Empty And txtNumCasa.Text <> String.Empty And Val(txtNumCasa.Text) - Int(Val(txtNumCasa.Text)) = 0 And txtRefDirec.Text <> String.Empty Then
 
                 If (conexion.PAOperacionesPersonaCL(numeroIdentidad, nombres, primerApellido, segundoApellido, numeroTelefono, numeroCasa, idSector, referenciasDireccion, idPaquete, pagosCliente, estadoC, 1) = 0) Then
+                    If conexion.PAOperacionesFactura(0, numeroIdentidad, String.Format("{0:G}", DateTime.Now), 1) = 1 Then
+                        MessageBox.Show("Cliente ingresado satisfactoriamente", "Registro cliente", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-                    MessageBox.Show("Cliente ingresado satisfactoriamente", "Registro cliente", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-                Else
-                    MessageBox.Show("Error al registrar cliente", "Registro cliente", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Else
+                        MessageBox.Show("Error al registrar cliente", "Registro cliente", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
                 End If
 
             Else

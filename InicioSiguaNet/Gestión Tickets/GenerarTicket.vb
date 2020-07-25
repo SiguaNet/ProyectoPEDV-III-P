@@ -12,7 +12,7 @@
         idTicket = 0
         numeroIdentidad = txtNumeroID.Text
         idPersonal = cmbPersonal.Text
-        estado = cmbEstado.Text
+        estado = "Pendiente"
         prioridad = cmbPrioridad.Text
         idOperacion = cmbOperaciones.SelectedIndex + 1
         nota = txtNota.Text
@@ -20,16 +20,22 @@
         fechaFin = ""
 
         Try
-            If Me.ValidateChildren And txtNumeroID.Text <> String.Empty And cmbPersonal.Text <> String.Empty And cmbEstado.Text <> String.Empty And cmbOperaciones.Text <> String.Empty And cmbPrioridad.Text <> String.Empty Then
-                If (conexion.PAOperacionesGestionTickets(idTicket, numeroIdentidad, idPersonal, estado, prioridad, idOperacion, nota, fechaInicio, fechaFin, 1) = 0) Then
-                    MessageBox.Show("Ticket registrado exitosamente", "Generar ticket", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            If Me.ValidateChildren And txtNumeroID.Text <> String.Empty And cmbPersonal.Text <> String.Empty And cmbOperaciones.Text <> String.Empty And cmbPrioridad.Text <> String.Empty Then
+                Dim cantPagos As Integer = conexion.obtenerVariableEntera("Select pagosCliente from CLIENTES where numeroIdentidad = '" & numeroIdentidad & "'", "pagosCliente")
+                Dim totalCanti As Integer = cantMesesG - cantPagos
+                If totalCanti <= 2 Then
+                    If (conexion.PAOperacionesGestionTickets(idTicket, numeroIdentidad, idPersonal, estado, prioridad, idOperacion, nota, fechaInicio, fechaFin, 1) = 0) Then
+                        conexion.EjecutarComando("update PERSONAL set estado = 'Ocupado' where idPersonal = '" & idPersonal & "'")
+                        MessageBox.Show("Ticket registrado exitosamente", "Generar ticket", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
+                    Else
+                        MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
                 Else
-                    MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    MessageBox.Show("La cuenta " & numeroIdentidad & " presenta una mora de " & totalCanti & " meses" & vbCrLf & "¡Por favor realice su pago!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 End If
-
             Else
-                MessageBox.Show("Por favor ingrese todos los datos solicitados", "Generar ticket", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    MessageBox.Show("Por favor ingrese todos los datos solicitados", "Generar ticket", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
             End If
         Catch ex As Exception
@@ -89,7 +95,6 @@
         txtNombreTec.Clear()
         cmbPersonal.SelectedIndex = -1
         cmbOperaciones.SelectedIndex = -1
-        cmbEstado.SelectedIndex = -1
         cmbPrioridad.SelectedIndex = -1
         txtNombreCompleto.Clear()
         txtTelefono.Clear()
