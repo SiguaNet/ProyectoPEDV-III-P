@@ -2,7 +2,7 @@
     Dim conexion As Conexion = New Conexion()
 
     Private Sub btnTablas_Click(sender As Object, e As EventArgs) Handles btnTablas.Click
-        conexion.LlenarDGV(dgvRecursos, "consultaTablaRecursosMotores")
+        conexion.LlenarDGV(dgvRecursos, "select * from RECURSOS_MOTORES")
     End Sub
 
     Private Sub btnTodo_Click(sender As Object, e As EventArgs) Handles btnTodo.Click
@@ -32,7 +32,24 @@
         End Try
     End Sub
 
-    Private Sub Recursos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        Try
+            conexion.PAEliminarRecursosMotores(txtVehiculo.Text)
+            MessageBox.Show("Recurso se elimino exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Catch ex As Exception
+            MessageBox.Show("Error", "Error de eliminacion", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
+
+    Private Sub btnInicio_Click(sender As Object, e As EventArgs) Handles btnInicio.Click
+        InicioSiguaNet.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub dgvRecursos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvRecursos.CellClick
+        conexion.llenarTextBox(txtVehiculo, "select idVehiculo from RECURSOS_MOTORES where idVehiculo = '" & Val(dgvRecursos.CurrentCell.Value) & "'", "idVehiculo")
+        conexion.llenarTextBox(txtMatricula, "select matricula from RECURSOS_MOTORES where idVehiculo = '" & Val(dgvRecursos.CurrentCell.Value) & "'", "matricula")
+        conexion.llenarTextBox(txtModelo, "select modelo from RECURSOS_MOTORES where idVehiculo = '" & Val(dgvRecursos.CurrentCell.Value) & "'", "modelo")
+    End Sub
+
 End Class

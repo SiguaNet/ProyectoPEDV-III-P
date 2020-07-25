@@ -56,30 +56,30 @@ Partial Class Personal
         '
         'btnInicio
         '
-        Me.btnInicio.Location = New System.Drawing.Point(407, 360)
-        Me.btnInicio.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnInicio.Location = New System.Drawing.Point(543, 443)
+        Me.btnInicio.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnInicio.Name = "btnInicio"
-        Me.btnInicio.Size = New System.Drawing.Size(56, 19)
+        Me.btnInicio.Size = New System.Drawing.Size(75, 23)
         Me.btnInicio.TabIndex = 21
         Me.btnInicio.Text = "Inicio"
         Me.btnInicio.UseVisualStyleBackColor = True
         '
         'btnModificar
         '
-        Me.btnModificar.Location = New System.Drawing.Point(407, 182)
-        Me.btnModificar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnModificar.Location = New System.Drawing.Point(543, 224)
+        Me.btnModificar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(56, 19)
+        Me.btnModificar.Size = New System.Drawing.Size(75, 23)
         Me.btnModificar.TabIndex = 19
         Me.btnModificar.Text = "Modificar"
         Me.btnModificar.UseVisualStyleBackColor = True
         '
         'btnNuevo
         '
-        Me.btnNuevo.Location = New System.Drawing.Point(407, 152)
-        Me.btnNuevo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnNuevo.Location = New System.Drawing.Point(543, 187)
+        Me.btnNuevo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnNuevo.Name = "btnNuevo"
-        Me.btnNuevo.Size = New System.Drawing.Size(56, 19)
+        Me.btnNuevo.Size = New System.Drawing.Size(75, 23)
         Me.btnNuevo.TabIndex = 18
         Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.UseVisualStyleBackColor = True
@@ -87,78 +87,75 @@ Partial Class Personal
         'dgvPersonal
         '
         Me.dgvPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvPersonal.Location = New System.Drawing.Point(28, 233)
-        Me.dgvPersonal.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgvPersonal.Location = New System.Drawing.Point(37, 287)
+        Me.dgvPersonal.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dgvPersonal.Name = "dgvPersonal"
         Me.dgvPersonal.RowHeadersWidth = 51
         Me.dgvPersonal.RowTemplate.Height = 24
-        Me.dgvPersonal.Size = New System.Drawing.Size(436, 122)
+        Me.dgvPersonal.Size = New System.Drawing.Size(581, 150)
         Me.dgvPersonal.TabIndex = 17
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(226, 135)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Location = New System.Drawing.Point(301, 166)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(43, 13)
+        Me.Label3.Size = New System.Drawing.Size(56, 17)
         Me.Label3.TabIndex = 15
         Me.Label3.Text = "Estado:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(206, 108)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label2.Location = New System.Drawing.Point(275, 133)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(65, 13)
+        Me.Label2.Size = New System.Drawing.Size(83, 17)
         Me.Label2.TabIndex = 13
         Me.Label2.Text = "ID Vehiculo:"
         '
         'txtIdentidad
         '
-        Me.txtIdentidad.Location = New System.Drawing.Point(123, 77)
-        Me.txtIdentidad.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtIdentidad.Location = New System.Drawing.Point(164, 95)
+        Me.txtIdentidad.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtIdentidad.Name = "txtIdentidad"
-        Me.txtIdentidad.Size = New System.Drawing.Size(76, 20)
+        Me.txtIdentidad.Size = New System.Drawing.Size(100, 22)
         Me.txtIdentidad.TabIndex = 12
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(26, 77)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Location = New System.Drawing.Point(35, 95)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(94, 13)
+        Me.Label1.Size = New System.Drawing.Size(124, 17)
         Me.Label1.TabIndex = 11
         Me.Label1.Text = "Numero Identidad:"
         '
         'btnTablas
         '
-        Me.btnTablas.Location = New System.Drawing.Point(407, 20)
-        Me.btnTablas.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnTablas.Location = New System.Drawing.Point(543, 25)
+        Me.btnTablas.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnTablas.Name = "btnTablas"
-        Me.btnTablas.Size = New System.Drawing.Size(56, 39)
+        Me.btnTablas.Size = New System.Drawing.Size(75, 48)
         Me.btnTablas.TabIndex = 22
         Me.btnTablas.Text = "Consulta Tablas"
         Me.btnTablas.UseVisualStyleBackColor = True
         '
         'btnTodo
         '
-        Me.btnTodo.Location = New System.Drawing.Point(407, 64)
-        Me.btnTodo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnTodo.Location = New System.Drawing.Point(543, 79)
+        Me.btnTodo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnTodo.Name = "btnTodo"
-        Me.btnTodo.Size = New System.Drawing.Size(56, 39)
+        Me.btnTodo.Size = New System.Drawing.Size(75, 48)
         Me.btnTodo.TabIndex = 23
         Me.btnTodo.Text = "Consulta Todo"
         Me.btnTodo.UseVisualStyleBackColor = True
         '
         'btnIndividual
         '
-        Me.btnIndividual.Location = New System.Drawing.Point(407, 108)
-        Me.btnIndividual.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnIndividual.Location = New System.Drawing.Point(543, 133)
+        Me.btnIndividual.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnIndividual.Name = "btnIndividual"
-        Me.btnIndividual.Size = New System.Drawing.Size(56, 39)
+        Me.btnIndividual.Size = New System.Drawing.Size(75, 48)
         Me.btnIndividual.TabIndex = 24
         Me.btnIndividual.Text = "Consulta Indiv."
         Me.btnIndividual.UseVisualStyleBackColor = True
@@ -166,173 +163,168 @@ Partial Class Personal
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(26, 46)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label4.Location = New System.Drawing.Point(35, 57)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(65, 13)
+        Me.Label4.Size = New System.Drawing.Size(85, 17)
         Me.Label4.TabIndex = 25
         Me.Label4.Text = "ID Personal:"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(66, 108)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label5.Location = New System.Drawing.Point(88, 133)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(52, 13)
+        Me.Label5.Size = New System.Drawing.Size(69, 17)
         Me.Label5.TabIndex = 27
         Me.Label5.Text = "Nombres:"
         '
         'txtNombres
         '
-        Me.txtNombres.Location = New System.Drawing.Point(123, 108)
-        Me.txtNombres.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtNombres.Location = New System.Drawing.Point(164, 133)
+        Me.txtNombres.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtNombres.Name = "txtNombres"
-        Me.txtNombres.Size = New System.Drawing.Size(76, 20)
+        Me.txtNombres.Size = New System.Drawing.Size(100, 22)
         Me.txtNombres.TabIndex = 28
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(38, 135)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label6.Location = New System.Drawing.Point(51, 166)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(79, 13)
+        Me.Label6.Size = New System.Drawing.Size(107, 17)
         Me.Label6.TabIndex = 29
         Me.Label6.Text = "Primer Apellido:"
         '
         'txtPrimer
         '
-        Me.txtPrimer.Location = New System.Drawing.Point(123, 135)
-        Me.txtPrimer.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtPrimer.Location = New System.Drawing.Point(164, 166)
+        Me.txtPrimer.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtPrimer.Name = "txtPrimer"
-        Me.txtPrimer.Size = New System.Drawing.Size(76, 20)
+        Me.txtPrimer.Size = New System.Drawing.Size(100, 22)
         Me.txtPrimer.TabIndex = 30
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(26, 163)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label7.Location = New System.Drawing.Point(35, 201)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(93, 13)
+        Me.Label7.Size = New System.Drawing.Size(123, 17)
         Me.Label7.TabIndex = 31
         Me.Label7.Text = "Segundo Apellido:"
         '
         'txtSegundo
         '
-        Me.txtSegundo.Location = New System.Drawing.Point(123, 163)
-        Me.txtSegundo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtSegundo.Location = New System.Drawing.Point(164, 201)
+        Me.txtSegundo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtSegundo.Name = "txtSegundo"
-        Me.txtSegundo.Size = New System.Drawing.Size(76, 20)
+        Me.txtSegundo.Size = New System.Drawing.Size(100, 22)
         Me.txtSegundo.TabIndex = 32
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(26, 195)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label8.Location = New System.Drawing.Point(35, 240)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(92, 13)
+        Me.Label8.Size = New System.Drawing.Size(122, 17)
         Me.Label8.TabIndex = 33
         Me.Label8.Text = "Numero Telefono:"
         '
         'txtTelefono
         '
-        Me.txtTelefono.Location = New System.Drawing.Point(123, 195)
-        Me.txtTelefono.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtTelefono.Location = New System.Drawing.Point(164, 240)
+        Me.txtTelefono.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtTelefono.Name = "txtTelefono"
-        Me.txtTelefono.Size = New System.Drawing.Size(76, 20)
+        Me.txtTelefono.Size = New System.Drawing.Size(100, 22)
         Me.txtTelefono.TabIndex = 34
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(206, 48)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label9.Location = New System.Drawing.Point(275, 59)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(74, 13)
+        Me.Label9.Size = New System.Drawing.Size(98, 17)
         Me.Label9.TabIndex = 35
         Me.Label9.Text = "Numero Casa:"
         '
         'txtCasa
         '
-        Me.txtCasa.Location = New System.Drawing.Point(302, 46)
-        Me.txtCasa.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtCasa.Location = New System.Drawing.Point(403, 57)
+        Me.txtCasa.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtCasa.Name = "txtCasa"
-        Me.txtCasa.Size = New System.Drawing.Size(76, 20)
+        Me.txtCasa.Size = New System.Drawing.Size(100, 22)
         Me.txtCasa.TabIndex = 36
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(216, 77)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label10.Location = New System.Drawing.Point(288, 95)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(55, 13)
+        Me.Label10.Size = New System.Drawing.Size(70, 17)
         Me.Label10.TabIndex = 37
         Me.Label10.Text = "ID Sector:"
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(202, 166)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label11.Location = New System.Drawing.Point(269, 204)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(67, 13)
+        Me.Label11.Size = New System.Drawing.Size(88, 17)
         Me.Label11.TabIndex = 39
         Me.Label11.Text = "Referencias:"
         '
         'txtReferencia
         '
-        Me.txtReferencia.Location = New System.Drawing.Point(267, 166)
-        Me.txtReferencia.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtReferencia.Location = New System.Drawing.Point(356, 204)
+        Me.txtReferencia.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtReferencia.Multiline = True
         Me.txtReferencia.Name = "txtReferencia"
-        Me.txtReferencia.Size = New System.Drawing.Size(111, 48)
+        Me.txtReferencia.Size = New System.Drawing.Size(147, 58)
         Me.txtReferencia.TabIndex = 40
         '
         'cmbEstado
         '
+        Me.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbEstado.FormattingEnabled = True
         Me.cmbEstado.Items.AddRange(New Object() {"Libre", "Ocupado", "Eliminado"})
-        Me.cmbEstado.Location = New System.Drawing.Point(286, 135)
-        Me.cmbEstado.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cmbEstado.Location = New System.Drawing.Point(381, 166)
+        Me.cmbEstado.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cmbEstado.Name = "cmbEstado"
-        Me.cmbEstado.Size = New System.Drawing.Size(92, 21)
+        Me.cmbEstado.Size = New System.Drawing.Size(121, 24)
         Me.cmbEstado.TabIndex = 41
         '
         'cmbSector
         '
+        Me.cmbSector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbSector.FormattingEnabled = True
-        Me.cmbSector.Location = New System.Drawing.Point(286, 77)
-        Me.cmbSector.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cmbSector.Location = New System.Drawing.Point(381, 95)
+        Me.cmbSector.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cmbSector.Name = "cmbSector"
-        Me.cmbSector.Size = New System.Drawing.Size(92, 21)
+        Me.cmbSector.Size = New System.Drawing.Size(121, 24)
         Me.cmbSector.TabIndex = 42
         '
         'cmbVehiculo
         '
+        Me.cmbVehiculo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbVehiculo.FormattingEnabled = True
-        Me.cmbVehiculo.Location = New System.Drawing.Point(286, 108)
-        Me.cmbVehiculo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cmbVehiculo.Location = New System.Drawing.Point(381, 133)
+        Me.cmbVehiculo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cmbVehiculo.Name = "cmbVehiculo"
-        Me.cmbVehiculo.Size = New System.Drawing.Size(92, 21)
+        Me.cmbVehiculo.Size = New System.Drawing.Size(121, 24)
         Me.cmbVehiculo.TabIndex = 43
         '
         'txtID
         '
-        Me.txtID.Location = New System.Drawing.Point(123, 46)
-        Me.txtID.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtID.Location = New System.Drawing.Point(164, 57)
+        Me.txtID.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtID.Name = "txtID"
-        Me.txtID.Size = New System.Drawing.Size(76, 20)
+        Me.txtID.Size = New System.Drawing.Size(100, 22)
         Me.txtID.TabIndex = 44
         '
         'Personal
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(482, 388)
+        Me.ClientSize = New System.Drawing.Size(643, 478)
         Me.Controls.Add(Me.txtID)
         Me.Controls.Add(Me.cmbVehiculo)
         Me.Controls.Add(Me.cmbSector)
@@ -362,7 +354,7 @@ Partial Class Personal
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtIdentidad)
         Me.Controls.Add(Me.Label1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Personal"
         Me.Text = "Personal"
         CType(Me.dgvPersonal, System.ComponentModel.ISupportInitialize).EndInit()

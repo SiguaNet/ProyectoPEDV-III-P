@@ -35,6 +35,7 @@ Partial Class Recursos
         Me.btnIndividual = New System.Windows.Forms.Button()
         Me.btnTodo = New System.Windows.Forms.Button()
         Me.btnTablas = New System.Windows.Forms.Button()
+        Me.btnEliminar = New System.Windows.Forms.Button()
         CType(Me.dgvRecursos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -49,7 +50,7 @@ Partial Class Recursos
         '
         'btnModificar
         '
-        Me.btnModificar.Location = New System.Drawing.Point(429, 246)
+        Me.btnModificar.Location = New System.Drawing.Point(429, 232)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(75, 23)
         Me.btnModificar.TabIndex = 19
@@ -58,7 +59,7 @@ Partial Class Recursos
         '
         'btnNuevo
         '
-        Me.btnNuevo.Location = New System.Drawing.Point(429, 217)
+        Me.btnNuevo.Location = New System.Drawing.Point(429, 203)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(75, 23)
         Me.btnNuevo.TabIndex = 18
@@ -150,11 +151,21 @@ Partial Class Recursos
         Me.btnTablas.Text = "Consulta Tablas"
         Me.btnTablas.UseVisualStyleBackColor = True
         '
+        'btnEliminar
+        '
+        Me.btnEliminar.Location = New System.Drawing.Point(429, 261)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(75, 23)
+        Me.btnEliminar.TabIndex = 28
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseVisualStyleBackColor = True
+        '
         'Recursos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(535, 505)
+        Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.btnIndividual)
         Me.Controls.Add(Me.btnTodo)
         Me.Controls.Add(Me.btnTablas)
@@ -189,4 +200,5 @@ Partial Class Recursos
     Friend WithEvents btnIndividual As Button
     Friend WithEvents btnTodo As Button
     Friend WithEvents btnTablas As Button
+    Friend WithEvents btnEliminar As Button
 End Class

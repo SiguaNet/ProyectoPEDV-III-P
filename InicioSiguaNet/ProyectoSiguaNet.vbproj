@@ -91,6 +91,18 @@
     <Compile Include="Bienvenida\Bienvenida.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="C.R.U.DS\Inventario.Designer.vb">
+      <DependentUpon>Inventario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="C.R.U.DS\Inventario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C.R.U.DS\Sectores.Designer.vb">
+      <DependentUpon>Sectores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="C.R.U.DS\Sectores.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Ejemplo.Designer.vb">
       <DependentUpon>Ejemplo.vb</DependentUpon>
     </Compile>
@@ -199,6 +211,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Bienvenida\Bienvenida.resx">
       <DependentUpon>Bienvenida.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C.R.U.DS\Inventario.resx">
+      <DependentUpon>Inventario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C.R.U.DS\Sectores.resx">
+      <DependentUpon>Sectores.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ejemplo.resx">
       <DependentUpon>Ejemplo.vb</DependentUpon>
