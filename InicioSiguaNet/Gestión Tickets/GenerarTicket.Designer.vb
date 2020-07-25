@@ -22,6 +22,7 @@ Partial Class GenerarTicket
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GenerarTicket))
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -43,8 +44,6 @@ Partial Class GenerarTicket
         Me.btnVerDatoCliente = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.btnVolver = New System.Windows.Forms.Button()
-        Me.btnCerrar = New System.Windows.Forms.Button()
         Me.PanelDatosCliente = New System.Windows.Forms.Panel()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -52,6 +51,11 @@ Partial Class GenerarTicket
         Me.txtReferenciasDirec = New System.Windows.Forms.TextBox()
         Me.txtNombreCompleto = New System.Windows.Forms.TextBox()
         Me.txtTelefono = New System.Windows.Forms.TextBox()
+        Me.TimerMostrar = New System.Windows.Forms.Timer(Me.components)
+        Me.TimerOcultar = New System.Windows.Forms.Timer(Me.components)
+        Me.btnCasa = New System.Windows.Forms.Button()
+        Me.btnVolver = New System.Windows.Forms.Button()
+        Me.btnCerrar = New System.Windows.Forms.Button()
         Me.Panel3.SuspendLayout()
         Me.PanelDatosCliente.SuspendLayout()
         Me.SuspendLayout()
@@ -170,7 +174,7 @@ Partial Class GenerarTicket
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Fugaz One", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(28, 257)
+        Me.Label4.Location = New System.Drawing.Point(38, 238)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(99, 28)
         Me.Label4.TabIndex = 27
@@ -180,7 +184,7 @@ Partial Class GenerarTicket
         '
         Me.cmbPersonal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbPersonal.FormattingEnabled = True
-        Me.cmbPersonal.Location = New System.Drawing.Point(12, 287)
+        Me.cmbPersonal.Location = New System.Drawing.Point(30, 272)
         Me.cmbPersonal.Name = "cmbPersonal"
         Me.cmbPersonal.Size = New System.Drawing.Size(115, 33)
         Me.cmbPersonal.TabIndex = 26
@@ -247,7 +251,8 @@ Partial Class GenerarTicket
         '
         'Panel3
         '
-        Me.Panel3.BackColor = System.Drawing.Color.Teal
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.btnCasa)
         Me.Panel3.Controls.Add(Me.btnVolver)
         Me.Panel3.Controls.Add(Me.btnCerrar)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
@@ -256,40 +261,9 @@ Partial Class GenerarTicket
         Me.Panel3.Size = New System.Drawing.Size(900, 76)
         Me.Panel3.TabIndex = 41
         '
-        'btnVolver
-        '
-        Me.btnVolver.BackColor = System.Drawing.Color.Transparent
-        Me.btnVolver.BackgroundImage = CType(resources.GetObject("btnVolver.BackgroundImage"), System.Drawing.Image)
-        Me.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnVolver.FlatAppearance.BorderSize = 0
-        Me.btnVolver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
-        Me.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnVolver.Location = New System.Drawing.Point(12, 3)
-        Me.btnVolver.Name = "btnVolver"
-        Me.btnVolver.Size = New System.Drawing.Size(71, 67)
-        Me.btnVolver.TabIndex = 8
-        Me.btnVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.btnVolver.UseVisualStyleBackColor = False
-        '
-        'btnCerrar
-        '
-        Me.btnCerrar.BackColor = System.Drawing.Color.Transparent
-        Me.btnCerrar.BackgroundImage = CType(resources.GetObject("btnCerrar.BackgroundImage"), System.Drawing.Image)
-        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnCerrar.FlatAppearance.BorderSize = 0
-        Me.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
-        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCerrar.Location = New System.Drawing.Point(845, 12)
-        Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(43, 42)
-        Me.btnCerrar.TabIndex = 7
-        Me.btnCerrar.UseVisualStyleBackColor = False
-        '
         'PanelDatosCliente
         '
-        Me.PanelDatosCliente.BackColor = System.Drawing.Color.Teal
+        Me.PanelDatosCliente.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.PanelDatosCliente.Controls.Add(Me.Label12)
         Me.PanelDatosCliente.Controls.Add(Me.Label11)
         Me.PanelDatosCliente.Controls.Add(Me.Label10)
@@ -298,7 +272,7 @@ Partial Class GenerarTicket
         Me.PanelDatosCliente.Controls.Add(Me.txtTelefono)
         Me.PanelDatosCliente.Location = New System.Drawing.Point(335, 128)
         Me.PanelDatosCliente.Name = "PanelDatosCliente"
-        Me.PanelDatosCliente.Size = New System.Drawing.Size(537, 21)
+        Me.PanelDatosCliente.Size = New System.Drawing.Size(537, 33)
         Me.PanelDatosCliente.TabIndex = 42
         '
         'Label12
@@ -361,6 +335,59 @@ Partial Class GenerarTicket
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(184, 30)
         Me.txtTelefono.TabIndex = 11
+        '
+        'TimerMostrar
+        '
+        '
+        'TimerOcultar
+        '
+        '
+        'btnCasa
+        '
+        Me.btnCasa.BackColor = System.Drawing.Color.Transparent
+        Me.btnCasa.BackgroundImage = CType(resources.GetObject("btnCasa.BackgroundImage"), System.Drawing.Image)
+        Me.btnCasa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnCasa.FlatAppearance.BorderSize = 0
+        Me.btnCasa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
+        Me.btnCasa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnCasa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCasa.Location = New System.Drawing.Point(97, 15)
+        Me.btnCasa.Name = "btnCasa"
+        Me.btnCasa.Size = New System.Drawing.Size(48, 43)
+        Me.btnCasa.TabIndex = 9
+        Me.btnCasa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.btnCasa.UseVisualStyleBackColor = False
+        '
+        'btnVolver
+        '
+        Me.btnVolver.BackColor = System.Drawing.Color.Transparent
+        Me.btnVolver.BackgroundImage = CType(resources.GetObject("btnVolver.BackgroundImage"), System.Drawing.Image)
+        Me.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnVolver.FlatAppearance.BorderSize = 0
+        Me.btnVolver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
+        Me.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnVolver.Location = New System.Drawing.Point(12, 3)
+        Me.btnVolver.Name = "btnVolver"
+        Me.btnVolver.Size = New System.Drawing.Size(65, 65)
+        Me.btnVolver.TabIndex = 8
+        Me.btnVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.btnVolver.UseVisualStyleBackColor = False
+        '
+        'btnCerrar
+        '
+        Me.btnCerrar.BackColor = System.Drawing.Color.Transparent
+        Me.btnCerrar.BackgroundImage = CType(resources.GetObject("btnCerrar.BackgroundImage"), System.Drawing.Image)
+        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCerrar.FlatAppearance.BorderSize = 0
+        Me.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
+        Me.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.Location = New System.Drawing.Point(845, 12)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(45, 45)
+        Me.btnCerrar.TabIndex = 7
+        Me.btnCerrar.UseVisualStyleBackColor = False
         '
         'GenerarTicket
         '
@@ -430,4 +457,7 @@ Partial Class GenerarTicket
     Friend WithEvents txtReferenciasDirec As TextBox
     Friend WithEvents txtNombreCompleto As TextBox
     Friend WithEvents txtTelefono As TextBox
+    Friend WithEvents TimerMostrar As Timer
+    Friend WithEvents TimerOcultar As Timer
+    Friend WithEvents btnCasa As Button
 End Class

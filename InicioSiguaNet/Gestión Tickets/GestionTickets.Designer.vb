@@ -22,21 +22,26 @@ Partial Class GestionTickets
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GestionTickets))
         Me.PanelOpciones = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnCerrar = New System.Windows.Forms.Button()
         Me.btnGenerar = New System.Windows.Forms.Button()
+        Me.btnPersonal = New System.Windows.Forms.Button()
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.BtnClientes = New System.Windows.Forms.Button()
         Me.btnRecursos = New System.Windows.Forms.Button()
-        Me.btnPersonal = New System.Windows.Forms.Button()
         Me.btnInventario = New System.Windows.Forms.Button()
         Me.btnEstadoFinanciero = New System.Windows.Forms.Button()
         Me.btnGestionTickets = New System.Windows.Forms.Button()
         Me.PanelContenido = New System.Windows.Forms.Panel()
-        Me.dgvTickets = New System.Windows.Forms.DataGridView()
         Me.btnCerrarSesion = New System.Windows.Forms.Button()
-        Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.dgvTickets = New System.Windows.Forms.DataGridView()
+        Me.TimerMostrar = New System.Windows.Forms.Timer(Me.components)
+        Me.TimerOcultar = New System.Windows.Forms.Timer(Me.components)
         Me.PanelOpciones.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.PanelContenido.SuspendLayout()
         CType(Me.dgvTickets, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -44,20 +49,45 @@ Partial Class GestionTickets
         'PanelOpciones
         '
         Me.PanelOpciones.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.PanelOpciones.Controls.Add(Me.btnCerrar)
+        Me.PanelOpciones.Controls.Add(Me.Panel1)
         Me.PanelOpciones.Controls.Add(Me.btnGenerar)
+        Me.PanelOpciones.Controls.Add(Me.btnPersonal)
         Me.PanelOpciones.Controls.Add(Me.btnActualizar)
         Me.PanelOpciones.Controls.Add(Me.BtnClientes)
         Me.PanelOpciones.Controls.Add(Me.btnRecursos)
-        Me.PanelOpciones.Controls.Add(Me.btnPersonal)
         Me.PanelOpciones.Controls.Add(Me.btnInventario)
         Me.PanelOpciones.Controls.Add(Me.btnEstadoFinanciero)
         Me.PanelOpciones.Controls.Add(Me.btnGestionTickets)
         Me.PanelOpciones.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelOpciones.Location = New System.Drawing.Point(0, 0)
         Me.PanelOpciones.Name = "PanelOpciones"
-        Me.PanelOpciones.Size = New System.Drawing.Size(1377, 181)
+        Me.PanelOpciones.Size = New System.Drawing.Size(1377, 128)
         Me.PanelOpciones.TabIndex = 0
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.Black
+        Me.Panel1.Controls.Add(Me.btnCerrar)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1377, 50)
+        Me.Panel1.TabIndex = 18
+        '
+        'btnCerrar
+        '
+        Me.btnCerrar.BackColor = System.Drawing.Color.Transparent
+        Me.btnCerrar.BackgroundImage = CType(resources.GetObject("btnCerrar.BackgroundImage"), System.Drawing.Image)
+        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCerrar.FlatAppearance.BorderSize = 0
+        Me.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
+        Me.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.Location = New System.Drawing.Point(1319, 3)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(43, 42)
+        Me.btnCerrar.TabIndex = 17
+        Me.btnCerrar.UseVisualStyleBackColor = False
         '
         'btnGenerar
         '
@@ -68,6 +98,16 @@ Partial Class GestionTickets
         Me.btnGenerar.TabIndex = 16
         Me.btnGenerar.Text = "Generar"
         Me.btnGenerar.UseVisualStyleBackColor = True
+        '
+        'btnPersonal
+        '
+        Me.btnPersonal.Location = New System.Drawing.Point(849, 61)
+        Me.btnPersonal.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnPersonal.Name = "btnPersonal"
+        Me.btnPersonal.Size = New System.Drawing.Size(191, 54)
+        Me.btnPersonal.TabIndex = 12
+        Me.btnPersonal.Text = "Personal"
+        Me.btnPersonal.UseVisualStyleBackColor = True
         '
         'btnActualizar
         '
@@ -81,83 +121,64 @@ Partial Class GestionTickets
         '
         'BtnClientes
         '
-        Me.BtnClientes.Location = New System.Drawing.Point(68, 69)
+        Me.BtnClientes.Location = New System.Drawing.Point(83, 63)
         Me.BtnClientes.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnClientes.Name = "BtnClientes"
-        Me.BtnClientes.Size = New System.Drawing.Size(191, 48)
+        Me.BtnClientes.Size = New System.Drawing.Size(187, 53)
         Me.BtnClientes.TabIndex = 14
         Me.BtnClientes.Text = "Clientes"
         Me.BtnClientes.UseVisualStyleBackColor = True
         '
         'btnRecursos
         '
-        Me.btnRecursos.Location = New System.Drawing.Point(1059, 69)
+        Me.btnRecursos.Location = New System.Drawing.Point(1046, 61)
         Me.btnRecursos.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnRecursos.Name = "btnRecursos"
-        Me.btnRecursos.Size = New System.Drawing.Size(191, 49)
+        Me.btnRecursos.Size = New System.Drawing.Size(191, 55)
         Me.btnRecursos.TabIndex = 13
         Me.btnRecursos.Text = "Recursos"
         Me.btnRecursos.UseVisualStyleBackColor = True
         '
-        'btnPersonal
-        '
-        Me.btnPersonal.Location = New System.Drawing.Point(862, 69)
-        Me.btnPersonal.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnPersonal.Name = "btnPersonal"
-        Me.btnPersonal.Size = New System.Drawing.Size(191, 49)
-        Me.btnPersonal.TabIndex = 12
-        Me.btnPersonal.Text = "Personal"
-        Me.btnPersonal.UseVisualStyleBackColor = True
-        '
         'btnInventario
         '
-        Me.btnInventario.Location = New System.Drawing.Point(665, 69)
+        Me.btnInventario.Location = New System.Drawing.Point(652, 61)
         Me.btnInventario.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnInventario.Name = "btnInventario"
-        Me.btnInventario.Size = New System.Drawing.Size(191, 49)
+        Me.btnInventario.Size = New System.Drawing.Size(191, 54)
         Me.btnInventario.TabIndex = 11
         Me.btnInventario.Text = "Inventario"
         Me.btnInventario.UseVisualStyleBackColor = True
         '
         'btnEstadoFinanciero
         '
-        Me.btnEstadoFinanciero.Location = New System.Drawing.Point(468, 69)
+        Me.btnEstadoFinanciero.Location = New System.Drawing.Point(466, 62)
         Me.btnEstadoFinanciero.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnEstadoFinanciero.Name = "btnEstadoFinanciero"
-        Me.btnEstadoFinanciero.Size = New System.Drawing.Size(191, 49)
+        Me.btnEstadoFinanciero.Size = New System.Drawing.Size(180, 53)
         Me.btnEstadoFinanciero.TabIndex = 10
         Me.btnEstadoFinanciero.Text = "Estado financiero"
         Me.btnEstadoFinanciero.UseVisualStyleBackColor = True
         '
         'btnGestionTickets
         '
-        Me.btnGestionTickets.Location = New System.Drawing.Point(266, 69)
+        Me.btnGestionTickets.Location = New System.Drawing.Point(277, 63)
         Me.btnGestionTickets.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnGestionTickets.Name = "btnGestionTickets"
-        Me.btnGestionTickets.Size = New System.Drawing.Size(191, 49)
+        Me.btnGestionTickets.Size = New System.Drawing.Size(183, 53)
         Me.btnGestionTickets.TabIndex = 9
         Me.btnGestionTickets.Text = "Gestión de tickets"
         Me.btnGestionTickets.UseVisualStyleBackColor = True
         '
         'PanelContenido
         '
+        Me.PanelContenido.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.PanelContenido.Controls.Add(Me.btnCerrarSesion)
         Me.PanelContenido.Controls.Add(Me.dgvTickets)
         Me.PanelContenido.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelContenido.Location = New System.Drawing.Point(0, 181)
+        Me.PanelContenido.Location = New System.Drawing.Point(0, 128)
         Me.PanelContenido.Name = "PanelContenido"
-        Me.PanelContenido.Size = New System.Drawing.Size(1377, 619)
+        Me.PanelContenido.Size = New System.Drawing.Size(1377, 672)
         Me.PanelContenido.TabIndex = 1
-        '
-        'dgvTickets
-        '
-        Me.dgvTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvTickets.Location = New System.Drawing.Point(59, 81)
-        Me.dgvTickets.Name = "dgvTickets"
-        Me.dgvTickets.RowHeadersWidth = 51
-        Me.dgvTickets.RowTemplate.Height = 24
-        Me.dgvTickets.Size = New System.Drawing.Size(1256, 510)
-        Me.dgvTickets.TabIndex = 0
         '
         'btnCerrarSesion
         '
@@ -169,20 +190,21 @@ Partial Class GestionTickets
         Me.btnCerrarSesion.Text = "Cerrar sesión"
         Me.btnCerrarSesion.UseVisualStyleBackColor = True
         '
-        'btnCerrar
+        'dgvTickets
         '
-        Me.btnCerrar.BackColor = System.Drawing.Color.Transparent
-        Me.btnCerrar.BackgroundImage = CType(resources.GetObject("btnCerrar.BackgroundImage"), System.Drawing.Image)
-        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnCerrar.FlatAppearance.BorderSize = 0
-        Me.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
-        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCerrar.Location = New System.Drawing.Point(1322, 12)
-        Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(43, 42)
-        Me.btnCerrar.TabIndex = 17
-        Me.btnCerrar.UseVisualStyleBackColor = False
+        Me.dgvTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvTickets.Location = New System.Drawing.Point(59, 81)
+        Me.dgvTickets.Name = "dgvTickets"
+        Me.dgvTickets.RowHeadersWidth = 51
+        Me.dgvTickets.RowTemplate.Height = 24
+        Me.dgvTickets.Size = New System.Drawing.Size(1256, 510)
+        Me.dgvTickets.TabIndex = 0
+        '
+        'TimerMostrar
+        '
+        '
+        'TimerOcultar
+        '
         '
         'GestionTickets
         '
@@ -196,6 +218,7 @@ Partial Class GestionTickets
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "GestionTickets"
         Me.PanelOpciones.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
         Me.PanelContenido.ResumeLayout(False)
         CType(Me.dgvTickets, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -215,4 +238,7 @@ Partial Class GestionTickets
     Friend WithEvents btnActualizar As Button
     Friend WithEvents btnCerrarSesion As Button
     Friend WithEvents btnCerrar As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents TimerMostrar As Timer
+    Friend WithEvents TimerOcultar As Timer
 End Class

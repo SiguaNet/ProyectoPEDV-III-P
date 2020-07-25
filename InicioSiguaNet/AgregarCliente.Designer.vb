@@ -22,6 +22,7 @@ Partial Class AgregarCliente
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AgregarCliente))
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -46,8 +47,11 @@ Partial Class AgregarCliente
         Me.btnVolver = New System.Windows.Forms.Button()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.PanelContenido = New System.Windows.Forms.Panel()
+        Me.ErrorValidacion = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel3.SuspendLayout()
         Me.PanelContenido.SuspendLayout()
+        CType(Me.ErrorValidacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label4
@@ -114,7 +118,7 @@ Partial Class AgregarCliente
         Me.txtRefDirec.Location = New System.Drawing.Point(395, 385)
         Me.txtRefDirec.Multiline = True
         Me.txtRefDirec.Name = "txtRefDirec"
-        Me.txtRefDirec.Size = New System.Drawing.Size(373, 96)
+        Me.txtRefDirec.Size = New System.Drawing.Size(411, 97)
         Me.txtRefDirec.TabIndex = 36
         '
         'Label2
@@ -217,7 +221,7 @@ Partial Class AgregarCliente
         '
         'btnAgregar
         '
-        Me.btnAgregar.Location = New System.Drawing.Point(687, 124)
+        Me.btnAgregar.Location = New System.Drawing.Point(708, 124)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(195, 63)
         Me.btnAgregar.TabIndex = 23
@@ -235,13 +239,13 @@ Partial Class AgregarCliente
         '
         'Panel3
         '
-        Me.Panel3.BackColor = System.Drawing.Color.Teal
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Panel3.Controls.Add(Me.btnVolver)
         Me.Panel3.Controls.Add(Me.btnCerrar)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(991, 56)
+        Me.Panel3.Size = New System.Drawing.Size(991, 74)
         Me.Panel3.TabIndex = 40
         '
         'btnVolver
@@ -255,7 +259,7 @@ Partial Class AgregarCliente
         Me.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnVolver.Location = New System.Drawing.Point(12, 3)
         Me.btnVolver.Name = "btnVolver"
-        Me.btnVolver.Size = New System.Drawing.Size(54, 50)
+        Me.btnVolver.Size = New System.Drawing.Size(65, 65)
         Me.btnVolver.TabIndex = 8
         Me.btnVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.btnVolver.UseVisualStyleBackColor = False
@@ -269,9 +273,9 @@ Partial Class AgregarCliente
         Me.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
         Me.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCerrar.Location = New System.Drawing.Point(936, 8)
+        Me.btnCerrar.Location = New System.Drawing.Point(934, 12)
         Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(43, 42)
+        Me.btnCerrar.Size = New System.Drawing.Size(45, 45)
         Me.btnCerrar.TabIndex = 7
         Me.btnCerrar.UseVisualStyleBackColor = False
         '
@@ -298,10 +302,14 @@ Partial Class AgregarCliente
         Me.PanelContenido.Controls.Add(Me.btnAgregar)
         Me.PanelContenido.Controls.Add(Me.cmbBarrios)
         Me.PanelContenido.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelContenido.Location = New System.Drawing.Point(0, 56)
+        Me.PanelContenido.Location = New System.Drawing.Point(0, 74)
         Me.PanelContenido.Name = "PanelContenido"
-        Me.PanelContenido.Size = New System.Drawing.Size(991, 543)
+        Me.PanelContenido.Size = New System.Drawing.Size(991, 525)
         Me.PanelContenido.TabIndex = 41
+        '
+        'ErrorValidacion
+        '
+        Me.ErrorValidacion.ContainerControl = Me
         '
         'AgregarCliente
         '
@@ -317,6 +325,7 @@ Partial Class AgregarCliente
         Me.Panel3.ResumeLayout(False)
         Me.PanelContenido.ResumeLayout(False)
         Me.PanelContenido.PerformLayout()
+        CType(Me.ErrorValidacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -344,4 +353,6 @@ Partial Class AgregarCliente
     Friend WithEvents btnVolver As Button
     Friend WithEvents btnCerrar As Button
     Friend WithEvents PanelContenido As Panel
+    Friend WithEvents ErrorValidacion As ErrorProvider
+    Friend WithEvents ToolTip As ToolTip
 End Class

@@ -3,6 +3,9 @@
 
     '(@numeroIdentidadC, @idPersonal, @estado, @prioridad, @idOperacion, @nota, @fechaInicio, @fechaFin)
     Private Sub btnGenerar_Click(sender As Object, e As EventArgs) Handles btnGenerar.Click
+
+
+
         Dim idTicket, idPersonal, idOperacion As Integer
         Dim numeroIdentidad, estado, prioridad, nota, fechaInicio, fechaFin As String
 
@@ -17,15 +20,21 @@
         fechaFin = ""
 
         Try
-            If (conexion.PAOperacionesGestionTickets(idTicket, numeroIdentidad, idPersonal, estado, prioridad, idOperacion, nota, fechaInicio, fechaFin, 1) = 0) Then
-                MessageBox.Show("Ticket registrado exitosamente", "Generar ticket", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            If Me.ValidateChildren And txtNumeroID.Text <> String.Empty And cmbPersonal.Text <> String.Empty And cmbEstado.Text <> String.Empty And cmbOperaciones.Text <> String.Empty And cmbPrioridad.Text <> String.Empty Then
+                If (conexion.PAOperacionesGestionTickets(idTicket, numeroIdentidad, idPersonal, estado, prioridad, idOperacion, nota, fechaInicio, fechaFin, 1) = 0) Then
+                    MessageBox.Show("Ticket registrado exitosamente", "Generar ticket", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                Else
+                    MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
 
             Else
-                MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End If
+                MessageBox.Show("Por favor ingrese todos los datos solicitados", "Generar ticket", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
+            End If
         Catch ex As Exception
             MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
         End Try
 
     End Sub
@@ -37,6 +46,7 @@
 
     Private Sub GenerarTicket_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        txtNumeroID.Text = variablesGlobales.numeroIdentidad
         conexion.llenarComboBox(cmbPersonal, "select idPersonal from PERSONAL", "idPersonal")
         conexion.llenarComboBox(cmbOperaciones, "select nombreOperacion from OPERACIONES", "nombreOperacion")
 
@@ -86,7 +96,21 @@
         txtReferenciasDirec.Clear()
 
     End Sub
+    Private Sub TimerOcultar_Tick(sender As Object, e As EventArgs) Handles TimerOcultar.Tick
+        If PanelDatosCliente.Height <= 27 Then
+            Me.TimerOcultar.Enabled = False
+        Else
+            Me.PanelDatosCliente.Height = PanelDatosCliente.Height - 40
+        End If
+    End Sub
 
+    Private Sub TimerMostrar_Tick(sender As Object, e As EventArgs) Handles TimerMostrar.Tick
+        If PanelDatosCliente.Height >= 180 Then
+            Me.TimerMostrar.Enabled = False
+        Else
+            Me.PanelDatosCliente.Height = PanelDatosCliente.Height + 40
+        End If
+    End Sub
     Private Sub btnVerDatoCliente_Click(sender As Object, e As EventArgs) Handles btnVerDatoCliente.Click
         Dim idCliente As String
         idCliente = txtNumeroID.Text
@@ -111,6 +135,13 @@
 
                     'Efecto por mientras
 
+                    If PanelDatosCliente.Height = 27 Then
+                        TimerMostrar.Enabled = True
+
+                    ElseIf PanelDatosCliente.Height = 187 Then
+                        TimerOcultar.Enabled = True
+
+                    End If
 
                     'Fin efecto
 
@@ -147,7 +178,14 @@
 
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
         limpiar()
-        Me.Hide()
+        Me.Close()
+        InicioGestion.Show()
+
+    End Sub
+
+    Private Sub btnCasa_Click(sender As Object, e As EventArgs) Handles btnCasa.Click
+        limpiar()
+        Me.Close()
         GestionTickets.Show()
 
     End Sub

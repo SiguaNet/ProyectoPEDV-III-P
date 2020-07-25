@@ -133,6 +133,12 @@
     <Compile Include="Ficha del cliente\GestionFacturas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Gestión Tickets\ActualizarPaquete.Designer.vb">
+      <DependentUpon>ActualizarPaquete.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestión Tickets\ActualizarPaquete.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Gestión Tickets\GenerarTicket.Designer.vb">
       <DependentUpon>GenerarTicket.vb</DependentUpon>
     </Compile>
@@ -143,6 +149,12 @@
       <DependentUpon>InicioGestion.vb</DependentUpon>
     </Compile>
     <Compile Include="Gestión Tickets\InicioGestion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestión Tickets\TicketsCliente.Designer.vb">
+      <DependentUpon>TicketsCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestión Tickets\TicketsCliente.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="InicioSiguaNet.vb">
@@ -233,11 +245,17 @@
     <EmbeddedResource Include="Ficha del cliente\GestionFacturas.resx">
       <DependentUpon>GestionFacturas.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Gestión Tickets\ActualizarPaquete.resx">
+      <DependentUpon>ActualizarPaquete.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gestión Tickets\GenerarTicket.resx">
       <DependentUpon>GenerarTicket.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gestión Tickets\InicioGestion.resx">
       <DependentUpon>InicioGestion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestión Tickets\TicketsCliente.resx">
+      <DependentUpon>TicketsCliente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InicioSiguaNet.resx">
       <DependentUpon>InicioSiguaNet.vb</DependentUpon>

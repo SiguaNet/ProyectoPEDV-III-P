@@ -34,9 +34,9 @@ Partial Class InicioGestion
         Me.btnPaquete = New System.Windows.Forms.Button()
         Me.txtIdCli = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btnVolver = New System.Windows.Forms.Button()
         Me.btnCerrar = New System.Windows.Forms.Button()
-        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -135,14 +135,30 @@ Partial Class InicioGestion
         '
         'Panel3
         '
-        Me.Panel3.BackColor = System.Drawing.Color.Teal
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Panel3.Controls.Add(Me.btnVolver)
         Me.Panel3.Controls.Add(Me.btnCerrar)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(990, 76)
+        Me.Panel3.Size = New System.Drawing.Size(990, 70)
         Me.Panel3.TabIndex = 17
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.btnVerDatoCliente)
+        Me.Panel2.Controls.Add(Me.Label1)
+        Me.Panel2.Controls.Add(Me.btnPaquete)
+        Me.Panel2.Controls.Add(Me.btnGenerar)
+        Me.Panel2.Controls.Add(Me.txtIdCli)
+        Me.Panel2.Controls.Add(Me.Panel1)
+        Me.Panel2.Controls.Add(Me.btnTickets)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Location = New System.Drawing.Point(0, 70)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(990, 340)
+        Me.Panel2.TabIndex = 18
         '
         'btnVolver
         '
@@ -155,7 +171,7 @@ Partial Class InicioGestion
         Me.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnVolver.Location = New System.Drawing.Point(12, 3)
         Me.btnVolver.Name = "btnVolver"
-        Me.btnVolver.Size = New System.Drawing.Size(71, 67)
+        Me.btnVolver.Size = New System.Drawing.Size(65, 65)
         Me.btnVolver.TabIndex = 8
         Me.btnVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.btnVolver.UseVisualStyleBackColor = False
@@ -171,25 +187,9 @@ Partial Class InicioGestion
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrar.Location = New System.Drawing.Point(931, 15)
         Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(43, 42)
+        Me.btnCerrar.Size = New System.Drawing.Size(45, 45)
         Me.btnCerrar.TabIndex = 7
         Me.btnCerrar.UseVisualStyleBackColor = False
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Panel2.Controls.Add(Me.btnVerDatoCliente)
-        Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Controls.Add(Me.btnPaquete)
-        Me.Panel2.Controls.Add(Me.btnGenerar)
-        Me.Panel2.Controls.Add(Me.txtIdCli)
-        Me.Panel2.Controls.Add(Me.Panel1)
-        Me.Panel2.Controls.Add(Me.btnTickets)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Location = New System.Drawing.Point(0, 76)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(990, 334)
-        Me.Panel2.TabIndex = 18
         '
         'InicioGestion
         '
