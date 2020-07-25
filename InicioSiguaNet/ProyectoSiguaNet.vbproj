@@ -115,6 +115,12 @@
     <Compile Include="EstadoFinanciero.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Facturas y Conta\FacturasTodas.Designer.vb">
+      <DependentUpon>FacturasTodas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Facturas y Conta\FacturasTodas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Facturas y Conta\PagosFacturas.Designer.vb">
       <DependentUpon>PagosFacturas.vb</DependentUpon>
     </Compile>
@@ -235,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EstadoFinanciero.resx">
       <DependentUpon>EstadoFinanciero.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facturas y Conta\FacturasTodas.resx">
+      <DependentUpon>FacturasTodas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Facturas y Conta\PagosFacturas.resx">
       <DependentUpon>PagosFacturas.vb</DependentUpon>
