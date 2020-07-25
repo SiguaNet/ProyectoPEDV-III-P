@@ -43,9 +43,9 @@ Partial Class AgregarCliente
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.cmbBarrios = New System.Windows.Forms.ComboBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.PanelContenido = New System.Windows.Forms.Panel()
         Me.btnVolver = New System.Windows.Forms.Button()
         Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.PanelContenido = New System.Windows.Forms.Panel()
         Me.Panel3.SuspendLayout()
         Me.PanelContenido.SuspendLayout()
         Me.SuspendLayout()
@@ -217,7 +217,7 @@ Partial Class AgregarCliente
         '
         'btnAgregar
         '
-        Me.btnAgregar.Location = New System.Drawing.Point(674, 124)
+        Me.btnAgregar.Location = New System.Drawing.Point(687, 124)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(195, 63)
         Me.btnAgregar.TabIndex = 23
@@ -243,34 +243,6 @@ Partial Class AgregarCliente
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(991, 56)
         Me.Panel3.TabIndex = 40
-        '
-        'PanelContenido
-        '
-        Me.PanelContenido.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.PanelContenido.Controls.Add(Me.Label4)
-        Me.PanelContenido.Controls.Add(Me.Label8)
-        Me.PanelContenido.Controls.Add(Me.txtNumeroID)
-        Me.PanelContenido.Controls.Add(Me.cmbPaquetes)
-        Me.PanelContenido.Controls.Add(Me.Label3)
-        Me.PanelContenido.Controls.Add(Me.txtSApellido)
-        Me.PanelContenido.Controls.Add(Me.txtRefDirec)
-        Me.PanelContenido.Controls.Add(Me.Label2)
-        Me.PanelContenido.Controls.Add(Me.Label6)
-        Me.PanelContenido.Controls.Add(Me.txtPApellido)
-        Me.PanelContenido.Controls.Add(Me.Label9)
-        Me.PanelContenido.Controls.Add(Me.Label1)
-        Me.PanelContenido.Controls.Add(Me.txtNumCasa)
-        Me.PanelContenido.Controls.Add(Me.txtNombres)
-        Me.PanelContenido.Controls.Add(Me.Label7)
-        Me.PanelContenido.Controls.Add(Me.Label5)
-        Me.PanelContenido.Controls.Add(Me.txtTelefono)
-        Me.PanelContenido.Controls.Add(Me.btnAgregar)
-        Me.PanelContenido.Controls.Add(Me.cmbBarrios)
-        Me.PanelContenido.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelContenido.Location = New System.Drawing.Point(0, 56)
-        Me.PanelContenido.Name = "PanelContenido"
-        Me.PanelContenido.Size = New System.Drawing.Size(991, 543)
-        Me.PanelContenido.TabIndex = 41
         '
         'btnVolver
         '
@@ -302,6 +274,34 @@ Partial Class AgregarCliente
         Me.btnCerrar.Size = New System.Drawing.Size(43, 42)
         Me.btnCerrar.TabIndex = 7
         Me.btnCerrar.UseVisualStyleBackColor = False
+        '
+        'PanelContenido
+        '
+        Me.PanelContenido.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.PanelContenido.Controls.Add(Me.Label4)
+        Me.PanelContenido.Controls.Add(Me.Label8)
+        Me.PanelContenido.Controls.Add(Me.txtNumeroID)
+        Me.PanelContenido.Controls.Add(Me.cmbPaquetes)
+        Me.PanelContenido.Controls.Add(Me.Label3)
+        Me.PanelContenido.Controls.Add(Me.txtSApellido)
+        Me.PanelContenido.Controls.Add(Me.txtRefDirec)
+        Me.PanelContenido.Controls.Add(Me.Label2)
+        Me.PanelContenido.Controls.Add(Me.Label6)
+        Me.PanelContenido.Controls.Add(Me.txtPApellido)
+        Me.PanelContenido.Controls.Add(Me.Label9)
+        Me.PanelContenido.Controls.Add(Me.Label1)
+        Me.PanelContenido.Controls.Add(Me.txtNumCasa)
+        Me.PanelContenido.Controls.Add(Me.txtNombres)
+        Me.PanelContenido.Controls.Add(Me.Label7)
+        Me.PanelContenido.Controls.Add(Me.Label5)
+        Me.PanelContenido.Controls.Add(Me.txtTelefono)
+        Me.PanelContenido.Controls.Add(Me.btnAgregar)
+        Me.PanelContenido.Controls.Add(Me.cmbBarrios)
+        Me.PanelContenido.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PanelContenido.Location = New System.Drawing.Point(0, 56)
+        Me.PanelContenido.Name = "PanelContenido"
+        Me.PanelContenido.Size = New System.Drawing.Size(991, 543)
+        Me.PanelContenido.TabIndex = 41
         '
         'AgregarCliente
         '
