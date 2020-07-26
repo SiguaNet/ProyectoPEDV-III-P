@@ -35,6 +35,7 @@ Partial Class InicioSiguaNet
         Me.btnEstadoFinanciero = New System.Windows.Forms.Button()
         Me.btnGestionTickets = New System.Windows.Forms.Button()
         Me.PanelContenido = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.DbgClientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelOpciones.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -55,7 +56,7 @@ Partial Class InicioSiguaNet
         '
         Me.DbgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DbgClientes.Location = New System.Drawing.Point(33, 129)
-        Me.DbgClientes.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DbgClientes.Margin = New System.Windows.Forms.Padding(4)
         Me.DbgClientes.Name = "DbgClientes"
         Me.DbgClientes.RowHeadersWidth = 51
         Me.DbgClientes.Size = New System.Drawing.Size(1289, 478)
@@ -81,9 +82,10 @@ Partial Class InicioSiguaNet
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.Black
+        Me.Panel3.Controls.Add(Me.Label1)
         Me.Panel3.Controls.Add(Me.Button1)
         Me.Panel3.Location = New System.Drawing.Point(0, 2)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1355, 48)
         Me.Panel3.TabIndex = 28
@@ -107,7 +109,7 @@ Partial Class InicioSiguaNet
         'BtnClientes
         '
         Me.BtnClientes.Location = New System.Drawing.Point(73, 58)
-        Me.BtnClientes.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnClientes.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnClientes.Name = "BtnClientes"
         Me.BtnClientes.Size = New System.Drawing.Size(191, 55)
         Me.BtnClientes.TabIndex = 27
@@ -176,6 +178,17 @@ Partial Class InicioSiguaNet
         Me.PanelContenido.Size = New System.Drawing.Size(1355, 666)
         Me.PanelContenido.TabIndex = 22
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.White
+        Me.Label1.Font = New System.Drawing.Font("Fugaz One", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(28, 7)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(94, 29)
+        Me.Label1.TabIndex = 9
+        Me.Label1.Text = "Clientes"
+        '
         'InicioSiguaNet
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -191,6 +204,7 @@ Partial Class InicioSiguaNet
         CType(Me.DbgClientes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelOpciones.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.PanelContenido.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -207,4 +221,5 @@ Partial Class InicioSiguaNet
     Friend WithEvents btnGestionTickets As Button
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Button1 As Button
+    Friend WithEvents Label1 As Label
 End Class

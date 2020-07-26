@@ -18,9 +18,9 @@
 
     End Sub
 
-    Private Sub btnGenerar_Click(sender As Object, e As EventArgs) Handles btnGenerar.Click
+    Private Sub btnGestionar_Click(sender As Object, e As EventArgs) Handles btnGestionar.Click
         Me.Close()
-        GenerarTicket.Show()
+        InicioGestion.Show()
 
     End Sub
     Private Sub TimerOcultar_Tick(sender As Object, e As EventArgs) Handles TimerOcultar.Tick

@@ -49,6 +49,7 @@ Partial Class AgregarCliente
         Me.PanelContenido = New System.Windows.Forms.Panel()
         Me.ErrorValidacion = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.btnCasa = New System.Windows.Forms.Button()
         Me.Panel3.SuspendLayout()
         Me.PanelContenido.SuspendLayout()
         CType(Me.ErrorValidacion, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -240,6 +241,7 @@ Partial Class AgregarCliente
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.btnCasa)
         Me.Panel3.Controls.Add(Me.btnVolver)
         Me.Panel3.Controls.Add(Me.btnCerrar)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
@@ -311,6 +313,23 @@ Partial Class AgregarCliente
         '
         Me.ErrorValidacion.ContainerControl = Me
         '
+        'btnCasa
+        '
+        Me.btnCasa.BackColor = System.Drawing.Color.Transparent
+        Me.btnCasa.BackgroundImage = CType(resources.GetObject("btnCasa.BackgroundImage"), System.Drawing.Image)
+        Me.btnCasa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnCasa.FlatAppearance.BorderSize = 0
+        Me.btnCasa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
+        Me.btnCasa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnCasa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCasa.Location = New System.Drawing.Point(107, 14)
+        Me.btnCasa.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnCasa.Name = "btnCasa"
+        Me.btnCasa.Size = New System.Drawing.Size(48, 43)
+        Me.btnCasa.TabIndex = 10
+        Me.btnCasa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.btnCasa.UseVisualStyleBackColor = False
+        '
         'AgregarCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -355,4 +374,5 @@ Partial Class AgregarCliente
     Friend WithEvents PanelContenido As Panel
     Friend WithEvents ErrorValidacion As ErrorProvider
     Friend WithEvents ToolTip As ToolTip
+    Friend WithEvents btnCasa As Button
 End Class

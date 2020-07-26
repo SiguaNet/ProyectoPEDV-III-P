@@ -24,12 +24,12 @@ Partial Class TicketsCliente
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TicketsCliente))
         Me.PanelOpciones = New System.Windows.Forms.Panel()
-        Me.PanelContenido = New System.Windows.Forms.Panel()
+        Me.btnCasa = New System.Windows.Forms.Button()
         Me.btnVolver = New System.Windows.Forms.Button()
         Me.btnCerrar = New System.Windows.Forms.Button()
-        Me.btnCasa = New System.Windows.Forms.Button()
-        Me.dgvTicketsCliente = New System.Windows.Forms.DataGridView()
+        Me.PanelContenido = New System.Windows.Forms.Panel()
         Me.btnActualizar = New System.Windows.Forms.Button()
+        Me.dgvTicketsCliente = New System.Windows.Forms.DataGridView()
         Me.PanelOpciones.SuspendLayout()
         Me.PanelContenido.SuspendLayout()
         CType(Me.dgvTicketsCliente, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -47,16 +47,21 @@ Partial Class TicketsCliente
         Me.PanelOpciones.Size = New System.Drawing.Size(1180, 79)
         Me.PanelOpciones.TabIndex = 0
         '
-        'PanelContenido
+        'btnCasa
         '
-        Me.PanelContenido.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.PanelContenido.Controls.Add(Me.btnActualizar)
-        Me.PanelContenido.Controls.Add(Me.dgvTicketsCliente)
-        Me.PanelContenido.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelContenido.Location = New System.Drawing.Point(0, 79)
-        Me.PanelContenido.Name = "PanelContenido"
-        Me.PanelContenido.Size = New System.Drawing.Size(1180, 690)
-        Me.PanelContenido.TabIndex = 1
+        Me.btnCasa.BackColor = System.Drawing.Color.Transparent
+        Me.btnCasa.BackgroundImage = CType(resources.GetObject("btnCasa.BackgroundImage"), System.Drawing.Image)
+        Me.btnCasa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnCasa.FlatAppearance.BorderSize = 0
+        Me.btnCasa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
+        Me.btnCasa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnCasa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCasa.Location = New System.Drawing.Point(109, 20)
+        Me.btnCasa.Name = "btnCasa"
+        Me.btnCasa.Size = New System.Drawing.Size(48, 43)
+        Me.btnCasa.TabIndex = 11
+        Me.btnCasa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.btnCasa.UseVisualStyleBackColor = False
         '
         'btnVolver
         '
@@ -89,21 +94,25 @@ Partial Class TicketsCliente
         Me.btnCerrar.TabIndex = 9
         Me.btnCerrar.UseVisualStyleBackColor = False
         '
-        'btnCasa
+        'PanelContenido
         '
-        Me.btnCasa.BackColor = System.Drawing.Color.Transparent
-        Me.btnCasa.BackgroundImage = CType(resources.GetObject("btnCasa.BackgroundImage"), System.Drawing.Image)
-        Me.btnCasa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnCasa.FlatAppearance.BorderSize = 0
-        Me.btnCasa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.btnCasa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btnCasa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCasa.Location = New System.Drawing.Point(109, 20)
-        Me.btnCasa.Name = "btnCasa"
-        Me.btnCasa.Size = New System.Drawing.Size(48, 43)
-        Me.btnCasa.TabIndex = 11
-        Me.btnCasa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.btnCasa.UseVisualStyleBackColor = False
+        Me.PanelContenido.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.PanelContenido.Controls.Add(Me.btnActualizar)
+        Me.PanelContenido.Controls.Add(Me.dgvTicketsCliente)
+        Me.PanelContenido.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PanelContenido.Location = New System.Drawing.Point(0, 79)
+        Me.PanelContenido.Name = "PanelContenido"
+        Me.PanelContenido.Size = New System.Drawing.Size(1180, 690)
+        Me.PanelContenido.TabIndex = 1
+        '
+        'btnActualizar
+        '
+        Me.btnActualizar.Location = New System.Drawing.Point(1010, 638)
+        Me.btnActualizar.Name = "btnActualizar"
+        Me.btnActualizar.Size = New System.Drawing.Size(158, 40)
+        Me.btnActualizar.TabIndex = 1
+        Me.btnActualizar.Text = "Actualizar"
+        Me.btnActualizar.UseVisualStyleBackColor = True
         '
         'dgvTicketsCliente
         '
@@ -114,15 +123,6 @@ Partial Class TicketsCliente
         Me.dgvTicketsCliente.RowTemplate.Height = 24
         Me.dgvTicketsCliente.Size = New System.Drawing.Size(1063, 489)
         Me.dgvTicketsCliente.TabIndex = 0
-        '
-        'btnActualizar
-        '
-        Me.btnActualizar.Location = New System.Drawing.Point(1010, 638)
-        Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(158, 40)
-        Me.btnActualizar.TabIndex = 1
-        Me.btnActualizar.Text = "Actualizar"
-        Me.btnActualizar.UseVisualStyleBackColor = True
         '
         'TicketsCliente
         '

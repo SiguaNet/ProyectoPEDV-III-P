@@ -23,6 +23,7 @@ Public Class AgregarCliente
             If Me.ValidateChildren And txtNumeroID.Text <> String.Empty And txtNombres.Text <> String.Empty And txtPApellido.Text <> String.Empty And txtTelefono.Text <> String.Empty And txtNumCasa.Text <> String.Empty And Val(txtNumCasa.Text) - Int(Val(txtNumCasa.Text)) = 0 And txtRefDirec.Text <> String.Empty Then
 
                 If (conexion.PAOperacionesPersonaCL(numeroIdentidad, nombres, primerApellido, segundoApellido, numeroTelefono, numeroCasa, idSector, referenciasDireccion, idPaquete, pagosCliente, estadoC, 1) = 0) Then
+
                     If conexion.PAOperacionesFactura(0, numeroIdentidad, String.Format("{0:G}", DateTime.Now), 1) = 1 Then
                         MessageBox.Show("Cliente ingresado satisfactoriamente", "Registro cliente", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
@@ -71,7 +72,7 @@ Public Class AgregarCliente
     Private Sub txtNumeroID_Validating(sender As Object, e As CancelEventArgs) Handles txtNumeroID.Validating
         Dim numID As String
         numID = txtNumeroID.Text
-        If Val(numID.Length) = 13 And numID = "" Then
+        If Val(numID.Length) = 13 And numID <> "" Then
             Me.ErrorValidacion.SetError(sender, "")
         Else
             Me.ErrorValidacion.SetError(sender, "Ingrese un numero de identidad valido")
@@ -97,7 +98,7 @@ Public Class AgregarCliente
     Private Sub txtTelefono_Validating(sender As Object, e As CancelEventArgs) Handles txtTelefono.Validating
         Dim numTel As String
         numTel = txtTelefono.Text
-        If Val(numTel.Length) = 13 And numTel = "" Then
+        If Val(numTel.Length) = 8 And numTel <> "" Then
             Me.ErrorValidacion.SetError(sender, "")
         Else
             Me.ErrorValidacion.SetError(sender, "Ingrese un numero de teléfono valido")
@@ -108,6 +109,12 @@ Public Class AgregarCliente
         ToolTip.SetToolTip(txtRefDirec, "Tiene un límite de 80 caracteres")
         ToolTip.ToolTipTitle = "Referencias"
         ToolTip.ToolTipIcon = ToolTipIcon.Info
+
+    End Sub
+
+    Private Sub btnCasa_Click(sender As Object, e As EventArgs) Handles btnCasa.Click
+        Me.Close()
+        GestionTickets.Show()
 
     End Sub
 End Class

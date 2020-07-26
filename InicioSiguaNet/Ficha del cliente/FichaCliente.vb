@@ -25,10 +25,6 @@
         AgregarCliente.Show()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-
-    End Sub
-
     Private Sub TxtNombres_TextChanged(sender As Object, e As EventArgs) Handles TxtNombres.TextChanged
 
     End Sub
@@ -42,13 +38,20 @@
         Conexion.llenarTextBox(TxtDireccion, "select referenciasDireccion from DATOS_PERSONAS where numeroIdentidad = '" & TxtId.Text & "'", "referenciasDireccion")
     End Sub
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-
-    End Sub
-
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
         InicioSiguaNet.Show()
         variablesGlobales.numeroIdentidad = ""
+    End Sub
+
+    Private Sub btnGestionTickets_Click(sender As Object, e As EventArgs) Handles btnGestionTickets.Click
+
+    End Sub
+
+    Private Sub btnCrearTicket_Click(sender As Object, e As EventArgs) Handles btnCrearTicket.Click
+        variablesGlobales.numeroIdentidad = TxtId.Text
+        Me.Close()
+        GenerarTicket.Show()
+
     End Sub
 End Class
