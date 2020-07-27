@@ -145,28 +145,40 @@
     <Compile Include="Ficha del cliente\GestionFacturas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Gestión Tickets\ActualizarPaquete.Designer.vb">
+    <Compile Include="Gestión Tickets\Dgv TicketsTodos\Opción Gestionar\Operaciones\ActualizarPaquete.Designer.vb">
       <DependentUpon>ActualizarPaquete.vb</DependentUpon>
     </Compile>
-    <Compile Include="Gestión Tickets\ActualizarPaquete.vb">
+    <Compile Include="Gestión Tickets\Dgv TicketsTodos\Opción Gestionar\Operaciones\ActualizarPaquete.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Gestión Tickets\GenerarTicket.Designer.vb">
+    <Compile Include="Gestión Tickets\Dgv TicketsTodos\Opcion Realizar\ActualizarTicket.Designer.vb">
+      <DependentUpon>ActualizarTicket.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestión Tickets\Dgv TicketsTodos\Opcion Realizar\ActualizarTicket.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestión Tickets\Dgv TicketsTodos\Opción Gestionar\GenerarTicket.Designer.vb">
       <DependentUpon>GenerarTicket.vb</DependentUpon>
     </Compile>
-    <Compile Include="Gestión Tickets\GenerarTicket.vb">
+    <Compile Include="Gestión Tickets\Dgv TicketsTodos\Opción Gestionar\GenerarTicket.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Gestión Tickets\InicioGestion.Designer.vb">
+    <Compile Include="Gestión Tickets\Dgv TicketsTodos\Opción Gestionar\InicioGestion.Designer.vb">
       <DependentUpon>InicioGestion.vb</DependentUpon>
     </Compile>
-    <Compile Include="Gestión Tickets\InicioGestion.vb">
+    <Compile Include="Gestión Tickets\Dgv TicketsTodos\Opción Gestionar\InicioGestion.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Gestión Tickets\TicketsCliente.Designer.vb">
+    <Compile Include="Gestión Tickets\Dgv TicketsTodos\Opcion Realizar\RealizarTickets.Designer.vb">
+      <DependentUpon>RealizarTickets.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestión Tickets\Dgv TicketsTodos\Opcion Realizar\RealizarTickets.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestión Tickets\Dgv TicketsTodos\Opción Gestionar\TicketsCliente.Designer.vb">
       <DependentUpon>TicketsCliente.vb</DependentUpon>
     </Compile>
-    <Compile Include="Gestión Tickets\TicketsCliente.vb">
+    <Compile Include="Gestión Tickets\Dgv TicketsTodos\Opción Gestionar\TicketsCliente.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="InicioSiguaNet.vb">
@@ -176,10 +188,10 @@
       <DependentUpon>InicioSiguaNet.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Gestión Tickets\GestionTickets.Designer.vb">
+    <Compile Include="Gestión Tickets\Dgv TicketsTodos\GestionTickets.Designer.vb">
       <DependentUpon>GestionTickets.vb</DependentUpon>
     </Compile>
-    <Compile Include="Gestión Tickets\GestionTickets.vb">
+    <Compile Include="Gestión Tickets\Dgv TicketsTodos\GestionTickets.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login\inicioSesion.Designer.vb">
@@ -263,22 +275,28 @@
     <EmbeddedResource Include="Ficha del cliente\GestionFacturas.resx">
       <DependentUpon>GestionFacturas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gestión Tickets\ActualizarPaquete.resx">
+    <EmbeddedResource Include="Gestión Tickets\Dgv TicketsTodos\Opción Gestionar\Operaciones\ActualizarPaquete.resx">
       <DependentUpon>ActualizarPaquete.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gestión Tickets\GenerarTicket.resx">
+    <EmbeddedResource Include="Gestión Tickets\Dgv TicketsTodos\Opcion Realizar\ActualizarTicket.resx">
+      <DependentUpon>ActualizarTicket.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestión Tickets\Dgv TicketsTodos\Opción Gestionar\GenerarTicket.resx">
       <DependentUpon>GenerarTicket.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gestión Tickets\InicioGestion.resx">
+    <EmbeddedResource Include="Gestión Tickets\Dgv TicketsTodos\Opción Gestionar\InicioGestion.resx">
       <DependentUpon>InicioGestion.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gestión Tickets\TicketsCliente.resx">
+    <EmbeddedResource Include="Gestión Tickets\Dgv TicketsTodos\Opcion Realizar\RealizarTickets.resx">
+      <DependentUpon>RealizarTickets.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestión Tickets\Dgv TicketsTodos\Opción Gestionar\TicketsCliente.resx">
       <DependentUpon>TicketsCliente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InicioSiguaNet.resx">
       <DependentUpon>InicioSiguaNet.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gestión Tickets\GestionTickets.resx">
+    <EmbeddedResource Include="Gestión Tickets\Dgv TicketsTodos\GestionTickets.resx">
       <DependentUpon>GestionTickets.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\inicioSesion.resx">
@@ -349,5 +367,6 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

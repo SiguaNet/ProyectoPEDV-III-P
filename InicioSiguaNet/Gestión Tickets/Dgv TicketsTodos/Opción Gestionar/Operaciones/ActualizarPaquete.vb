@@ -1,13 +1,7 @@
 ﻿Public Class ActualizarPaquete
     Dim conexion As Conexion = New Conexion
-    Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
-        Me.Close()
-        InicioGestion.Show()
-
-    End Sub
-
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
-        End
+        Me.Close()
 
     End Sub
 
@@ -50,21 +44,24 @@
 
     End Sub
 
-    Private Sub btnCasa_Click(sender As Object, e As EventArgs) Handles btnCasa.Click
-        Me.Close()
-        GestionTickets.Show()
+    Private Sub btnRealizar_Click(sender As Object, e As EventArgs) Handles btnRealizar.Click
+        Dim idCli As String
 
-    End Sub
+        idCli = txtIdCli.Text
 
-    Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
         Try
-            If cmbPlanOp.SelectedIndex = Nothing Then
-                MessageBox.Show("Por favor seleccione un paquete", "Actualizar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            If idCli = "" And idCli.Length <> 13 Then
+                MessageBox.Show("Por favor ingrese un número de identidad válido", "Actualizar", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
+            ElseIf cmbPlanOp.SelectedIndex = -1 Then
+                MessageBox.Show("Por favor seleccione un paquete de internet", "Actualizar", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
             Else
                 conexion.EjecutarComando("update CLIENTES set idPaquete = '" & cmbPlanOp.SelectedIndex + 1 & "' where numeroIdentidad = '" & txtIdCli.Text & "'")
+                MessageBox.Show("Paquete actualizado exitosamente", "Actualizar", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             End If
+
         Catch ex As Exception
             MessageBox.Show("Error", "Actualizar", MessageBoxButtons.OK, MessageBoxIcon.Error)
 

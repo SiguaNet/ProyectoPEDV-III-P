@@ -11,7 +11,7 @@
 
     Private Sub dgvTickets_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTickets.CellContentDoubleClick
         variablesGlobales.numeroIdentidad = ""
-        variablesGlobales.numeroIdentidad = dgvTickets.CurrentRow.Cells(2).Value.ToString()
+        variablesGlobales.numeroIdentidad = dgvTickets.CurrentRow.Cells(3).Value.ToString()
 
         Me.Close()
         InicioGestion.Show()
@@ -111,5 +111,11 @@
             Case 12
                 lblMes.Text = "Diciembre"
         End Select
+    End Sub
+
+    Private Sub btnRealizar_Click(sender As Object, e As EventArgs) Handles btnRealizar.Click
+        Me.Hide()
+        RealizarTickets.Show()
+
     End Sub
 End Class

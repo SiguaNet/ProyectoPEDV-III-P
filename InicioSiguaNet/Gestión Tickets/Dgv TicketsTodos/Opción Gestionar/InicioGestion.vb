@@ -1,4 +1,6 @@
-﻿Public Class InicioGestion
+﻿Imports System.ComponentModel
+
+Public Class InicioGestion
     Dim conexion As Conexion = New Conexion
     Private Sub InicioGestion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -27,11 +29,19 @@
                     txtReferenciasDirec.Text = dat(3)
                 End If
 
-            ElseIf MessageBox.Show("El cliente no existe, ¿Desea ingresarlo?", "Verificación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
-                AgregarCliente.Show()
-                Me.Hide()
+            ElseIf idCliente.Length = 13 Then
 
+                If MessageBox.Show("El cliente no existe, ¿Desea ingresarlo?", "Verificación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+                    variablesGlobales.numeroIdentidad = ""
+                    variablesGlobales.numeroIdentidad = txtIdCli.Text
+                    Me.Hide()
+                    AgregarCliente.Show()
+
+                End If
+            Else
+                MessageBox.Show("¡Por favor ingrese un número de identidad valido!", "Verificación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
             End If
+
         Catch ex As Exception
             MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -61,37 +71,29 @@
 
     End Sub
 
-    Public Sub limpiar()
-        txtIdCli.Clear()
-        txtNombreCompleto.Clear()
-        txtReferenciasDirec.Clear()
-        txtTelefono.Clear()
-
-    End Sub
-
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
-        limpiar()
         Me.Close()
         GestionTickets.Show()
 
     End Sub
 
-    Private Sub btnPaquete_Click(sender As Object, e As EventArgs) Handles btnPaquete.Click
-        Try
-            If txtIdCli.Text = "" Then
-                MessageBox.Show("Por favor ingrese un numero de identidad", "Gestionar", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+    'Private Sub btnPaquete_Click(sender As Object, e As EventArgs)
+    '    Try
+    '        If txtIdCli.Text = "" Then
+    '            MessageBox.Show("Por favor ingrese un numero de identidad", "Gestionar", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
-            Else
-                variablesGlobales.numeroIdentidad = txtIdCli.Text
-                Me.Hide()
-                ActualizarPaquete.Show()
+    '        Else
+    '            limpiar()
+    '            variablesGlobales.numeroIdentidad = txtIdCli.Text
+    '            Me.Hide()
+    '            ActualizarPaquete.Show()
 
-            End If
-        Catch ex As Exception
-            MessageBox.Show("Error", "Gestionar", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    '        End If
+    '    Catch ex As Exception
+    '        MessageBox.Show("Error", "Gestionar", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
-        End Try
-    End Sub
+    '    End Try
+    'End Sub
 
     Private Sub btnTickets_Click(sender As Object, e As EventArgs) Handles btnTickets.Click
 
@@ -109,5 +111,15 @@
             MessageBox.Show("Error", "Gestionar", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
         End Try
+    End Sub
+
+    Private Sub txtIdCli_Validating(sender As Object, e As CancelEventArgs) Handles txtIdCli.Validating
+        Dim numID As String
+        numID = txtIdCli.Text
+        If Val(numID.Length) = 13 And numID <> "" Then
+            Me.ErrorValidacion.SetError(sender, "")
+        Else
+            Me.ErrorValidacion.SetError(sender, "Ingrese un numero de identidad valido")
+        End If
     End Sub
 End Class
