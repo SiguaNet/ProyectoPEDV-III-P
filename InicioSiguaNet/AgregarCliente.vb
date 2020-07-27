@@ -26,7 +26,7 @@ Public Class AgregarCliente
 
                     If conexion.PAOperacionesFactura(0, numeroIdentidad, String.Format("{0:G}", DateTime.Now), 1) = 1 Then
                         MessageBox.Show("Cliente ingresado satisfactoriamente", "Registro cliente", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
+                        HcantEfectivoTotal += conexion.obtenerVariableDecimal("select pli.precio from PLANES_INTERNET pli  inner join CLIENTES c ON pli.idPaquete = c.idPaquete inner join FACTURA f on c.numeroIdentidad = f.numeroIdentidadC where c.numeroIdentidad = '" & numeroIdentidad & "'", "precio")
                     Else
                         MessageBox.Show("Error al registrar cliente", "Registro cliente", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End If
