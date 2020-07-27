@@ -25,7 +25,9 @@ Partial Class GestionTickets
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GestionTickets))
         Me.PanelOpciones = New System.Windows.Forms.Panel()
+        Me.btnRealizar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.btnGestionar = New System.Windows.Forms.Button()
         Me.btnPersonal = New System.Windows.Forms.Button()
@@ -42,7 +44,6 @@ Partial Class GestionTickets
         Me.dgvTickets = New System.Windows.Forms.DataGridView()
         Me.TimerMostrar = New System.Windows.Forms.Timer(Me.components)
         Me.TimerOcultar = New System.Windows.Forms.Timer(Me.components)
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.PanelOpciones.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.PanelContenido.SuspendLayout()
@@ -52,6 +53,7 @@ Partial Class GestionTickets
         'PanelOpciones
         '
         Me.PanelOpciones.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.PanelOpciones.Controls.Add(Me.btnRealizar)
         Me.PanelOpciones.Controls.Add(Me.Panel1)
         Me.PanelOpciones.Controls.Add(Me.btnGestionar)
         Me.PanelOpciones.Controls.Add(Me.btnPersonal)
@@ -68,6 +70,16 @@ Partial Class GestionTickets
         Me.PanelOpciones.Size = New System.Drawing.Size(1377, 128)
         Me.PanelOpciones.TabIndex = 0
         '
+        'btnRealizar
+        '
+        Me.btnRealizar.Location = New System.Drawing.Point(535, 135)
+        Me.btnRealizar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnRealizar.Name = "btnRealizar"
+        Me.btnRealizar.Size = New System.Drawing.Size(176, 34)
+        Me.btnRealizar.TabIndex = 19
+        Me.btnRealizar.Text = "Realizar"
+        Me.btnRealizar.UseVisualStyleBackColor = True
+        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Black
@@ -79,6 +91,17 @@ Partial Class GestionTickets
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1377, 50)
         Me.Panel1.TabIndex = 18
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.White
+        Me.Label1.Font = New System.Drawing.Font("Fugaz One", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(12, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(194, 29)
+        Me.Label1.TabIndex = 18
+        Me.Label1.Text = "Gestión de tickets"
         '
         'btnCerrar
         '
@@ -129,7 +152,7 @@ Partial Class GestionTickets
         'BtnClientes
         '
         Me.BtnClientes.Location = New System.Drawing.Point(83, 63)
-        Me.BtnClientes.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnClientes.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnClientes.Name = "BtnClientes"
         Me.BtnClientes.Size = New System.Drawing.Size(187, 53)
         Me.BtnClientes.TabIndex = 14
@@ -242,17 +265,6 @@ Partial Class GestionTickets
         'TimerOcultar
         '
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.White
-        Me.Label1.Font = New System.Drawing.Font("Fugaz One", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(12, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(194, 29)
-        Me.Label1.TabIndex = 18
-        Me.Label1.Text = "Gestión de tickets"
-        '
         'GestionTickets
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -294,4 +306,5 @@ Partial Class GestionTickets
     Friend WithEvents btnAvanzarMes As Button
     Friend WithEvents lblMes As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents btnRealizar As Button
 End Class

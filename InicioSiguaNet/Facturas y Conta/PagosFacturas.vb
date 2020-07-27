@@ -79,7 +79,6 @@ Public Class PagosFacturas
             Next
         End If
 
-
         Dim fuente As System.Drawing.Font = New Font("consolas", 15)
         Dim topMargin As Double = e.MarginBounds.Top
 

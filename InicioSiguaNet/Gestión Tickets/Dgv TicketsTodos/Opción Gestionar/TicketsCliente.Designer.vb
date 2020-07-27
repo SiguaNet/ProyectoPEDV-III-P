@@ -44,7 +44,7 @@ Partial Class TicketsCliente
         Me.PanelOpciones.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelOpciones.Location = New System.Drawing.Point(0, 0)
         Me.PanelOpciones.Name = "PanelOpciones"
-        Me.PanelOpciones.Size = New System.Drawing.Size(1180, 79)
+        Me.PanelOpciones.Size = New System.Drawing.Size(1394, 79)
         Me.PanelOpciones.TabIndex = 0
         '
         'btnCasa
@@ -88,7 +88,7 @@ Partial Class TicketsCliente
         Me.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
         Me.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCerrar.Location = New System.Drawing.Point(1123, 18)
+        Me.btnCerrar.Location = New System.Drawing.Point(1337, 18)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(45, 45)
         Me.btnCerrar.TabIndex = 9
@@ -102,12 +102,12 @@ Partial Class TicketsCliente
         Me.PanelContenido.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelContenido.Location = New System.Drawing.Point(0, 79)
         Me.PanelContenido.Name = "PanelContenido"
-        Me.PanelContenido.Size = New System.Drawing.Size(1180, 690)
+        Me.PanelContenido.Size = New System.Drawing.Size(1394, 696)
         Me.PanelContenido.TabIndex = 1
         '
         'btnActualizar
         '
-        Me.btnActualizar.Location = New System.Drawing.Point(1010, 638)
+        Me.btnActualizar.Location = New System.Drawing.Point(1224, 644)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(158, 40)
         Me.btnActualizar.TabIndex = 1
@@ -121,14 +121,14 @@ Partial Class TicketsCliente
         Me.dgvTicketsCliente.Name = "dgvTicketsCliente"
         Me.dgvTicketsCliente.RowHeadersWidth = 51
         Me.dgvTicketsCliente.RowTemplate.Height = 24
-        Me.dgvTicketsCliente.Size = New System.Drawing.Size(1063, 489)
+        Me.dgvTicketsCliente.Size = New System.Drawing.Size(1318, 513)
         Me.dgvTicketsCliente.TabIndex = 0
         '
         'TicketsCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1180, 769)
+        Me.ClientSize = New System.Drawing.Size(1394, 775)
         Me.Controls.Add(Me.PanelContenido)
         Me.Controls.Add(Me.PanelOpciones)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None

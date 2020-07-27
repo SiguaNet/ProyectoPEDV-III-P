@@ -22,6 +22,7 @@ Partial Class InicioGestion
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(InicioGestion))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnVerDatoCliente = New System.Windows.Forms.Button()
@@ -31,15 +32,16 @@ Partial Class InicioGestion
         Me.txtNombreCompleto = New System.Windows.Forms.TextBox()
         Me.btnTickets = New System.Windows.Forms.Button()
         Me.btnGenerar = New System.Windows.Forms.Button()
-        Me.btnPaquete = New System.Windows.Forms.Button()
         Me.txtIdCli = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btnVolver = New System.Windows.Forms.Button()
         Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.ErrorValidacion = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        CType(Me.ErrorValidacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -100,7 +102,7 @@ Partial Class InicioGestion
         '
         'btnTickets
         '
-        Me.btnTickets.Location = New System.Drawing.Point(682, 143)
+        Me.btnTickets.Location = New System.Drawing.Point(682, 90)
         Me.btnTickets.Name = "btnTickets"
         Me.btnTickets.Size = New System.Drawing.Size(265, 47)
         Me.btnTickets.TabIndex = 10
@@ -115,15 +117,6 @@ Partial Class InicioGestion
         Me.btnGenerar.TabIndex = 9
         Me.btnGenerar.Text = "Generar nuevo ticket"
         Me.btnGenerar.UseVisualStyleBackColor = True
-        '
-        'btnPaquete
-        '
-        Me.btnPaquete.Location = New System.Drawing.Point(682, 77)
-        Me.btnPaquete.Name = "btnPaquete"
-        Me.btnPaquete.Size = New System.Drawing.Size(265, 45)
-        Me.btnPaquete.TabIndex = 8
-        Me.btnPaquete.Text = "Actualizar paquete de internet"
-        Me.btnPaquete.UseVisualStyleBackColor = True
         '
         'txtIdCli
         '
@@ -143,22 +136,6 @@ Partial Class InicioGestion
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(990, 70)
         Me.Panel3.TabIndex = 17
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Panel2.Controls.Add(Me.btnVerDatoCliente)
-        Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Controls.Add(Me.btnPaquete)
-        Me.Panel2.Controls.Add(Me.btnGenerar)
-        Me.Panel2.Controls.Add(Me.txtIdCli)
-        Me.Panel2.Controls.Add(Me.Panel1)
-        Me.Panel2.Controls.Add(Me.btnTickets)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Location = New System.Drawing.Point(0, 70)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(990, 340)
-        Me.Panel2.TabIndex = 18
         '
         'btnVolver
         '
@@ -191,6 +168,25 @@ Partial Class InicioGestion
         Me.btnCerrar.TabIndex = 7
         Me.btnCerrar.UseVisualStyleBackColor = False
         '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.btnVerDatoCliente)
+        Me.Panel2.Controls.Add(Me.Label1)
+        Me.Panel2.Controls.Add(Me.btnGenerar)
+        Me.Panel2.Controls.Add(Me.txtIdCli)
+        Me.Panel2.Controls.Add(Me.Panel1)
+        Me.Panel2.Controls.Add(Me.btnTickets)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Location = New System.Drawing.Point(0, 70)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(990, 340)
+        Me.Panel2.TabIndex = 18
+        '
+        'ErrorValidacion
+        '
+        Me.ErrorValidacion.ContainerControl = Me
+        '
         'InicioGestion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -207,6 +203,7 @@ Partial Class InicioGestion
         Me.Panel3.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.ErrorValidacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -218,10 +215,10 @@ Partial Class InicioGestion
     Friend WithEvents txtNombreCompleto As TextBox
     Friend WithEvents btnTickets As Button
     Friend WithEvents btnGenerar As Button
-    Friend WithEvents btnPaquete As Button
     Friend WithEvents txtIdCli As TextBox
     Friend WithEvents Panel3 As Panel
     Friend WithEvents btnVolver As Button
     Friend WithEvents btnCerrar As Button
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents ErrorValidacion As ErrorProvider
 End Class
