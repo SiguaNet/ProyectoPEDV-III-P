@@ -93,9 +93,11 @@ Partial Class inicioSesion
         '
         'PictureBox1
         '
+        Me.PictureBox1.Image = Global.InicioSiguaNet.My.Resources.Resources.SIGUANET
         Me.PictureBox1.Location = New System.Drawing.Point(92, 12)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(147, 105)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 5
         Me.PictureBox1.TabStop = False
         '

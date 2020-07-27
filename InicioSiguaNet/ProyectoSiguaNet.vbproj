@@ -347,6 +347,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Login\mensajeCorreo.html" />
+    <None Include="Resources\SIGUANET.png" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="AxWMPLib">
