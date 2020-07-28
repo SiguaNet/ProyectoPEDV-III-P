@@ -84,11 +84,12 @@ Partial Class GenerarTicket
         '
         'txtTelefonoTec
         '
+        Me.txtTelefonoTec.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtTelefonoTec.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTelefonoTec.Location = New System.Drawing.Point(346, 109)
         Me.txtTelefonoTec.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtTelefonoTec.Name = "txtTelefonoTec"
-        Me.txtTelefonoTec.Size = New System.Drawing.Size(203, 30)
+        Me.txtTelefonoTec.Size = New System.Drawing.Size(203, 23)
         Me.txtTelefonoTec.TabIndex = 35
         '
         'txtNombreTec
