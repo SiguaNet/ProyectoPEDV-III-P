@@ -25,17 +25,14 @@ Partial Class GestionTickets
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GestionTickets))
         Me.PanelOpciones = New System.Windows.Forms.Panel()
-        Me.btnRealizar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.btnGestionar = New System.Windows.Forms.Button()
-        Me.btnPersonal = New System.Windows.Forms.Button()
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.BtnClientes = New System.Windows.Forms.Button()
-        Me.btnRecursos = New System.Windows.Forms.Button()
         Me.btnInventario = New System.Windows.Forms.Button()
-        Me.btnEstadoFinanciero = New System.Windows.Forms.Button()
+        Me.btnFacturas = New System.Windows.Forms.Button()
         Me.btnGestionTickets = New System.Windows.Forms.Button()
         Me.PanelContenido = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -55,15 +52,12 @@ Partial Class GestionTickets
         'PanelOpciones
         '
         Me.PanelOpciones.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.PanelOpciones.Controls.Add(Me.btnRealizar)
         Me.PanelOpciones.Controls.Add(Me.Panel1)
         Me.PanelOpciones.Controls.Add(Me.btnGestionar)
-        Me.PanelOpciones.Controls.Add(Me.btnPersonal)
         Me.PanelOpciones.Controls.Add(Me.btnActualizar)
         Me.PanelOpciones.Controls.Add(Me.BtnClientes)
-        Me.PanelOpciones.Controls.Add(Me.btnRecursos)
         Me.PanelOpciones.Controls.Add(Me.btnInventario)
-        Me.PanelOpciones.Controls.Add(Me.btnEstadoFinanciero)
+        Me.PanelOpciones.Controls.Add(Me.btnFacturas)
         Me.PanelOpciones.Controls.Add(Me.btnGestionTickets)
         Me.PanelOpciones.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelOpciones.Location = New System.Drawing.Point(0, 0)
@@ -71,16 +65,6 @@ Partial Class GestionTickets
         Me.PanelOpciones.Name = "PanelOpciones"
         Me.PanelOpciones.Size = New System.Drawing.Size(1033, 104)
         Me.PanelOpciones.TabIndex = 0
-        '
-        'btnRealizar
-        '
-        Me.btnRealizar.Location = New System.Drawing.Point(401, 110)
-        Me.btnRealizar.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnRealizar.Name = "btnRealizar"
-        Me.btnRealizar.Size = New System.Drawing.Size(132, 28)
-        Me.btnRealizar.TabIndex = 19
-        Me.btnRealizar.Text = "Realizar"
-        Me.btnRealizar.UseVisualStyleBackColor = True
         '
         'Panel1
         '
@@ -125,94 +109,74 @@ Partial Class GestionTickets
         '
         'btnGestionar
         '
-        Me.btnGestionar.Location = New System.Drawing.Point(272, 110)
+        Me.btnGestionar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.btnGestionar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnGestionar.ForeColor = System.Drawing.Color.White
+        Me.btnGestionar.Location = New System.Drawing.Point(454, 108)
         Me.btnGestionar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnGestionar.Name = "btnGestionar"
         Me.btnGestionar.Size = New System.Drawing.Size(117, 28)
         Me.btnGestionar.TabIndex = 16
         Me.btnGestionar.Text = "Gestionar"
-        Me.btnGestionar.UseVisualStyleBackColor = True
-        '
-        'btnPersonal
-        '
-        Me.btnPersonal.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btnPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnPersonal.ForeColor = System.Drawing.Color.White
-        Me.btnPersonal.Location = New System.Drawing.Point(665, 45)
-        Me.btnPersonal.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnPersonal.Name = "btnPersonal"
-        Me.btnPersonal.Size = New System.Drawing.Size(143, 44)
-        Me.btnPersonal.TabIndex = 12
-        Me.btnPersonal.Text = "Personal"
-        Me.btnPersonal.UseVisualStyleBackColor = False
+        Me.btnGestionar.UseVisualStyleBackColor = False
         '
         'btnActualizar
         '
-        Me.btnActualizar.Location = New System.Drawing.Point(143, 110)
+        Me.btnActualizar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnActualizar.ForeColor = System.Drawing.Color.White
+        Me.btnActualizar.Location = New System.Drawing.Point(325, 108)
         Me.btnActualizar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(117, 28)
         Me.btnActualizar.TabIndex = 15
         Me.btnActualizar.Text = "Actualizar"
-        Me.btnActualizar.UseVisualStyleBackColor = True
+        Me.btnActualizar.UseVisualStyleBackColor = False
         '
         'BtnClientes
         '
         Me.BtnClientes.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.BtnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnClientes.ForeColor = System.Drawing.Color.White
-        Me.BtnClientes.Location = New System.Drawing.Point(90, 46)
+        Me.BtnClientes.Location = New System.Drawing.Point(230, 46)
         Me.BtnClientes.Name = "BtnClientes"
         Me.BtnClientes.Size = New System.Drawing.Size(140, 43)
         Me.BtnClientes.TabIndex = 14
         Me.BtnClientes.Text = "Clientes"
         Me.BtnClientes.UseVisualStyleBackColor = False
         '
-        'btnRecursos
-        '
-        Me.btnRecursos.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btnRecursos.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnRecursos.ForeColor = System.Drawing.Color.White
-        Me.btnRecursos.Location = New System.Drawing.Point(812, 45)
-        Me.btnRecursos.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnRecursos.Name = "btnRecursos"
-        Me.btnRecursos.Size = New System.Drawing.Size(143, 45)
-        Me.btnRecursos.TabIndex = 13
-        Me.btnRecursos.Text = "Recursos"
-        Me.btnRecursos.UseVisualStyleBackColor = False
-        '
         'btnInventario
         '
         Me.btnInventario.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnInventario.ForeColor = System.Drawing.Color.White
-        Me.btnInventario.Location = New System.Drawing.Point(517, 45)
+        Me.btnInventario.Location = New System.Drawing.Point(657, 45)
         Me.btnInventario.Margin = New System.Windows.Forms.Padding(2)
         Me.btnInventario.Name = "btnInventario"
         Me.btnInventario.Size = New System.Drawing.Size(143, 44)
         Me.btnInventario.TabIndex = 11
-        Me.btnInventario.Text = "Inventario"
+        Me.btnInventario.Text = "Administración"
         Me.btnInventario.UseVisualStyleBackColor = False
         '
-        'btnEstadoFinanciero
+        'btnFacturas
         '
-        Me.btnEstadoFinanciero.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btnEstadoFinanciero.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnEstadoFinanciero.ForeColor = System.Drawing.Color.White
-        Me.btnEstadoFinanciero.Location = New System.Drawing.Point(378, 45)
-        Me.btnEstadoFinanciero.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnEstadoFinanciero.Name = "btnEstadoFinanciero"
-        Me.btnEstadoFinanciero.Size = New System.Drawing.Size(135, 43)
-        Me.btnEstadoFinanciero.TabIndex = 10
-        Me.btnEstadoFinanciero.Text = "Pago de Facturas"
-        Me.btnEstadoFinanciero.UseVisualStyleBackColor = False
+        Me.btnFacturas.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnFacturas.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnFacturas.ForeColor = System.Drawing.Color.White
+        Me.btnFacturas.Location = New System.Drawing.Point(518, 45)
+        Me.btnFacturas.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnFacturas.Name = "btnFacturas"
+        Me.btnFacturas.Size = New System.Drawing.Size(135, 43)
+        Me.btnFacturas.TabIndex = 10
+        Me.btnFacturas.Text = "Facturas"
+        Me.btnFacturas.UseVisualStyleBackColor = False
         '
         'btnGestionTickets
         '
         Me.btnGestionTickets.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnGestionTickets.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnGestionTickets.ForeColor = System.Drawing.Color.White
-        Me.btnGestionTickets.Location = New System.Drawing.Point(236, 46)
+        Me.btnGestionTickets.Location = New System.Drawing.Point(376, 46)
         Me.btnGestionTickets.Margin = New System.Windows.Forms.Padding(2)
         Me.btnGestionTickets.Name = "btnGestionTickets"
         Me.btnGestionTickets.Size = New System.Drawing.Size(137, 43)
@@ -223,6 +187,8 @@ Partial Class GestionTickets
         'PanelContenido
         '
         Me.PanelContenido.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.PanelContenido.BackgroundImage = Global.InicioSiguaNet.My.Resources.Resources.MenuGeneral
+        Me.PanelContenido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PanelContenido.Controls.Add(Me.PictureBox1)
         Me.PanelContenido.Controls.Add(Me.lblMes)
         Me.PanelContenido.Controls.Add(Me.btnAvanzarMes)
@@ -237,6 +203,7 @@ Partial Class GestionTickets
         '
         'PictureBox1
         '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = Global.InicioSiguaNet.My.Resources.Resources.SIGUANET
         Me.PictureBox1.Location = New System.Drawing.Point(0, -4)
         Me.PictureBox1.Name = "PictureBox1"
@@ -323,10 +290,8 @@ Partial Class GestionTickets
     Friend WithEvents PanelContenido As Panel
     Friend WithEvents dgvTickets As DataGridView
     Friend WithEvents BtnClientes As Button
-    Friend WithEvents btnRecursos As Button
-    Friend WithEvents btnPersonal As Button
     Friend WithEvents btnInventario As Button
-    Friend WithEvents btnEstadoFinanciero As Button
+    Friend WithEvents btnFacturas As Button
     Friend WithEvents btnGestionTickets As Button
     Friend WithEvents btnGestionar As Button
     Friend WithEvents btnActualizar As Button
@@ -338,6 +303,5 @@ Partial Class GestionTickets
     Friend WithEvents btnAvanzarMes As Button
     Friend WithEvents lblMes As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents btnRealizar As Button
     Friend WithEvents PictureBox1 As PictureBox
 End Class

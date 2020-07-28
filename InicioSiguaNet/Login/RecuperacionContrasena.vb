@@ -79,4 +79,9 @@ Public Class RecuperacionContrasena
         ToolTip1.ToolTipTitle = "Ingrese Valores"
         ToolTip1.ToolTipIcon = ToolTipIcon.Info
     End Sub
+
+    Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
+        Me.Close()
+        inicioSesion.Show()
+    End Sub
 End Class

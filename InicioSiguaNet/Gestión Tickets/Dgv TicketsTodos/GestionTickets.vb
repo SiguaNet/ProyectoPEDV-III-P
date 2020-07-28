@@ -39,7 +39,7 @@
         End If
     End Sub
     Private Sub btnGestionTickets_Click(sender As Object, e As EventArgs) Handles btnGestionTickets.Click
-        'Por mientras
+
         If PanelOpciones.Height = 144 Then
             TimerOcultar.Enabled = True
 
@@ -48,21 +48,7 @@
 
         End If
 
-        'If (GradientPanel.Height = 55) Then
 
-        '    GradientPanel.Visible = False
-        '    GradientPanel.Height = 105
-        '    PanelOpciones.Height = 108
-        '    TransMostrar.Show(GradientPanel)
-
-        'Else
-
-        '    GradientPanel.Visible = False
-        '    GradientPanel.Height = 55
-        '    PanelOpciones.Height = 58
-        '    TransOcultar.Show(GradientPanel)
-
-        'End If
     End Sub
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
@@ -82,6 +68,9 @@
             variablesGlobales.cantMesesG += 1
         End If
         imprimirLabel()
+        HcodigoHistorial = 1
+        EstadosGenerales.Show()
+        HcodigoHistorial = 2
     End Sub
 
     Sub imprimirLabel()
@@ -113,9 +102,22 @@
         End Select
     End Sub
 
-    Private Sub btnRealizar_Click(sender As Object, e As EventArgs) Handles btnRealizar.Click
+    Private Sub btnRealizar_Click(sender As Object, e As EventArgs)
         Me.Hide()
         RealizarTickets.Show()
 
+    End Sub
+
+    Private Sub PanelOpciones_Paint(sender As Object, e As PaintEventArgs) Handles PanelOpciones.Paint
+
+    End Sub
+    Private Sub btnFacturas_Click(sender As Object, e As EventArgs) Handles btnFacturas.Click
+        Me.Close()
+        FacturasTodas.Show()
+    End Sub
+
+    Private Sub btnInventario_Click(sender As Object, e As EventArgs) Handles btnInventario.Click
+        Me.Close()
+        AdministracionCRUD.Show()
     End Sub
 End Class

@@ -22,6 +22,7 @@ Partial Class EstadosGenerales
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EstadosGenerales))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -31,12 +32,17 @@ Partial Class EstadosGenerales
         Me.Label9 = New System.Windows.Forms.Label()
         Me.invent = New System.Windows.Forms.GroupBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblTotalGestiones = New System.Windows.Forms.Label()
+        Me.lblActualizaciones = New System.Windows.Forms.Label()
+        Me.lblActualizacionPaque = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblInstalaciones = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.lblCorteSolicitud = New System.Windows.Forms.Label()
         Me.lblSoporteTecnico = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.lblInstalaciones = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -46,26 +52,27 @@ Partial Class EstadosGenerales
         Me.lblCantFacturas = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.lblMes = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.lblActualizaciones = New System.Windows.Forms.Label()
-        Me.lblActualizacionPaque = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.lblTotalGestiones = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.lblClientesActivos = New System.Windows.Forms.Label()
         Me.btnMesAnterior = New System.Windows.Forms.Button()
         Me.btnMesSiguiente = New System.Windows.Forms.Button()
         Me.btnAceptar = New System.Windows.Forms.Button()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.invent.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(263, 34)
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(12, 9)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(121, 20)
         Me.Label1.TabIndex = 0
@@ -133,6 +140,7 @@ Partial Class EstadosGenerales
         '
         'invent
         '
+        Me.invent.BackColor = System.Drawing.Color.Transparent
         Me.invent.Controls.Add(Me.Label9)
         Me.invent.Controls.Add(Me.Label5)
         Me.invent.Controls.Add(Me.Label2)
@@ -140,7 +148,8 @@ Partial Class EstadosGenerales
         Me.invent.Controls.Add(Me.lblEnrutadores)
         Me.invent.Controls.Add(Me.lblAntenas)
         Me.invent.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.invent.Location = New System.Drawing.Point(12, 99)
+        Me.invent.ForeColor = System.Drawing.Color.White
+        Me.invent.Location = New System.Drawing.Point(12, 106)
         Me.invent.Name = "invent"
         Me.invent.Size = New System.Drawing.Size(317, 163)
         Me.invent.TabIndex = 11
@@ -149,6 +158,7 @@ Partial Class EstadosGenerales
         '
         'GroupBox1
         '
+        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.lblTotalGestiones)
         Me.GroupBox1.Controls.Add(Me.lblActualizaciones)
@@ -161,12 +171,83 @@ Partial Class EstadosGenerales
         Me.GroupBox1.Controls.Add(Me.lblCorteSolicitud)
         Me.GroupBox1.Controls.Add(Me.lblSoporteTecnico)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.ForeColor = System.Drawing.Color.White
         Me.GroupBox1.Location = New System.Drawing.Point(340, 100)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(317, 260)
         Me.GroupBox1.TabIndex = 12
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Operaciones Atentidas:"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(24, 210)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(167, 16)
+        Me.Label4.TabIndex = 14
+        Me.Label4.Text = "Total Gestiones Atendidos"
+        '
+        'lblTotalGestiones
+        '
+        Me.lblTotalGestiones.AutoSize = True
+        Me.lblTotalGestiones.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalGestiones.Location = New System.Drawing.Point(206, 211)
+        Me.lblTotalGestiones.Name = "lblTotalGestiones"
+        Me.lblTotalGestiones.Size = New System.Drawing.Size(45, 15)
+        Me.lblTotalGestiones.TabIndex = 15
+        Me.lblTotalGestiones.Text = "Label6"
+        '
+        'lblActualizaciones
+        '
+        Me.lblActualizaciones.AutoSize = True
+        Me.lblActualizaciones.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblActualizaciones.Location = New System.Drawing.Point(24, 169)
+        Me.lblActualizaciones.Name = "lblActualizaciones"
+        Me.lblActualizaciones.Size = New System.Drawing.Size(185, 16)
+        Me.lblActualizaciones.TabIndex = 12
+        Me.lblActualizaciones.Text = "Actualizaciones de Paquetes:"
+        '
+        'lblActualizacionPaque
+        '
+        Me.lblActualizacionPaque.AutoSize = True
+        Me.lblActualizacionPaque.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblActualizacionPaque.Location = New System.Drawing.Point(206, 170)
+        Me.lblActualizacionPaque.Name = "lblActualizacionPaque"
+        Me.lblActualizacionPaque.Size = New System.Drawing.Size(45, 15)
+        Me.lblActualizacionPaque.TabIndex = 13
+        Me.lblActualizacionPaque.Text = "Label6"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(24, 49)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(108, 16)
+        Me.Label16.TabIndex = 11
+        Me.Label16.Text = "Soporte Tecnico"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(24, 129)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(90, 16)
+        Me.Label3.TabIndex = 9
+        Me.Label3.Text = "Instalaciones:"
+        '
+        'lblInstalaciones
+        '
+        Me.lblInstalaciones.AutoSize = True
+        Me.lblInstalaciones.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblInstalaciones.Location = New System.Drawing.Point(206, 129)
+        Me.lblInstalaciones.Name = "lblInstalaciones"
+        Me.lblInstalaciones.Size = New System.Drawing.Size(45, 15)
+        Me.lblInstalaciones.TabIndex = 10
+        Me.lblInstalaciones.Text = "Label6"
         '
         'Label7
         '
@@ -207,28 +288,9 @@ Partial Class EstadosGenerales
         Me.lblSoporteTecnico.TabIndex = 7
         Me.lblSoporteTecnico.Text = "Label8"
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(24, 129)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(90, 16)
-        Me.Label3.TabIndex = 9
-        Me.Label3.Text = "Instalaciones:"
-        '
-        'lblInstalaciones
-        '
-        Me.lblInstalaciones.AutoSize = True
-        Me.lblInstalaciones.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblInstalaciones.Location = New System.Drawing.Point(206, 129)
-        Me.lblInstalaciones.Name = "lblInstalaciones"
-        Me.lblInstalaciones.Size = New System.Drawing.Size(45, 15)
-        Me.lblInstalaciones.TabIndex = 10
-        Me.lblInstalaciones.Text = "Label6"
-        '
         'GroupBox2
         '
+        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox2.Controls.Add(Me.Label10)
         Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Controls.Add(Me.Label15)
@@ -236,6 +298,7 @@ Partial Class EstadosGenerales
         Me.GroupBox2.Controls.Add(Me.lblEfectivo)
         Me.GroupBox2.Controls.Add(Me.lblCantFacturas)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.ForeColor = System.Drawing.Color.White
         Me.GroupBox2.Location = New System.Drawing.Point(12, 275)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(317, 163)
@@ -306,7 +369,9 @@ Partial Class EstadosGenerales
         'Label19
         '
         Me.Label19.AutoSize = True
+        Me.Label19.BackColor = System.Drawing.Color.Transparent
         Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.ForeColor = System.Drawing.Color.White
         Me.Label19.Location = New System.Drawing.Point(439, 64)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(45, 18)
@@ -316,67 +381,21 @@ Partial Class EstadosGenerales
         'lblMes
         '
         Me.lblMes.AutoSize = True
+        Me.lblMes.BackColor = System.Drawing.Color.Transparent
         Me.lblMes.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMes.Location = New System.Drawing.Point(490, 64)
+        Me.lblMes.ForeColor = System.Drawing.Color.White
+        Me.lblMes.Location = New System.Drawing.Point(534, 65)
         Me.lblMes.Name = "lblMes"
         Me.lblMes.Size = New System.Drawing.Size(41, 18)
         Me.lblMes.TabIndex = 14
         Me.lblMes.Text = "Mes:"
         '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(24, 49)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(108, 16)
-        Me.Label16.TabIndex = 11
-        Me.Label16.Text = "Soporte Tecnico"
-        '
-        'lblActualizaciones
-        '
-        Me.lblActualizaciones.AutoSize = True
-        Me.lblActualizaciones.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblActualizaciones.Location = New System.Drawing.Point(24, 169)
-        Me.lblActualizaciones.Name = "lblActualizaciones"
-        Me.lblActualizaciones.Size = New System.Drawing.Size(185, 16)
-        Me.lblActualizaciones.TabIndex = 12
-        Me.lblActualizaciones.Text = "Actualizaciones de Paquetes:"
-        '
-        'lblActualizacionPaque
-        '
-        Me.lblActualizacionPaque.AutoSize = True
-        Me.lblActualizacionPaque.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblActualizacionPaque.Location = New System.Drawing.Point(206, 170)
-        Me.lblActualizacionPaque.Name = "lblActualizacionPaque"
-        Me.lblActualizacionPaque.Size = New System.Drawing.Size(45, 15)
-        Me.lblActualizacionPaque.TabIndex = 13
-        Me.lblActualizacionPaque.Text = "Label6"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(24, 210)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(167, 16)
-        Me.Label4.TabIndex = 14
-        Me.Label4.Text = "Total Gestiones Atendidos"
-        '
-        'lblTotalGestiones
-        '
-        Me.lblTotalGestiones.AutoSize = True
-        Me.lblTotalGestiones.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotalGestiones.Location = New System.Drawing.Point(206, 211)
-        Me.lblTotalGestiones.Name = "lblTotalGestiones"
-        Me.lblTotalGestiones.Size = New System.Drawing.Size(45, 15)
-        Me.lblTotalGestiones.TabIndex = 15
-        Me.lblTotalGestiones.Text = "Label6"
-        '
         'Label17
         '
         Me.Label17.AutoSize = True
+        Me.Label17.BackColor = System.Drawing.Color.Transparent
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.ForeColor = System.Drawing.Color.White
         Me.Label17.Location = New System.Drawing.Point(364, 390)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(106, 16)
@@ -386,7 +405,9 @@ Partial Class EstadosGenerales
         'lblClientesActivos
         '
         Me.lblClientesActivos.AutoSize = True
+        Me.lblClientesActivos.BackColor = System.Drawing.Color.Transparent
         Me.lblClientesActivos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblClientesActivos.ForeColor = System.Drawing.Color.White
         Me.lblClientesActivos.Location = New System.Drawing.Point(546, 390)
         Me.lblClientesActivos.Name = "lblClientesActivos"
         Me.lblClientesActivos.Size = New System.Drawing.Size(101, 15)
@@ -420,11 +441,58 @@ Partial Class EstadosGenerales
         Me.btnAceptar.Text = "Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = True
         '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.Black
+        Me.Panel3.Controls.Add(Me.Button2)
+        Me.Panel3.Controls.Add(Me.Button1)
+        Me.Panel3.Controls.Add(Me.Label1)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel3.Location = New System.Drawing.Point(0, 0)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(688, 45)
+        Me.Panel3.TabIndex = 23
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.Transparent
+        Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
+        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
+        Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Location = New System.Drawing.Point(654, 2)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(32, 34)
+        Me.Button2.TabIndex = 20
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Transparent
+        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
+        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Location = New System.Drawing.Point(997, 5)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(32, 34)
+        Me.Button1.TabIndex = 19
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'EstadosGenerales
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(671, 509)
+        Me.BackgroundImage = Global.InicioSiguaNet.My.Resources.Resources.MenuGeneral
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(688, 535)
+        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.btnMesSiguiente)
         Me.Controls.Add(Me.btnMesAnterior)
@@ -435,7 +503,7 @@ Partial Class EstadosGenerales
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.invent)
-        Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "EstadosGenerales"
         Me.Text = "EstadosGenerales"
         Me.invent.ResumeLayout(False)
@@ -444,6 +512,8 @@ Partial Class EstadosGenerales
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -483,4 +553,7 @@ Partial Class EstadosGenerales
     Friend WithEvents btnMesAnterior As Button
     Friend WithEvents btnMesSiguiente As Button
     Friend WithEvents btnAceptar As Button
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button1 As Button
 End Class

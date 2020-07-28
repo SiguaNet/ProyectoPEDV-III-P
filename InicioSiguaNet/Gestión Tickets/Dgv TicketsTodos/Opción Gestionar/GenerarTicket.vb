@@ -18,6 +18,7 @@
 
         ElseIf cmbOperaciones.Text = "Corte por solicitud" Then
             idOperacion = 4
+            conexion.EjecutarComando("update CLIENTE set estadoC = 'Eliminado' where numeroIdentidad = '" & numeroIdentidad & "'")
 
         Else
             idOperacion = 1
