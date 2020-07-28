@@ -30,10 +30,8 @@ Partial Class InicioSiguaNet
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.BtnClientes = New System.Windows.Forms.Button()
-        Me.btnRecursos = New System.Windows.Forms.Button()
-        Me.btnPersonal = New System.Windows.Forms.Button()
-        Me.btnInventario = New System.Windows.Forms.Button()
-        Me.btnEstadoFinanciero = New System.Windows.Forms.Button()
+        Me.btnAdmin = New System.Windows.Forms.Button()
+        Me.btnFacturas = New System.Windows.Forms.Button()
         Me.btnGestionTickets = New System.Windows.Forms.Button()
         Me.PanelContenido = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -61,7 +59,7 @@ Partial Class InicioSiguaNet
         Me.DbgClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DbgClientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DbgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DbgClientes.Location = New System.Drawing.Point(157, 166)
+        Me.DbgClientes.Location = New System.Drawing.Point(157, 158)
         Me.DbgClientes.Name = "DbgClientes"
         Me.DbgClientes.RowHeadersWidth = 51
         Me.DbgClientes.Size = New System.Drawing.Size(835, 327)
@@ -72,10 +70,8 @@ Partial Class InicioSiguaNet
         Me.PanelOpciones.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.PanelOpciones.Controls.Add(Me.Panel3)
         Me.PanelOpciones.Controls.Add(Me.BtnClientes)
-        Me.PanelOpciones.Controls.Add(Me.btnRecursos)
-        Me.PanelOpciones.Controls.Add(Me.btnPersonal)
-        Me.PanelOpciones.Controls.Add(Me.btnInventario)
-        Me.PanelOpciones.Controls.Add(Me.btnEstadoFinanciero)
+        Me.PanelOpciones.Controls.Add(Me.btnAdmin)
+        Me.PanelOpciones.Controls.Add(Me.btnFacturas)
         Me.PanelOpciones.Controls.Add(Me.btnGestionTickets)
         Me.PanelOpciones.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelOpciones.Location = New System.Drawing.Point(0, 0)
@@ -128,71 +124,45 @@ Partial Class InicioSiguaNet
         Me.BtnClientes.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.BtnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnClientes.ForeColor = System.Drawing.Color.White
-        Me.BtnClientes.Location = New System.Drawing.Point(55, 47)
+        Me.BtnClientes.Location = New System.Drawing.Point(209, 46)
         Me.BtnClientes.Name = "BtnClientes"
         Me.BtnClientes.Size = New System.Drawing.Size(143, 45)
         Me.BtnClientes.TabIndex = 27
         Me.BtnClientes.Text = "Clientes"
         Me.BtnClientes.UseVisualStyleBackColor = False
         '
-        'btnRecursos
+        'btnAdmin
         '
-        Me.btnRecursos.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btnRecursos.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnRecursos.ForeColor = System.Drawing.Color.White
-        Me.btnRecursos.Location = New System.Drawing.Point(791, 47)
-        Me.btnRecursos.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnRecursos.Name = "btnRecursos"
-        Me.btnRecursos.Size = New System.Drawing.Size(143, 45)
-        Me.btnRecursos.TabIndex = 26
-        Me.btnRecursos.Text = "Recursos"
-        Me.btnRecursos.UseVisualStyleBackColor = False
+        Me.btnAdmin.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnAdmin.ForeColor = System.Drawing.Color.White
+        Me.btnAdmin.Location = New System.Drawing.Point(651, 46)
+        Me.btnAdmin.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnAdmin.Name = "btnAdmin"
+        Me.btnAdmin.Size = New System.Drawing.Size(143, 45)
+        Me.btnAdmin.TabIndex = 24
+        Me.btnAdmin.Text = "Administración"
+        Me.btnAdmin.UseVisualStyleBackColor = False
         '
-        'btnPersonal
+        'btnFacturas
         '
-        Me.btnPersonal.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btnPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnPersonal.ForeColor = System.Drawing.Color.White
-        Me.btnPersonal.Location = New System.Drawing.Point(644, 47)
-        Me.btnPersonal.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnPersonal.Name = "btnPersonal"
-        Me.btnPersonal.Size = New System.Drawing.Size(143, 45)
-        Me.btnPersonal.TabIndex = 25
-        Me.btnPersonal.Text = "Personal"
-        Me.btnPersonal.UseVisualStyleBackColor = False
-        '
-        'btnInventario
-        '
-        Me.btnInventario.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnInventario.ForeColor = System.Drawing.Color.White
-        Me.btnInventario.Location = New System.Drawing.Point(497, 47)
-        Me.btnInventario.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnInventario.Name = "btnInventario"
-        Me.btnInventario.Size = New System.Drawing.Size(143, 45)
-        Me.btnInventario.TabIndex = 24
-        Me.btnInventario.Text = "Inventario"
-        Me.btnInventario.UseVisualStyleBackColor = False
-        '
-        'btnEstadoFinanciero
-        '
-        Me.btnEstadoFinanciero.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btnEstadoFinanciero.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnEstadoFinanciero.ForeColor = System.Drawing.Color.White
-        Me.btnEstadoFinanciero.Location = New System.Drawing.Point(350, 47)
-        Me.btnEstadoFinanciero.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnEstadoFinanciero.Name = "btnEstadoFinanciero"
-        Me.btnEstadoFinanciero.Size = New System.Drawing.Size(143, 45)
-        Me.btnEstadoFinanciero.TabIndex = 23
-        Me.btnEstadoFinanciero.Text = "Pago de Facturas"
-        Me.btnEstadoFinanciero.UseVisualStyleBackColor = False
+        Me.btnFacturas.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnFacturas.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnFacturas.ForeColor = System.Drawing.Color.White
+        Me.btnFacturas.Location = New System.Drawing.Point(504, 46)
+        Me.btnFacturas.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnFacturas.Name = "btnFacturas"
+        Me.btnFacturas.Size = New System.Drawing.Size(143, 45)
+        Me.btnFacturas.TabIndex = 23
+        Me.btnFacturas.Text = "Facturas"
+        Me.btnFacturas.UseVisualStyleBackColor = False
         '
         'btnGestionTickets
         '
         Me.btnGestionTickets.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnGestionTickets.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnGestionTickets.ForeColor = System.Drawing.Color.White
-        Me.btnGestionTickets.Location = New System.Drawing.Point(203, 47)
+        Me.btnGestionTickets.Location = New System.Drawing.Point(357, 46)
         Me.btnGestionTickets.Margin = New System.Windows.Forms.Padding(2)
         Me.btnGestionTickets.Name = "btnGestionTickets"
         Me.btnGestionTickets.Size = New System.Drawing.Size(143, 45)
@@ -203,6 +173,8 @@ Partial Class InicioSiguaNet
         'PanelContenido
         '
         Me.PanelContenido.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.PanelContenido.BackgroundImage = Global.InicioSiguaNet.My.Resources.Resources.MenuGeneral
+        Me.PanelContenido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PanelContenido.Controls.Add(Me.Label2)
         Me.PanelContenido.Controls.Add(Me.Label4)
         Me.PanelContenido.Controls.Add(Me.PictureBox1)
@@ -218,6 +190,7 @@ Partial Class InicioSiguaNet
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(389, 503)
@@ -230,6 +203,7 @@ Partial Class InicioSiguaNet
         'Label4
         '
         Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
         Me.Label4.Location = New System.Drawing.Point(418, 69)
@@ -241,6 +215,7 @@ Partial Class InicioSiguaNet
         '
         'PictureBox1
         '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = Global.InicioSiguaNet.My.Resources.Resources.SIGUANET
         Me.PictureBox1.Location = New System.Drawing.Point(12, 5)
         Me.PictureBox1.Name = "PictureBox1"
@@ -276,10 +251,8 @@ Partial Class InicioSiguaNet
     Friend WithEvents PanelOpciones As Panel
     Friend WithEvents PanelContenido As Panel
     Friend WithEvents BtnClientes As Button
-    Friend WithEvents btnRecursos As Button
-    Friend WithEvents btnPersonal As Button
-    Friend WithEvents btnInventario As Button
-    Friend WithEvents btnEstadoFinanciero As Button
+    Friend WithEvents btnAdmin As Button
+    Friend WithEvents btnFacturas As Button
     Friend WithEvents btnGestionTickets As Button
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Button1 As Button

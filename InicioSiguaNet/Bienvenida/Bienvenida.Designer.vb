@@ -51,6 +51,7 @@ Partial Class Bienvenida
         Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Bienvenida"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Bienvenida"
         Me.ResumeLayout(False)
 

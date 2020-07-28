@@ -25,17 +25,14 @@ Partial Class GestionTickets
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GestionTickets))
         Me.PanelOpciones = New System.Windows.Forms.Panel()
-        Me.btnRealizar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.btnGestionar = New System.Windows.Forms.Button()
-        Me.btnPersonal = New System.Windows.Forms.Button()
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.BtnClientes = New System.Windows.Forms.Button()
-        Me.btnRecursos = New System.Windows.Forms.Button()
         Me.btnInventario = New System.Windows.Forms.Button()
-        Me.btnEstadoFinanciero = New System.Windows.Forms.Button()
+        Me.btnFacturas = New System.Windows.Forms.Button()
         Me.btnGestionTickets = New System.Windows.Forms.Button()
         Me.PanelContenido = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -55,15 +52,12 @@ Partial Class GestionTickets
         'PanelOpciones
         '
         Me.PanelOpciones.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.PanelOpciones.Controls.Add(Me.btnRealizar)
         Me.PanelOpciones.Controls.Add(Me.Panel1)
         Me.PanelOpciones.Controls.Add(Me.btnGestionar)
-        Me.PanelOpciones.Controls.Add(Me.btnPersonal)
         Me.PanelOpciones.Controls.Add(Me.btnActualizar)
         Me.PanelOpciones.Controls.Add(Me.BtnClientes)
-        Me.PanelOpciones.Controls.Add(Me.btnRecursos)
         Me.PanelOpciones.Controls.Add(Me.btnInventario)
-        Me.PanelOpciones.Controls.Add(Me.btnEstadoFinanciero)
+        Me.PanelOpciones.Controls.Add(Me.btnFacturas)
         Me.PanelOpciones.Controls.Add(Me.btnGestionTickets)
         Me.PanelOpciones.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelOpciones.Location = New System.Drawing.Point(0, 0)
@@ -124,8 +118,11 @@ Partial Class GestionTickets
         '
         'btnGestionar
         '
-        Me.btnGestionar.Location = New System.Drawing.Point(363, 135)
-        Me.btnGestionar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnGestionar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.btnGestionar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnGestionar.ForeColor = System.Drawing.Color.White
+        Me.btnGestionar.Location = New System.Drawing.Point(454, 108)
+        Me.btnGestionar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnGestionar.Name = "btnGestionar"
         Me.btnGestionar.Size = New System.Drawing.Size(156, 34)
         Me.btnGestionar.TabIndex = 16
@@ -147,13 +144,16 @@ Partial Class GestionTickets
         '
         'btnActualizar
         '
-        Me.btnActualizar.Location = New System.Drawing.Point(191, 135)
-        Me.btnActualizar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnActualizar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnActualizar.ForeColor = System.Drawing.Color.White
+        Me.btnActualizar.Location = New System.Drawing.Point(325, 108)
+        Me.btnActualizar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(156, 34)
         Me.btnActualizar.TabIndex = 15
         Me.btnActualizar.Text = "Actualizar"
-        Me.btnActualizar.UseVisualStyleBackColor = True
+        Me.btnActualizar.UseVisualStyleBackColor = False
         '
         'BtnClientes
         '
@@ -191,10 +191,10 @@ Partial Class GestionTickets
         Me.btnInventario.Name = "btnInventario"
         Me.btnInventario.Size = New System.Drawing.Size(191, 54)
         Me.btnInventario.TabIndex = 11
-        Me.btnInventario.Text = "Inventario"
+        Me.btnInventario.Text = "Administración"
         Me.btnInventario.UseVisualStyleBackColor = False
         '
-        'btnEstadoFinanciero
+        'btnFacturas
         '
         Me.btnEstadoFinanciero.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnEstadoFinanciero.FlatStyle = System.Windows.Forms.FlatStyle.Popup
@@ -223,6 +223,8 @@ Partial Class GestionTickets
         'PanelContenido
         '
         Me.PanelContenido.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.PanelContenido.BackgroundImage = Global.InicioSiguaNet.My.Resources.Resources.MenuGeneral
+        Me.PanelContenido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PanelContenido.Controls.Add(Me.PictureBox1)
         Me.PanelContenido.Controls.Add(Me.lblMes)
         Me.PanelContenido.Controls.Add(Me.btnAvanzarMes)
@@ -237,6 +239,7 @@ Partial Class GestionTickets
         '
         'PictureBox1
         '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = Global.InicioSiguaNet.My.Resources.Resources.SIGUANET
         Me.PictureBox1.Location = New System.Drawing.Point(0, -5)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
@@ -325,10 +328,8 @@ Partial Class GestionTickets
     Friend WithEvents PanelContenido As Panel
     Friend WithEvents dgvTickets As DataGridView
     Friend WithEvents BtnClientes As Button
-    Friend WithEvents btnRecursos As Button
-    Friend WithEvents btnPersonal As Button
     Friend WithEvents btnInventario As Button
-    Friend WithEvents btnEstadoFinanciero As Button
+    Friend WithEvents btnFacturas As Button
     Friend WithEvents btnGestionTickets As Button
     Friend WithEvents btnGestionar As Button
     Friend WithEvents btnActualizar As Button
@@ -340,6 +341,5 @@ Partial Class GestionTickets
     Friend WithEvents btnAvanzarMes As Button
     Friend WithEvents lblMes As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents btnRealizar As Button
     Friend WithEvents PictureBox1 As PictureBox
 End Class

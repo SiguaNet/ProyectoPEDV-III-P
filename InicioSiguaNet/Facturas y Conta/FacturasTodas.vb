@@ -47,8 +47,8 @@
         End If
     End Sub
 
-    Private Sub btnEstadoFinanciero_Click(sender As Object, e As EventArgs) Handles btnEstadoFinanciero.Click
-        'Por mientras
+    Private Sub btnEstadoFinanciero_Click(sender As Object, e As EventArgs) Handles btnFacturas.Click
+
         If PanelOpciones.Height = 144 Then
             TimerOcultar.Enabled = True
 
@@ -57,20 +57,15 @@
 
         End If
 
-        'If (GradientPanel.Height = 55) Then
 
-        '    GradientPanel.Visible = False
-        '    GradientPanel.Height = 105
-        '    PanelOpciones.Height = 108
-        '    TransMostrar.Show(GradientPanel)
+    End Sub
 
-        'Else
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        PagosFacturas.Show()
+    End Sub
 
-        '    GradientPanel.Visible = False
-        '    GradientPanel.Height = 55
-        '    PanelOpciones.Height = 58
-        '    TransOcultar.Show(GradientPanel)
-
-        'End If
+    Private Sub btnInventario_Click(sender As Object, e As EventArgs) Handles btnInventario.Click
+        Me.Close()
+        AdministracionCRUD.Show()
     End Sub
 End Class
