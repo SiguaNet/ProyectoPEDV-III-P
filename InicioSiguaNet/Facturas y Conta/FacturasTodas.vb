@@ -17,8 +17,10 @@
 	End Sub
 
 	Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-		Me.Close()
-	End Sub
+        Me.Close()
+        InicioSiguaNet.Show()
+
+    End Sub
 
 	Private Sub BtnClientes_Click(sender As Object, e As EventArgs) Handles BtnClientes.Click
 		Me.Close()

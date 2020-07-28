@@ -42,6 +42,7 @@ Partial Class GenerarTicket
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.btnCasa = New System.Windows.Forms.Button()
+        Me.btnVolver = New System.Windows.Forms.Button()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.PanelDatosCliente = New System.Windows.Forms.Panel()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -54,7 +55,6 @@ Partial Class GenerarTicket
         Me.TimerOcultar = New System.Windows.Forms.Timer(Me.components)
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.ImprimirTicket = New System.Drawing.Printing.PrintDocument()
-        Me.btnVolver = New System.Windows.Forms.Button()
         Me.Panel3.SuspendLayout()
         Me.PanelDatosCliente.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -65,10 +65,9 @@ Partial Class GenerarTicket
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(181, 89)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label9.Location = New System.Drawing.Point(241, 110)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(66, 18)
+        Me.Label9.Size = New System.Drawing.Size(85, 24)
         Me.Label9.TabIndex = 38
         Me.Label9.Text = "Teléfono"
         '
@@ -77,10 +76,9 @@ Partial Class GenerarTicket
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(166, 50)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label8.Location = New System.Drawing.Point(221, 62)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(62, 18)
+        Me.Label8.Size = New System.Drawing.Size(79, 24)
         Me.Label8.TabIndex = 37
         Me.Label8.Text = "Nombre"
         '
@@ -88,19 +86,19 @@ Partial Class GenerarTicket
         '
         Me.txtTelefonoTec.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtTelefonoTec.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTelefonoTec.Location = New System.Drawing.Point(260, 89)
-        Me.txtTelefonoTec.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtTelefonoTec.Location = New System.Drawing.Point(347, 110)
+        Me.txtTelefonoTec.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtTelefonoTec.Name = "txtTelefonoTec"
-        Me.txtTelefonoTec.Size = New System.Drawing.Size(203, 23)
+        Me.txtTelefonoTec.Size = New System.Drawing.Size(271, 23)
         Me.txtTelefonoTec.TabIndex = 35
         '
         'txtNombreTec
         '
         Me.txtNombreTec.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombreTec.Location = New System.Drawing.Point(236, 46)
-        Me.txtNombreTec.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtNombreTec.Location = New System.Drawing.Point(315, 57)
+        Me.txtNombreTec.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtNombreTec.Name = "txtNombreTec"
-        Me.txtNombreTec.Size = New System.Drawing.Size(200, 26)
+        Me.txtNombreTec.Size = New System.Drawing.Size(265, 30)
         Me.txtNombreTec.TabIndex = 34
         '
         'Label6
@@ -108,21 +106,20 @@ Partial Class GenerarTicket
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(121, 383)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label6.Location = New System.Drawing.Point(161, 471)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(40, 18)
+        Me.Label6.Size = New System.Drawing.Size(49, 24)
         Me.Label6.TabIndex = 33
         Me.Label6.Text = "Nota"
         '
         'txtNota
         '
         Me.txtNota.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNota.Location = New System.Drawing.Point(134, 411)
-        Me.txtNota.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtNota.Location = New System.Drawing.Point(179, 506)
+        Me.txtNota.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtNota.Multiline = True
         Me.txtNota.Name = "txtNota"
-        Me.txtNota.Size = New System.Drawing.Size(410, 107)
+        Me.txtNota.Size = New System.Drawing.Size(545, 131)
         Me.txtNota.TabIndex = 32
         '
         'Label5
@@ -130,10 +127,9 @@ Partial Class GenerarTicket
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(83, 313)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label5.Location = New System.Drawing.Point(111, 385)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(77, 18)
+        Me.Label5.Size = New System.Drawing.Size(99, 24)
         Me.Label5.TabIndex = 31
         Me.Label5.Text = "Operacion"
         '
@@ -141,10 +137,10 @@ Partial Class GenerarTicket
         '
         Me.cmbOperaciones.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbOperaciones.FormattingEnabled = True
-        Me.cmbOperaciones.Location = New System.Drawing.Point(86, 339)
-        Me.cmbOperaciones.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cmbOperaciones.Location = New System.Drawing.Point(115, 417)
+        Me.cmbOperaciones.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cmbOperaciones.Name = "cmbOperaciones"
-        Me.cmbOperaciones.Size = New System.Drawing.Size(216, 28)
+        Me.cmbOperaciones.Size = New System.Drawing.Size(287, 33)
         Me.cmbOperaciones.TabIndex = 30
         '
         'cmbPrioridad
@@ -152,10 +148,10 @@ Partial Class GenerarTicket
         Me.cmbPrioridad.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbPrioridad.FormattingEnabled = True
         Me.cmbPrioridad.Items.AddRange(New Object() {"Alta", "Baja"})
-        Me.cmbPrioridad.Location = New System.Drawing.Point(404, 339)
-        Me.cmbPrioridad.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cmbPrioridad.Location = New System.Drawing.Point(539, 417)
+        Me.cmbPrioridad.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cmbPrioridad.Name = "cmbPrioridad"
-        Me.cmbPrioridad.Size = New System.Drawing.Size(98, 28)
+        Me.cmbPrioridad.Size = New System.Drawing.Size(129, 33)
         Me.cmbPrioridad.TabIndex = 29
         '
         'Label4
@@ -163,10 +159,9 @@ Partial Class GenerarTicket
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(50, 39)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label4.Location = New System.Drawing.Point(67, 48)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(69, 18)
+        Me.Label4.Size = New System.Drawing.Size(89, 24)
         Me.Label4.TabIndex = 27
         Me.Label4.Text = "Asignar a"
         '
@@ -174,10 +169,10 @@ Partial Class GenerarTicket
         '
         Me.cmbPersonal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbPersonal.FormattingEnabled = True
-        Me.cmbPersonal.Location = New System.Drawing.Point(34, 67)
-        Me.cmbPersonal.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cmbPersonal.Location = New System.Drawing.Point(45, 82)
+        Me.cmbPersonal.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cmbPersonal.Name = "cmbPersonal"
-        Me.cmbPersonal.Size = New System.Drawing.Size(97, 28)
+        Me.cmbPersonal.Size = New System.Drawing.Size(128, 33)
         Me.cmbPersonal.TabIndex = 26
         '
         'Label2
@@ -185,19 +180,18 @@ Partial Class GenerarTicket
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(363, 313)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label2.Location = New System.Drawing.Point(484, 385)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(67, 18)
+        Me.Label2.Size = New System.Drawing.Size(85, 24)
         Me.Label2.TabIndex = 24
         Me.Label2.Text = "Prioridad"
         '
         'btnGenerar
         '
-        Me.btnGenerar.Location = New System.Drawing.Point(251, 532)
-        Me.btnGenerar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnGenerar.Location = New System.Drawing.Point(335, 655)
+        Me.btnGenerar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnGenerar.Name = "btnGenerar"
-        Me.btnGenerar.Size = New System.Drawing.Size(151, 39)
+        Me.btnGenerar.Size = New System.Drawing.Size(201, 48)
         Me.btnGenerar.TabIndex = 23
         Me.btnGenerar.Text = "Generar"
         Me.btnGenerar.UseVisualStyleBackColor = True
@@ -205,19 +199,19 @@ Partial Class GenerarTicket
         'txtNumeroID
         '
         Me.txtNumeroID.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNumeroID.Location = New System.Drawing.Point(21, 114)
-        Me.txtNumeroID.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtNumeroID.Location = New System.Drawing.Point(28, 140)
+        Me.txtNumeroID.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtNumeroID.Name = "txtNumeroID"
-        Me.txtNumeroID.Size = New System.Drawing.Size(178, 26)
+        Me.txtNumeroID.Size = New System.Drawing.Size(236, 30)
         Me.txtNumeroID.TabIndex = 22
         '
         'btnVerDatoCliente
         '
         Me.btnVerDatoCliente.BackColor = System.Drawing.Color.Silver
-        Me.btnVerDatoCliente.Location = New System.Drawing.Point(251, 74)
-        Me.btnVerDatoCliente.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnVerDatoCliente.Location = New System.Drawing.Point(335, 91)
+        Me.btnVerDatoCliente.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnVerDatoCliente.Name = "btnVerDatoCliente"
-        Me.btnVerDatoCliente.Size = New System.Drawing.Size(177, 24)
+        Me.btnVerDatoCliente.Size = New System.Drawing.Size(236, 30)
         Me.btnVerDatoCliente.TabIndex = 40
         Me.btnVerDatoCliente.Text = "Ver datos cliente"
         Me.btnVerDatoCliente.UseVisualStyleBackColor = False
@@ -227,10 +221,9 @@ Partial Class GenerarTicket
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(20, 88)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Location = New System.Drawing.Point(27, 108)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(130, 18)
+        Me.Label1.Size = New System.Drawing.Size(166, 24)
         Me.Label1.TabIndex = 39
         Me.Label1.Text = "Número ID cliente:"
         '
@@ -242,9 +235,9 @@ Partial Class GenerarTicket
         Me.Panel3.Controls.Add(Me.btnCerrar)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(675, 62)
+        Me.Panel3.Size = New System.Drawing.Size(900, 76)
         Me.Panel3.TabIndex = 41
         '
         'btnCasa
@@ -256,13 +249,30 @@ Partial Class GenerarTicket
         Me.btnCasa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
         Me.btnCasa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnCasa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCasa.Location = New System.Drawing.Point(73, 12)
-        Me.btnCasa.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCasa.Location = New System.Drawing.Point(97, 15)
+        Me.btnCasa.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnCasa.Name = "btnCasa"
-        Me.btnCasa.Size = New System.Drawing.Size(36, 35)
+        Me.btnCasa.Size = New System.Drawing.Size(48, 43)
         Me.btnCasa.TabIndex = 9
         Me.btnCasa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.btnCasa.UseVisualStyleBackColor = False
+        '
+        'btnVolver
+        '
+        Me.btnVolver.BackColor = System.Drawing.Color.Transparent
+        Me.btnVolver.BackgroundImage = CType(resources.GetObject("btnVolver.BackgroundImage"), System.Drawing.Image)
+        Me.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnVolver.FlatAppearance.BorderSize = 0
+        Me.btnVolver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
+        Me.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnVolver.Location = New System.Drawing.Point(12, 2)
+        Me.btnVolver.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnVolver.Name = "btnVolver"
+        Me.btnVolver.Size = New System.Drawing.Size(65, 65)
+        Me.btnVolver.TabIndex = 8
+        Me.btnVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.btnVolver.UseVisualStyleBackColor = False
         '
         'btnCerrar
         '
@@ -273,10 +283,10 @@ Partial Class GenerarTicket
         Me.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
         Me.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCerrar.Location = New System.Drawing.Point(634, 10)
-        Me.btnCerrar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCerrar.Location = New System.Drawing.Point(845, 12)
+        Me.btnCerrar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(34, 37)
+        Me.btnCerrar.Size = New System.Drawing.Size(45, 46)
         Me.btnCerrar.TabIndex = 7
         Me.btnCerrar.UseVisualStyleBackColor = False
         '
@@ -289,10 +299,10 @@ Partial Class GenerarTicket
         Me.PanelDatosCliente.Controls.Add(Me.txtReferenciasDirec)
         Me.PanelDatosCliente.Controls.Add(Me.txtNombreCompleto)
         Me.PanelDatosCliente.Controls.Add(Me.txtTelefono)
-        Me.PanelDatosCliente.Location = New System.Drawing.Point(251, 104)
-        Me.PanelDatosCliente.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PanelDatosCliente.Location = New System.Drawing.Point(335, 128)
+        Me.PanelDatosCliente.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PanelDatosCliente.Name = "PanelDatosCliente"
-        Me.PanelDatosCliente.Size = New System.Drawing.Size(403, 27)
+        Me.PanelDatosCliente.Size = New System.Drawing.Size(537, 33)
         Me.PanelDatosCliente.TabIndex = 42
         '
         'Label12
@@ -301,10 +311,9 @@ Partial Class GenerarTicket
         Me.Label12.BackColor = System.Drawing.Color.Transparent
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(14, 24)
-        Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label12.Location = New System.Drawing.Point(19, 30)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(119, 17)
+        Me.Label12.Size = New System.Drawing.Size(141, 20)
         Me.Label12.TabIndex = 15
         Me.Label12.Text = "Nombre completo"
         '
@@ -314,10 +323,9 @@ Partial Class GenerarTicket
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(14, 79)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label11.Location = New System.Drawing.Point(19, 97)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(64, 17)
+        Me.Label11.Size = New System.Drawing.Size(73, 20)
         Me.Label11.TabIndex = 14
         Me.Label11.Text = "Teléfono"
         '
@@ -327,39 +335,38 @@ Partial Class GenerarTicket
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(167, 80)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label10.Location = New System.Drawing.Point(223, 98)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(95, 17)
+        Me.Label10.Size = New System.Drawing.Size(112, 20)
         Me.Label10.TabIndex = 13
         Me.Label10.Text = "Ref. dirección"
         '
         'txtReferenciasDirec
         '
         Me.txtReferenciasDirec.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtReferenciasDirec.Location = New System.Drawing.Point(166, 105)
-        Me.txtReferenciasDirec.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtReferenciasDirec.Location = New System.Drawing.Point(221, 129)
+        Me.txtReferenciasDirec.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtReferenciasDirec.Multiline = True
         Me.txtReferenciasDirec.Name = "txtReferenciasDirec"
-        Me.txtReferenciasDirec.Size = New System.Drawing.Size(232, 62)
+        Me.txtReferenciasDirec.Size = New System.Drawing.Size(308, 75)
         Me.txtReferenciasDirec.TabIndex = 12
         '
         'txtNombreCompleto
         '
         Me.txtNombreCompleto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombreCompleto.Location = New System.Drawing.Point(17, 46)
-        Me.txtNombreCompleto.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtNombreCompleto.Location = New System.Drawing.Point(23, 57)
+        Me.txtNombreCompleto.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtNombreCompleto.Name = "txtNombreCompleto"
-        Me.txtNombreCompleto.Size = New System.Drawing.Size(323, 26)
+        Me.txtNombreCompleto.Size = New System.Drawing.Size(429, 30)
         Me.txtNombreCompleto.TabIndex = 10
         '
         'txtTelefono
         '
         Me.txtTelefono.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTelefono.Location = New System.Drawing.Point(15, 103)
-        Me.txtTelefono.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtTelefono.Location = New System.Drawing.Point(20, 127)
+        Me.txtTelefono.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtTelefono.Name = "txtTelefono"
-        Me.txtTelefono.Size = New System.Drawing.Size(139, 26)
+        Me.txtTelefono.Size = New System.Drawing.Size(184, 30)
         Me.txtTelefono.TabIndex = 11
         '
         'TimerMostrar
@@ -378,11 +385,11 @@ Partial Class GenerarTicket
         Me.GroupBox1.Controls.Add(Me.cmbPersonal)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.GroupBox1.Location = New System.Drawing.Point(57, 153)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Location = New System.Drawing.Point(76, 188)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.GroupBox1.Size = New System.Drawing.Size(533, 145)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GroupBox1.Size = New System.Drawing.Size(711, 178)
         Me.GroupBox1.TabIndex = 43
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos tecnico"
@@ -390,29 +397,12 @@ Partial Class GenerarTicket
         'ImprimirTicket
         '
         '
-        'btnVolver
-        '
-        Me.btnVolver.BackColor = System.Drawing.Color.Transparent
-        Me.btnVolver.BackgroundImage = CType(resources.GetObject("btnVolver.BackgroundImage"), System.Drawing.Image)
-        Me.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnVolver.FlatAppearance.BorderSize = 0
-        Me.btnVolver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnVolver.Location = New System.Drawing.Point(9, 2)
-        Me.btnVolver.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnVolver.Name = "btnVolver"
-        Me.btnVolver.Size = New System.Drawing.Size(49, 53)
-        Me.btnVolver.TabIndex = 8
-        Me.btnVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.btnVolver.UseVisualStyleBackColor = False
-        '
         'GenerarTicket
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(675, 580)
+        Me.ClientSize = New System.Drawing.Size(900, 714)
         Me.Controls.Add(Me.PanelDatosCliente)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.btnVerDatoCliente)
@@ -427,7 +417,7 @@ Partial Class GenerarTicket
         Me.Controls.Add(Me.txtNumeroID)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "GenerarTicket"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "GenerarTicket"

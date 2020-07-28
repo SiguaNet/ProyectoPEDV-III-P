@@ -1,4 +1,5 @@
-﻿Public Class GestionTickets
+﻿Imports System.Runtime.InteropServices
+Public Class GestionTickets
     Dim conexion As Conexion = New Conexion
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
         conexion.LlenarDGV(dgvTickets, "consultaTicketsClientes")
@@ -52,7 +53,8 @@
     End Sub
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
-        End
+        Me.Close()
+        InicioSiguaNet.Show()
 
     End Sub
 
@@ -102,12 +104,6 @@
         End Select
     End Sub
 
-    Private Sub btnRealizar_Click(sender As Object, e As EventArgs)
-        Me.Hide()
-        RealizarTickets.Show()
-
-    End Sub
-
     Private Sub PanelOpciones_Paint(sender As Object, e As PaintEventArgs) Handles PanelOpciones.Paint
 
     End Sub
@@ -116,8 +112,34 @@
         FacturasTodas.Show()
     End Sub
 
-    Private Sub btnInventario_Click(sender As Object, e As EventArgs) Handles btnInventario.Click
+    Private Sub btnInventario_Click(sender As Object, e As EventArgs) Handles btnAdministracion.Click
         Me.Close()
         AdministracionCRUD.Show()
+    End Sub
+
+    Private Sub btnRealizar_Click_1(sender As Object, e As EventArgs) Handles btnRealizar.Click
+        Me.Hide()
+        RealizarTickets.Show()
+
+    End Sub
+
+    <DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
+    Private Shared Sub ReleaseCapture()
+    End Sub
+
+    <DllImport("user32.DLL", EntryPoint:="SendMessage")>
+    Private Shared Sub SendMessage(ByVal hWnd As System.IntPtr, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer)
+    End Sub
+
+    Private Sub Panel1_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel1.MouseMove
+        ReleaseCapture()
+        SendMessage(Me.Handle, &H112&, &HF012&, 0)
+
+    End Sub
+
+    Private Sub btnFactura_Click(sender As Object, e As EventArgs) Handles btnFactura.Click
+        Me.Close()
+        FacturasTodas.Show()
+
     End Sub
 End Class
