@@ -65,60 +65,55 @@ Partial Class FichaCliente
         Me.Panel1.Controls.Add(Me.btnGestionTickets)
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.PictureBox1)
-        Me.Panel1.Location = New System.Drawing.Point(-17, 1)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel1.Location = New System.Drawing.Point(-13, 1)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(273, 720)
+        Me.Panel1.Size = New System.Drawing.Size(205, 585)
         Me.Panel1.TabIndex = 0
         '
         'btnCrearTicket
         '
-        Me.btnCrearTicket.BackColor = System.Drawing.Color.Navy
+        Me.btnCrearTicket.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnCrearTicket.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnCrearTicket.ForeColor = System.Drawing.Color.White
-        Me.btnCrearTicket.Location = New System.Drawing.Point(24, 295)
-        Me.btnCrearTicket.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnCrearTicket.Location = New System.Drawing.Point(18, 240)
         Me.btnCrearTicket.Name = "btnCrearTicket"
-        Me.btnCrearTicket.Size = New System.Drawing.Size(240, 43)
+        Me.btnCrearTicket.Size = New System.Drawing.Size(180, 35)
         Me.btnCrearTicket.TabIndex = 4
         Me.btnCrearTicket.Text = "Crear ticket"
         Me.btnCrearTicket.UseVisualStyleBackColor = False
         '
         'btnGestionFacturas
         '
-        Me.btnGestionFacturas.BackColor = System.Drawing.Color.Navy
+        Me.btnGestionFacturas.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnGestionFacturas.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnGestionFacturas.ForeColor = System.Drawing.Color.White
-        Me.btnGestionFacturas.Location = New System.Drawing.Point(24, 422)
-        Me.btnGestionFacturas.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnGestionFacturas.Location = New System.Drawing.Point(18, 343)
         Me.btnGestionFacturas.Name = "btnGestionFacturas"
-        Me.btnGestionFacturas.Size = New System.Drawing.Size(240, 43)
+        Me.btnGestionFacturas.Size = New System.Drawing.Size(180, 35)
         Me.btnGestionFacturas.TabIndex = 3
         Me.btnGestionFacturas.Text = "Gestion de facturas"
         Me.btnGestionFacturas.UseVisualStyleBackColor = False
         '
         'btnGestionTickets
         '
-        Me.btnGestionTickets.BackColor = System.Drawing.Color.Navy
+        Me.btnGestionTickets.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnGestionTickets.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnGestionTickets.ForeColor = System.Drawing.Color.White
-        Me.btnGestionTickets.Location = New System.Drawing.Point(24, 359)
-        Me.btnGestionTickets.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnGestionTickets.Location = New System.Drawing.Point(18, 292)
         Me.btnGestionTickets.Name = "btnGestionTickets"
-        Me.btnGestionTickets.Size = New System.Drawing.Size(240, 43)
+        Me.btnGestionTickets.Size = New System.Drawing.Size(180, 35)
         Me.btnGestionTickets.TabIndex = 2
         Me.btnGestionTickets.Text = "Gestion de tickets"
         Me.btnGestionTickets.UseVisualStyleBackColor = False
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.Color.Navy
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(24, 231)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button1.Location = New System.Drawing.Point(18, 188)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(240, 43)
+        Me.Button1.Size = New System.Drawing.Size(180, 35)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Informacion cliente"
         Me.Button1.UseVisualStyleBackColor = False
@@ -126,10 +121,9 @@ Partial Class FichaCliente
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(4, 0)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 0)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(272, 273)
+        Me.PictureBox1.Size = New System.Drawing.Size(204, 222)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
@@ -153,28 +147,25 @@ Partial Class FichaCliente
         Me.Panel2.Controls.Add(Me.TextBox2)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.TxtNombres)
-        Me.Panel2.Location = New System.Drawing.Point(255, 15)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel2.Location = New System.Drawing.Point(191, 12)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1043, 706)
+        Me.Panel2.Size = New System.Drawing.Size(782, 574)
         Me.Panel2.TabIndex = 1
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(575, 570)
-        Me.Button5.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button5.Location = New System.Drawing.Point(431, 463)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(175, 39)
+        Me.Button5.Size = New System.Drawing.Size(131, 32)
         Me.Button5.TabIndex = 17
         Me.Button5.Text = "Actualizar informacion"
         Me.Button5.UseVisualStyleBackColor = True
         '
         'BtnAgregar
         '
-        Me.BtnAgregar.Location = New System.Drawing.Point(328, 570)
-        Me.BtnAgregar.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnAgregar.Location = New System.Drawing.Point(246, 463)
         Me.BtnAgregar.Name = "BtnAgregar"
-        Me.BtnAgregar.Size = New System.Drawing.Size(168, 39)
+        Me.BtnAgregar.Size = New System.Drawing.Size(126, 32)
         Me.BtnAgregar.TabIndex = 16
         Me.BtnAgregar.Text = "Agregar Cliente"
         Me.BtnAgregar.UseVisualStyleBackColor = True
@@ -184,20 +175,18 @@ Partial Class FichaCliente
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(301, 71)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label8.Location = New System.Drawing.Point(226, 58)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(420, 46)
+        Me.Label8.Size = New System.Drawing.Size(336, 37)
         Me.Label8.TabIndex = 15
         Me.Label8.Text = "Informacion del cliente"
         '
         'TxtDireccion
         '
-        Me.TxtDireccion.Location = New System.Drawing.Point(180, 383)
-        Me.TxtDireccion.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtDireccion.Location = New System.Drawing.Point(135, 311)
         Me.TxtDireccion.Multiline = True
         Me.TxtDireccion.Name = "TxtDireccion"
-        Me.TxtDireccion.Size = New System.Drawing.Size(767, 102)
+        Me.TxtDireccion.Size = New System.Drawing.Size(576, 84)
         Me.TxtDireccion.TabIndex = 14
         '
         'Label7
@@ -205,19 +194,17 @@ Partial Class FichaCliente
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(79, 383)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Location = New System.Drawing.Point(59, 311)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(86, 20)
+        Me.Label7.Size = New System.Drawing.Size(68, 16)
         Me.Label7.TabIndex = 13
         Me.Label7.Text = "Direccion:"
         '
         'TxtTelefono
         '
-        Me.TxtTelefono.Location = New System.Drawing.Point(180, 319)
-        Me.TxtTelefono.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtTelefono.Location = New System.Drawing.Point(135, 259)
         Me.TxtTelefono.Name = "TxtTelefono"
-        Me.TxtTelefono.Size = New System.Drawing.Size(212, 22)
+        Me.TxtTelefono.Size = New System.Drawing.Size(160, 20)
         Me.TxtTelefono.TabIndex = 10
         '
         'Label5
@@ -225,19 +212,17 @@ Partial Class FichaCliente
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(83, 320)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Location = New System.Drawing.Point(62, 260)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(78, 20)
+        Me.Label5.Size = New System.Drawing.Size(65, 16)
         Me.Label5.TabIndex = 9
         Me.Label5.Text = "Telefono:"
         '
         'TxtId
         '
-        Me.TxtId.Location = New System.Drawing.Point(673, 193)
-        Me.TxtId.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtId.Location = New System.Drawing.Point(505, 157)
         Me.TxtId.Name = "TxtId"
-        Me.TxtId.Size = New System.Drawing.Size(273, 22)
+        Me.TxtId.Size = New System.Drawing.Size(206, 20)
         Me.TxtId.TabIndex = 8
         '
         'Label4
@@ -245,19 +230,17 @@ Partial Class FichaCliente
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(508, 194)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Location = New System.Drawing.Point(381, 158)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(145, 20)
+        Me.Label4.Size = New System.Drawing.Size(118, 16)
         Me.Label4.TabIndex = 7
         Me.Label4.Text = "Numero identidad:"
         '
         'TxtSegundoApellido
         '
-        Me.TxtSegundoApellido.Location = New System.Drawing.Point(673, 256)
-        Me.TxtSegundoApellido.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtSegundoApellido.Location = New System.Drawing.Point(505, 208)
         Me.TxtSegundoApellido.Name = "TxtSegundoApellido"
-        Me.TxtSegundoApellido.Size = New System.Drawing.Size(273, 22)
+        Me.TxtSegundoApellido.Size = New System.Drawing.Size(206, 20)
         Me.TxtSegundoApellido.TabIndex = 6
         '
         'Label3
@@ -265,19 +248,17 @@ Partial Class FichaCliente
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(508, 257)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(381, 209)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(141, 20)
+        Me.Label3.Size = New System.Drawing.Size(118, 16)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Segundo apellido:"
         '
         'TxtPrimerApellido
         '
-        Me.TxtPrimerApellido.Location = New System.Drawing.Point(180, 256)
-        Me.TxtPrimerApellido.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtPrimerApellido.Location = New System.Drawing.Point(135, 208)
         Me.TxtPrimerApellido.Name = "TxtPrimerApellido"
-        Me.TxtPrimerApellido.Size = New System.Drawing.Size(293, 22)
+        Me.TxtPrimerApellido.Size = New System.Drawing.Size(221, 20)
         Me.TxtPrimerApellido.TabIndex = 4
         '
         'Label2
@@ -285,10 +266,9 @@ Partial Class FichaCliente
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(36, 250)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(27, 203)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(126, 20)
+        Me.Label2.Size = New System.Drawing.Size(102, 16)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Primer apellido:"
         '
@@ -296,11 +276,10 @@ Partial Class FichaCliente
         '
         Me.TextBox2.BackColor = System.Drawing.Color.Lime
         Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(839, 71)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(4)
+        Me.TextBox2.Location = New System.Drawing.Point(629, 58)
         Me.TextBox2.Multiline = True
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(145, 29)
+        Me.TextBox2.Size = New System.Drawing.Size(110, 24)
         Me.TextBox2.TabIndex = 2
         Me.TextBox2.Text = "Conectado"
         Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -310,19 +289,17 @@ Partial Class FichaCliente
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(83, 193)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(62, 157)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(82, 20)
+        Me.Label1.Size = New System.Drawing.Size(67, 16)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Nombres:"
         '
         'TxtNombres
         '
-        Me.TxtNombres.Location = New System.Drawing.Point(180, 193)
-        Me.TxtNombres.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtNombres.Location = New System.Drawing.Point(135, 157)
         Me.TxtNombres.Name = "TxtNombres"
-        Me.TxtNombres.Size = New System.Drawing.Size(293, 22)
+        Me.TxtNombres.Size = New System.Drawing.Size(221, 20)
         Me.TxtNombres.TabIndex = 0
         '
         'Panel3
@@ -331,10 +308,9 @@ Partial Class FichaCliente
         Me.Panel3.Controls.Add(Me.Label6)
         Me.Panel3.Controls.Add(Me.PictureBox2)
         Me.Panel3.Controls.Add(Me.btnCerrar)
-        Me.Panel3.Location = New System.Drawing.Point(-13, -1)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel3.Location = New System.Drawing.Point(-10, -1)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1311, 48)
+        Me.Panel3.Size = New System.Drawing.Size(983, 39)
         Me.Panel3.TabIndex = 5
         '
         'Label6
@@ -342,20 +318,18 @@ Partial Class FichaCliente
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(75, 7)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Location = New System.Drawing.Point(56, 6)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(189, 29)
+        Me.Label6.Size = New System.Drawing.Size(148, 24)
         Me.Label6.TabIndex = 19
         Me.Label6.Text = "Ficha del cliente"
         '
         'PictureBox2
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(25, 4)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox2.Location = New System.Drawing.Point(19, 3)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(47, 37)
+        Me.PictureBox2.Size = New System.Drawing.Size(35, 30)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox2.TabIndex = 18
         Me.PictureBox2.TabStop = False
@@ -369,24 +343,23 @@ Partial Class FichaCliente
         Me.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
         Me.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCerrar.Location = New System.Drawing.Point(1260, 2)
-        Me.btnCerrar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnCerrar.Location = New System.Drawing.Point(945, 2)
+        Me.btnCerrar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(43, 42)
+        Me.btnCerrar.Size = New System.Drawing.Size(32, 34)
         Me.btnCerrar.TabIndex = 8
         Me.btnCerrar.UseVisualStyleBackColor = False
         '
         'FichaCliente
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1297, 715)
+        Me.ClientSize = New System.Drawing.Size(973, 581)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "FichaCliente"
         Me.Text = "FichaCliente"
         Me.Panel1.ResumeLayout(False)

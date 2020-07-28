@@ -82,4 +82,8 @@ Public Class inicioSesion
         RecuperacionContrasena.Show()
 
     End Sub
+
+    Private Sub txtUsuario_TextChanged(sender As Object, e As EventArgs) Handles txtUsuario.TextChanged
+
+    End Sub
 End Class

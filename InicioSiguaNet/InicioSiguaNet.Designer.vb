@@ -36,9 +36,9 @@ Partial Class InicioSiguaNet
         Me.btnEstadoFinanciero = New System.Windows.Forms.Button()
         Me.btnGestionTickets = New System.Windows.Forms.Button()
         Me.PanelContenido = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.DbgClientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelOpciones.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -49,7 +49,7 @@ Partial Class InicioSiguaNet
         'btnCerrarSesion
         '
         Me.btnCerrarSesion.Location = New System.Drawing.Point(862, 498)
-        Me.btnCerrarSesion.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCerrarSesion.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCerrarSesion.Name = "btnCerrarSesion"
         Me.btnCerrarSesion.Size = New System.Drawing.Size(130, 32)
         Me.btnCerrarSesion.TabIndex = 4
@@ -79,7 +79,7 @@ Partial Class InicioSiguaNet
         Me.PanelOpciones.Controls.Add(Me.btnGestionTickets)
         Me.PanelOpciones.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelOpciones.Location = New System.Drawing.Point(0, 0)
-        Me.PanelOpciones.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PanelOpciones.Margin = New System.Windows.Forms.Padding(2)
         Me.PanelOpciones.Name = "PanelOpciones"
         Me.PanelOpciones.Size = New System.Drawing.Size(1016, 104)
         Me.PanelOpciones.TabIndex = 21
@@ -97,8 +97,9 @@ Partial Class InicioSiguaNet
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.White
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(21, 6)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
@@ -116,7 +117,7 @@ Partial Class InicioSiguaNet
         Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Location = New System.Drawing.Point(979, 2)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(32, 34)
         Me.Button1.TabIndex = 8
@@ -124,62 +125,80 @@ Partial Class InicioSiguaNet
         '
         'BtnClientes
         '
+        Me.BtnClientes.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BtnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtnClientes.ForeColor = System.Drawing.Color.White
         Me.BtnClientes.Location = New System.Drawing.Point(55, 47)
         Me.BtnClientes.Name = "BtnClientes"
         Me.BtnClientes.Size = New System.Drawing.Size(143, 45)
         Me.BtnClientes.TabIndex = 27
         Me.BtnClientes.Text = "Clientes"
-        Me.BtnClientes.UseVisualStyleBackColor = True
+        Me.BtnClientes.UseVisualStyleBackColor = False
         '
         'btnRecursos
         '
+        Me.btnRecursos.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnRecursos.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnRecursos.ForeColor = System.Drawing.Color.White
         Me.btnRecursos.Location = New System.Drawing.Point(791, 47)
-        Me.btnRecursos.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnRecursos.Margin = New System.Windows.Forms.Padding(2)
         Me.btnRecursos.Name = "btnRecursos"
         Me.btnRecursos.Size = New System.Drawing.Size(143, 45)
         Me.btnRecursos.TabIndex = 26
         Me.btnRecursos.Text = "Recursos"
-        Me.btnRecursos.UseVisualStyleBackColor = True
+        Me.btnRecursos.UseVisualStyleBackColor = False
         '
         'btnPersonal
         '
+        Me.btnPersonal.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnPersonal.ForeColor = System.Drawing.Color.White
         Me.btnPersonal.Location = New System.Drawing.Point(644, 47)
-        Me.btnPersonal.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnPersonal.Margin = New System.Windows.Forms.Padding(2)
         Me.btnPersonal.Name = "btnPersonal"
         Me.btnPersonal.Size = New System.Drawing.Size(143, 45)
         Me.btnPersonal.TabIndex = 25
         Me.btnPersonal.Text = "Personal"
-        Me.btnPersonal.UseVisualStyleBackColor = True
+        Me.btnPersonal.UseVisualStyleBackColor = False
         '
         'btnInventario
         '
+        Me.btnInventario.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnInventario.ForeColor = System.Drawing.Color.White
         Me.btnInventario.Location = New System.Drawing.Point(497, 47)
-        Me.btnInventario.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnInventario.Margin = New System.Windows.Forms.Padding(2)
         Me.btnInventario.Name = "btnInventario"
         Me.btnInventario.Size = New System.Drawing.Size(143, 45)
         Me.btnInventario.TabIndex = 24
         Me.btnInventario.Text = "Inventario"
-        Me.btnInventario.UseVisualStyleBackColor = True
+        Me.btnInventario.UseVisualStyleBackColor = False
         '
         'btnEstadoFinanciero
         '
+        Me.btnEstadoFinanciero.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnEstadoFinanciero.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnEstadoFinanciero.ForeColor = System.Drawing.Color.White
         Me.btnEstadoFinanciero.Location = New System.Drawing.Point(350, 47)
-        Me.btnEstadoFinanciero.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnEstadoFinanciero.Margin = New System.Windows.Forms.Padding(2)
         Me.btnEstadoFinanciero.Name = "btnEstadoFinanciero"
         Me.btnEstadoFinanciero.Size = New System.Drawing.Size(143, 45)
         Me.btnEstadoFinanciero.TabIndex = 23
         Me.btnEstadoFinanciero.Text = "Pago de Facturas"
-        Me.btnEstadoFinanciero.UseVisualStyleBackColor = True
+        Me.btnEstadoFinanciero.UseVisualStyleBackColor = False
         '
         'btnGestionTickets
         '
+        Me.btnGestionTickets.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnGestionTickets.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnGestionTickets.ForeColor = System.Drawing.Color.White
         Me.btnGestionTickets.Location = New System.Drawing.Point(203, 47)
-        Me.btnGestionTickets.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnGestionTickets.Margin = New System.Windows.Forms.Padding(2)
         Me.btnGestionTickets.Name = "btnGestionTickets"
         Me.btnGestionTickets.Size = New System.Drawing.Size(143, 45)
         Me.btnGestionTickets.TabIndex = 22
         Me.btnGestionTickets.Text = "Gestión de tickets"
-        Me.btnGestionTickets.UseVisualStyleBackColor = True
+        Me.btnGestionTickets.UseVisualStyleBackColor = False
         '
         'PanelContenido
         '
@@ -191,32 +210,10 @@ Partial Class InicioSiguaNet
         Me.PanelContenido.Controls.Add(Me.btnCerrarSesion)
         Me.PanelContenido.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelContenido.Location = New System.Drawing.Point(0, 104)
-        Me.PanelContenido.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PanelContenido.Margin = New System.Windows.Forms.Padding(2)
         Me.PanelContenido.Name = "PanelContenido"
         Me.PanelContenido.Size = New System.Drawing.Size(1016, 541)
         Me.PanelContenido.TabIndex = 22
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.InicioSiguaNet.My.Resources.Resources.SIGUANET
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 5)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(149, 155)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 8
-        Me.PictureBox1.TabStop = False
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(418, 69)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(287, 29)
-        Me.Label4.TabIndex = 30
-        Me.Label4.Text = "La Velocidad Más Rapida"
         '
         'Label2
         '
@@ -230,6 +227,28 @@ Partial Class InicioSiguaNet
         Me.Label2.TabIndex = 31
         Me.Label2.Text = "Barrio San Miguel, Siguatepeque   Tel: 2773-1110"
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(418, 69)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(287, 29)
+        Me.Label4.TabIndex = 30
+        Me.Label4.Text = "La Velocidad Más Rapida"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.InicioSiguaNet.My.Resources.Resources.SIGUANET
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 5)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(149, 155)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 8
+        Me.PictureBox1.TabStop = False
+        '
         'InicioSiguaNet
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -238,7 +257,7 @@ Partial Class InicioSiguaNet
         Me.Controls.Add(Me.PanelContenido)
         Me.Controls.Add(Me.PanelOpciones)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "InicioSiguaNet"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"

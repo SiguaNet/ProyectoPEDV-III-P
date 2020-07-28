@@ -30,6 +30,7 @@ Partial Class FacturasTodas
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PanelOpciones = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.btnPersonal = New System.Windows.Forms.Button()
         Me.BtnClientes = New System.Windows.Forms.Button()
         Me.btnRecursos = New System.Windows.Forms.Button()
@@ -40,7 +41,6 @@ Partial Class FacturasTodas
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TimerMostrar = New System.Windows.Forms.Timer(Me.components)
         Me.TimerOcultar = New System.Windows.Forms.Timer(Me.components)
-        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.dgvFactuTodas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -117,64 +117,91 @@ Partial Class FacturasTodas
         Me.PanelOpciones.Size = New System.Drawing.Size(1033, 146)
         Me.PanelOpciones.TabIndex = 4
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(449, 110)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 27
+        Me.Button2.Text = "Button2"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'btnPersonal
         '
+        Me.btnPersonal.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnPersonal.ForeColor = System.Drawing.Color.White
         Me.btnPersonal.Location = New System.Drawing.Point(700, 47)
         Me.btnPersonal.Margin = New System.Windows.Forms.Padding(2)
         Me.btnPersonal.Name = "btnPersonal"
         Me.btnPersonal.Size = New System.Drawing.Size(143, 44)
         Me.btnPersonal.TabIndex = 24
         Me.btnPersonal.Text = "Personal"
-        Me.btnPersonal.UseVisualStyleBackColor = True
+        Me.btnPersonal.UseVisualStyleBackColor = False
         '
         'BtnClientes
         '
+        Me.BtnClientes.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BtnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtnClientes.ForeColor = System.Drawing.Color.White
         Me.BtnClientes.Location = New System.Drawing.Point(125, 48)
         Me.BtnClientes.Name = "BtnClientes"
         Me.BtnClientes.Size = New System.Drawing.Size(140, 43)
         Me.BtnClientes.TabIndex = 26
         Me.BtnClientes.Text = "Clientes"
-        Me.BtnClientes.UseVisualStyleBackColor = True
+        Me.BtnClientes.UseVisualStyleBackColor = False
         '
         'btnRecursos
         '
+        Me.btnRecursos.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnRecursos.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnRecursos.ForeColor = System.Drawing.Color.White
         Me.btnRecursos.Location = New System.Drawing.Point(847, 47)
         Me.btnRecursos.Margin = New System.Windows.Forms.Padding(2)
         Me.btnRecursos.Name = "btnRecursos"
         Me.btnRecursos.Size = New System.Drawing.Size(143, 45)
         Me.btnRecursos.TabIndex = 25
         Me.btnRecursos.Text = "Recursos"
-        Me.btnRecursos.UseVisualStyleBackColor = True
+        Me.btnRecursos.UseVisualStyleBackColor = False
         '
         'btnInventario
         '
+        Me.btnInventario.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnInventario.ForeColor = System.Drawing.Color.White
         Me.btnInventario.Location = New System.Drawing.Point(552, 47)
         Me.btnInventario.Margin = New System.Windows.Forms.Padding(2)
         Me.btnInventario.Name = "btnInventario"
         Me.btnInventario.Size = New System.Drawing.Size(143, 44)
         Me.btnInventario.TabIndex = 23
         Me.btnInventario.Text = "Inventario"
-        Me.btnInventario.UseVisualStyleBackColor = True
+        Me.btnInventario.UseVisualStyleBackColor = False
         '
         'btnEstadoFinanciero
         '
+        Me.btnEstadoFinanciero.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnEstadoFinanciero.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnEstadoFinanciero.ForeColor = System.Drawing.Color.White
         Me.btnEstadoFinanciero.Location = New System.Drawing.Point(413, 47)
         Me.btnEstadoFinanciero.Margin = New System.Windows.Forms.Padding(2)
         Me.btnEstadoFinanciero.Name = "btnEstadoFinanciero"
         Me.btnEstadoFinanciero.Size = New System.Drawing.Size(135, 43)
         Me.btnEstadoFinanciero.TabIndex = 22
         Me.btnEstadoFinanciero.Text = "Pago de Facturas"
-        Me.btnEstadoFinanciero.UseVisualStyleBackColor = True
+        Me.btnEstadoFinanciero.UseVisualStyleBackColor = False
         '
         'btnGestionTickets
         '
+        Me.btnGestionTickets.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnGestionTickets.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnGestionTickets.ForeColor = System.Drawing.Color.White
         Me.btnGestionTickets.Location = New System.Drawing.Point(271, 48)
         Me.btnGestionTickets.Margin = New System.Windows.Forms.Padding(2)
         Me.btnGestionTickets.Name = "btnGestionTickets"
         Me.btnGestionTickets.Size = New System.Drawing.Size(137, 43)
         Me.btnGestionTickets.TabIndex = 21
         Me.btnGestionTickets.Text = "Gestión de tickets"
-        Me.btnGestionTickets.UseVisualStyleBackColor = True
+        Me.btnGestionTickets.UseVisualStyleBackColor = False
         '
         'Panel3
         '
@@ -208,15 +235,6 @@ Partial Class FacturasTodas
         '
         'TimerOcultar
         '
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(449, 110)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 27
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
         '
         'FacturasTodas
         '
