@@ -1,4 +1,5 @@
-﻿Public Class FacturasTodas
+﻿Imports System.Runtime.InteropServices
+Public Class FacturasTodas
     Dim Conexion As Conexion = New Conexion
     Private Sub FacturasTodas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Conexion.LlenarDGV(dgvFactAll, "select f.idFactura as 'ID Factura', f.numeroIdentidadC as 'Numero Identidad', CONCAT(dp.nombres, ' ', dp.primerApellido, ' ', dp.segundoApellido) as 'Nombre', 
@@ -41,7 +42,7 @@
     End Sub
 
     Private Sub TimerMostrar_Tick(sender As Object, e As EventArgs) Handles TimerMostrar.Tick
-        If PanelOpciones.Height >= 140 Then
+        If PanelOpciones.Height >= 154 Then
             Me.TimerMostrar.Enabled = False
         Else
             Me.PanelOpciones.Height = PanelOpciones.Height + 20
@@ -49,15 +50,13 @@
     End Sub
 
     Private Sub btnEstadoFinanciero_Click(sender As Object, e As EventArgs) Handles btnFacturas.Click
-
-        If PanelOpciones.Height = 144 Then
+        If PanelOpciones.Height = 164 Then
             TimerOcultar.Enabled = True
 
         ElseIf PanelOpciones.Height = 104 Then
             TimerMostrar.Enabled = True
 
         End If
-
 
     End Sub
 
@@ -73,5 +72,24 @@
     Private Sub btnEstadosGene_Click(sender As Object, e As EventArgs) Handles btnEstadosGene.Click
         HcodigoHistorial = 2
         EstadosGenerales.Show()
+    End Sub
+
+    Private Sub btnCerrarSesion_Click(sender As Object, e As EventArgs) Handles btnCerrarSesion.Click
+        Me.Close()
+        inicioSesion.Show()
+    End Sub
+
+
+    <DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
+    Private Shared Sub ReleaseCapture()
+    End Sub
+
+    <DllImport("user32.DLL", EntryPoint:="SendMessage")>
+    Private Shared Sub SendMessage(ByVal hWnd As System.IntPtr, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer)
+    End Sub
+
+    Private Sub Panel3_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel3.MouseMove
+        ReleaseCapture()
+        SendMessage(Me.Handle, &H112&, &HF012&, 0)
     End Sub
 End Class

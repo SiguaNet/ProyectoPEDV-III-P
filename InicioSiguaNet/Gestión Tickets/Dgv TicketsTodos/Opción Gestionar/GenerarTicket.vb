@@ -29,7 +29,7 @@ Public Class GenerarTicket
                 Dim cantPagos As Integer = conexion.obtenerVariableEntera("Select pagosCliente from CLIENTES where numeroIdentidad = '" & numeroIdentidad & "'", "pagosCliente")
                 Dim totalCanti As Integer = cantMesesG - cantPagos
 
-                If totalCanti <= 2 Then
+                If cantMesesG <= cantPagos Then
 
                     If cmbOperaciones.Text = "Actualización" Then
                         idOperacion = 2
@@ -38,10 +38,10 @@ Public Class GenerarTicket
                     ElseIf cmbOperaciones.Text = "Soporte técnico" Then
                         idOperacion = 3
                         HcantSoporteMes += 1
+
                     ElseIf cmbOperaciones.Text = "Corte por solicitud" Then
                         idOperacion = 4
-                        conexion.EjecutarComando("update CLIENTE set estadoC = 'Eliminado' where numeroIdentidad = '" & numeroIdentidad & "'")
-                        HcantCortesMes += 1
+
                     Else
                         idOperacion = 1
 
@@ -52,6 +52,14 @@ Public Class GenerarTicket
                         MessageBox.Show("Ticket registrado exitosamente", "Generar ticket", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         conexion.PAOperacionesFactura(0, numeroIdentidad, fechaInicio, 1)
                         ImprimirTicket.Print()
+
+                        If idOperacion = 4 Then
+
+                            conexion.EjecutarComando("update CLIENTES set estadoC = 'Eliminado' where numeroIdentidad = '" & numeroIdentidad & "'")
+                            conexion.EjecutarComando("update PERSONAL set estado = 'Libre' where idPersonal = '" & idPersonal & "'")
+                            conexion.EjecutarComando("update GESTION_TICKETS set estado = 'Realizado' where numeroIdentidadC = '" & numeroIdentidad & "'")
+                            HcantCortesMes += 1
+                        End If
                     Else
                         MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
@@ -75,8 +83,6 @@ Public Class GenerarTicket
         conexion.limpiar(Me)
         Me.Close()
         InicioGestion.Show()
-
-
     End Sub
 
     Private Sub GenerarTicket_Load(sender As Object, e As EventArgs) Handles MyBase.Load

@@ -8,7 +8,7 @@ Public Class AgregarCliente
         Dim numeroTelefono, numeroCasa, idSector, idPaquete, pagosCliente, idTicket, idPersonal, idOperacion, cantEr, cantAn, inveEr, inveAn, totalEr, totalAn As Integer
 
         idTicket = 0
-        idPersonal = cmbPersonal.SelectedIndex + 1
+        idPersonal = cmbPersonal.SelectedItem
         estado = "Pendiente"
         numeroIdentidad = txtNumeroID.Text
         nombres = convertirMayusMin(Me.txtNombres.Text)
@@ -47,12 +47,22 @@ Public Class AgregarCliente
 
                             conexion.PAOperacionesInventario(1, "Antenas", totalAn, 2)
                             conexion.PAOperacionesInventario(2, "Enrutadores", totalEr, 2)
+                            conexion.limpiar(Me.GroupBox1)
+                            conexion.limpiar(Me.GroupBox2)
+                            conexion.limpiar(Me.GroupBox3)
+                            conexion.limpiar(Me.GroupBox4)
+                            cmbBarrios.SelectedIndex = -1
+                            cmbPaquetes.SelectedIndex = -1
+                            cmbPersonal.SelectedIndex = -1
+
                         Else
                             MessageBox.Show("Error al registrar ticket", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         End If
                         HcantEfectivoTotal += conexion.obtenerVariableDecimal("select pli.precio from PLANES_INTERNET pli  inner join CLIENTES c ON pli.idPaquete = c.idPaquete inner join FACTURA f on c.numeroIdentidad = f.numeroIdentidadC where c.numeroIdentidad = '" & numeroIdentidad & "'", "precio")
                         HcantEfectivoMes = conexion.obtenerVariableDecimal("select pli.precio from PLANES_INTERNET pli  inner join CLIENTES c ON pli.idPaquete = c.idPaquete inner join FACTURA f on c.numeroIdentidad = f.numeroIdentidadC where c.numeroIdentidad = '" & numeroIdentidad & "'", "precio")
                         HcantNuevosMes += 1
+                        HcantFacturasMes += 1
+
                     Else
                         MessageBox.Show("Error al registrar cliente", "Registro cliente", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End If
@@ -73,7 +83,7 @@ Public Class AgregarCliente
         txtNumeroID.Text = variablesGlobales.numeroIdentidad
         conexion.llenarComboBox(cmbPaquetes, "select nombrePaquete from PLANES_INTERNET", "nombrePaquete")
         conexion.llenarComboBox(cmbBarrios, "select barrio from SECTORES", "barrio")
-        conexion.llenarComboBox(cmbPersonal, "select idPersonal from PERSONAL where estado <> 'Eliminado'", "idPersonal")
+        conexion.llenarComboBox(cmbPersonal, "select idPersonal from PERSONAL where estado <> 'Eliminado' and estado <> 'Ocupado'", "idPersonal")
 
     End Sub
 
@@ -152,7 +162,7 @@ Public Class AgregarCliente
     Private Sub cmbPersonal_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbPersonal.SelectedIndexChanged
         Dim IdPersonal As Integer
 
-        IdPersonal = cmbPersonal.Text
+        IdPersonal = Val(cmbPersonal.Text)
 
         Try
             If (conexion.LlenarTablaPorIdentidad("consultaDatosTecnico", "@idPersonal", IdPersonal) = 0) Then

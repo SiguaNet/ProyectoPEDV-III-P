@@ -443,8 +443,6 @@ Partial Class EstadosGenerales
         Me.lblClientesActivos.TabIndex = 7
         Me.lblClientesActivos.Text = "lblClientesActivos"
         '
-        'btnMesAnterior
-        '
         'btnAceptar
         '
         Me.btnAceptar.Location = New System.Drawing.Point(383, 564)

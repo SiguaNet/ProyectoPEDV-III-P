@@ -72,4 +72,37 @@ Public Class InicioSiguaNet
         Conexion.EjecutarComando("update CLIENTES set estadoC = 'En mora' where pagosCliente < '" & variablesGlobales.cantMesesG & "'")
 
     End Sub
+
+    Private Sub TimerOcultar_Tick(sender As Object, e As EventArgs) Handles TimerOcultar.Tick
+        If PanelOpciones.Height <= 104 Then
+            Me.TimerOcultar.Enabled = False
+        Else
+            Me.PanelOpciones.Height = PanelOpciones.Height - 20
+        End If
+    End Sub
+
+    Private Sub TimerMostrar_Tick(sender As Object, e As EventArgs) Handles TimerMostrar.Tick
+        If PanelOpciones.Height >= 140 Then
+            Me.TimerMostrar.Enabled = False
+        Else
+            Me.PanelOpciones.Height = PanelOpciones.Height + 20
+        End If
+    End Sub
+
+    Private Sub BtnClientes_Click(sender As Object, e As EventArgs) Handles BtnClientes.Click
+
+        If PanelOpciones.Height = 144 Then
+            TimerOcultar.Enabled = True
+
+        ElseIf PanelOpciones.Height = 104 Then
+            TimerMostrar.Enabled = True
+
+        End If
+    End Sub
+
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+        Me.Hide()
+        AgregarCliente.Show()
+
+    End Sub
 End Class

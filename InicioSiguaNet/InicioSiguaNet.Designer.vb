@@ -22,10 +22,13 @@ Partial Class InicioSiguaNet
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(InicioSiguaNet))
         Me.btnCerrarSesion = New System.Windows.Forms.Button()
         Me.DgvClientes = New System.Windows.Forms.DataGridView()
         Me.PanelOpciones = New System.Windows.Forms.Panel()
+        Me.btnActualizar = New System.Windows.Forms.Button()
+        Me.btnAgregar = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -34,10 +37,11 @@ Partial Class InicioSiguaNet
         Me.btnFacturas = New System.Windows.Forms.Button()
         Me.btnGestionTickets = New System.Windows.Forms.Button()
         Me.PanelContenido = New System.Windows.Forms.Panel()
-        Me.btnActualizar = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.TimerMostrar = New System.Windows.Forms.Timer(Me.components)
+        Me.TimerOcultar = New System.Windows.Forms.Timer(Me.components)
         CType(Me.DgvClientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelOpciones.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -47,7 +51,7 @@ Partial Class InicioSiguaNet
         '
         'btnCerrarSesion
         '
-        Me.btnCerrarSesion.Location = New System.Drawing.Point(1149, 613)
+        Me.btnCerrarSesion.Location = New System.Drawing.Point(1160, 616)
         Me.btnCerrarSesion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnCerrarSesion.Name = "btnCerrarSesion"
         Me.btnCerrarSesion.Size = New System.Drawing.Size(173, 39)
@@ -60,16 +64,18 @@ Partial Class InicioSiguaNet
         Me.DgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DgvClientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgvClientes.Location = New System.Drawing.Point(166, 194)
+        Me.DgvClientes.Location = New System.Drawing.Point(149, 197)
         Me.DgvClientes.Margin = New System.Windows.Forms.Padding(4)
         Me.DgvClientes.Name = "DgvClientes"
         Me.DgvClientes.RowHeadersWidth = 51
-        Me.DgvClientes.Size = New System.Drawing.Size(1156, 413)
+        Me.DgvClientes.Size = New System.Drawing.Size(1184, 413)
         Me.DgvClientes.TabIndex = 7
         '
         'PanelOpciones
         '
         Me.PanelOpciones.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.PanelOpciones.Controls.Add(Me.btnActualizar)
+        Me.PanelOpciones.Controls.Add(Me.btnAgregar)
         Me.PanelOpciones.Controls.Add(Me.Panel3)
         Me.PanelOpciones.Controls.Add(Me.BtnClientes)
         Me.PanelOpciones.Controls.Add(Me.btnAdmin)
@@ -81,6 +87,32 @@ Partial Class InicioSiguaNet
         Me.PanelOpciones.Name = "PanelOpciones"
         Me.PanelOpciones.Size = New System.Drawing.Size(1355, 128)
         Me.PanelOpciones.TabIndex = 21
+        '
+        'btnActualizar
+        '
+        Me.btnActualizar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnActualizar.ForeColor = System.Drawing.Color.White
+        Me.btnActualizar.Location = New System.Drawing.Point(376, 133)
+        Me.btnActualizar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnActualizar.Name = "btnActualizar"
+        Me.btnActualizar.Size = New System.Drawing.Size(136, 35)
+        Me.btnActualizar.TabIndex = 32
+        Me.btnActualizar.Text = "Actualizar"
+        Me.btnActualizar.UseVisualStyleBackColor = True
+        '
+        'btnAgregar
+        '
+        Me.btnAgregar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnAgregar.ForeColor = System.Drawing.Color.White
+        Me.btnAgregar.Location = New System.Drawing.Point(241, 133)
+        Me.btnAgregar.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnAgregar.Name = "btnAgregar"
+        Me.btnAgregar.Size = New System.Drawing.Size(130, 35)
+        Me.btnAgregar.TabIndex = 29
+        Me.btnAgregar.Text = "Agregar"
+        Me.btnAgregar.UseVisualStyleBackColor = True
         '
         'Panel3
         '
@@ -178,7 +210,6 @@ Partial Class InicioSiguaNet
         Me.PanelContenido.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.PanelContenido.BackgroundImage = Global.InicioSiguaNet.My.Resources.Resources.MenuGeneral
         Me.PanelContenido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PanelContenido.Controls.Add(Me.btnActualizar)
         Me.PanelContenido.Controls.Add(Me.Label2)
         Me.PanelContenido.Controls.Add(Me.Label4)
         Me.PanelContenido.Controls.Add(Me.PictureBox1)
@@ -191,23 +222,13 @@ Partial Class InicioSiguaNet
         Me.PanelContenido.Size = New System.Drawing.Size(1355, 666)
         Me.PanelContenido.TabIndex = 22
         '
-        'btnActualizar
-        '
-        Me.btnActualizar.Location = New System.Drawing.Point(1149, 138)
-        Me.btnActualizar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(173, 39)
-        Me.btnActualizar.TabIndex = 32
-        Me.btnActualizar.Text = "Actualizar"
-        Me.btnActualizar.UseVisualStyleBackColor = True
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(519, 619)
+        Me.Label2.Location = New System.Drawing.Point(519, 627)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(448, 25)
         Me.Label2.TabIndex = 31
@@ -219,7 +240,7 @@ Partial Class InicioSiguaNet
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(518, 81)
+        Me.Label4.Location = New System.Drawing.Point(470, 78)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(492, 36)
         Me.Label4.TabIndex = 30
@@ -236,6 +257,12 @@ Partial Class InicioSiguaNet
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 8
         Me.PictureBox1.TabStop = False
+        '
+        'TimerMostrar
+        '
+        '
+        'TimerOcultar
+        '
         '
         'InicioSiguaNet
         '
@@ -274,4 +301,7 @@ Partial Class InicioSiguaNet
     Friend WithEvents Label4 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents btnActualizar As Button
+    Friend WithEvents TimerMostrar As Timer
+    Friend WithEvents TimerOcultar As Timer
+    Friend WithEvents btnAgregar As Button
 End Class

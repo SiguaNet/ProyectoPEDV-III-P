@@ -75,10 +75,10 @@ Partial Class GestionTickets
         Me.btnRealizar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.btnRealizar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnRealizar.ForeColor = System.Drawing.Color.White
-        Me.btnRealizar.Location = New System.Drawing.Point(645, 134)
+        Me.btnRealizar.Location = New System.Drawing.Point(621, 132)
         Me.btnRealizar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnRealizar.Name = "btnRealizar"
-        Me.btnRealizar.Size = New System.Drawing.Size(156, 34)
+        Me.btnRealizar.Size = New System.Drawing.Size(130, 34)
         Me.btnRealizar.TabIndex = 25
         Me.btnRealizar.Text = "Realizar"
         Me.btnRealizar.UseVisualStyleBackColor = True
@@ -141,10 +141,10 @@ Partial Class GestionTickets
         Me.btnGestionar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.btnGestionar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnGestionar.ForeColor = System.Drawing.Color.White
-        Me.btnGestionar.Location = New System.Drawing.Point(485, 134)
+        Me.btnGestionar.Location = New System.Drawing.Point(487, 132)
         Me.btnGestionar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnGestionar.Name = "btnGestionar"
-        Me.btnGestionar.Size = New System.Drawing.Size(156, 34)
+        Me.btnGestionar.Size = New System.Drawing.Size(130, 34)
         Me.btnGestionar.TabIndex = 16
         Me.btnGestionar.Text = "Gestionar"
         Me.btnGestionar.UseVisualStyleBackColor = True
@@ -154,10 +154,10 @@ Partial Class GestionTickets
         Me.btnActualizar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnActualizar.ForeColor = System.Drawing.Color.White
-        Me.btnActualizar.Location = New System.Drawing.Point(325, 134)
+        Me.btnActualizar.Location = New System.Drawing.Point(353, 132)
         Me.btnActualizar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(156, 34)
+        Me.btnActualizar.Size = New System.Drawing.Size(130, 34)
         Me.btnActualizar.TabIndex = 15
         Me.btnActualizar.Text = "Actualizar"
         Me.btnActualizar.UseVisualStyleBackColor = False
@@ -261,7 +261,7 @@ Partial Class GestionTickets
         '
         'btnCerrarSesion
         '
-        Me.btnCerrarSesion.Location = New System.Drawing.Point(1192, 609)
+        Me.btnCerrarSesion.Location = New System.Drawing.Point(1192, 622)
         Me.btnCerrarSesion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnCerrarSesion.Name = "btnCerrarSesion"
         Me.btnCerrarSesion.Size = New System.Drawing.Size(173, 39)
