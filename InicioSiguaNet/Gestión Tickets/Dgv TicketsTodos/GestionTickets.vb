@@ -71,6 +71,8 @@
         HcodigoHistorial = 1
         EstadosGenerales.Show()
         HcodigoHistorial = 2
+        My.Settings.settMesActualP = variablesGlobales.cantMesesG
+        My.Settings.Save()
     End Sub
 
     Sub imprimirLabel()

@@ -51,6 +51,8 @@ Public Class AgregarCliente
                             MessageBox.Show("Error al registrar ticket", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         End If
                         HcantEfectivoTotal += conexion.obtenerVariableDecimal("select pli.precio from PLANES_INTERNET pli  inner join CLIENTES c ON pli.idPaquete = c.idPaquete inner join FACTURA f on c.numeroIdentidad = f.numeroIdentidadC where c.numeroIdentidad = '" & numeroIdentidad & "'", "precio")
+                        HcantEfectivoMes = conexion.obtenerVariableDecimal("select pli.precio from PLANES_INTERNET pli  inner join CLIENTES c ON pli.idPaquete = c.idPaquete inner join FACTURA f on c.numeroIdentidad = f.numeroIdentidadC where c.numeroIdentidad = '" & numeroIdentidad & "'", "precio")
+                        HcantNuevosMes += 1
                     Else
                         MessageBox.Show("Error al registrar cliente", "Registro cliente", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End If

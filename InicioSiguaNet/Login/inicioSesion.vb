@@ -23,7 +23,7 @@ Public Class inicioSesion
             ElseIf Conexion.comprobarUsuario(txtUsuario.Text, Conexion.Encriptar(txtContrasena.Text)) = True Then
                 '   Asignacion variable global para saber quien es el que esta accesando
                 identidadPersonalEntro = txtUsuario.Text
-                InicioSiguaNet.Show()
+                Bienvenida.Show()
                 Me.Hide()
             Else
                 MessageBox.Show("Usuario o Contraseña incorrectos!", "Error de Ingreso", MessageBoxButtons.OK, MessageBoxIcon.Error)

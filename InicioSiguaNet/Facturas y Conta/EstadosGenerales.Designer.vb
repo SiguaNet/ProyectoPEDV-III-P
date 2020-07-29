@@ -54,8 +54,6 @@ Partial Class EstadosGenerales
         Me.lblMes = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.lblClientesActivos = New System.Windows.Forms.Label()
-        Me.btnMesAnterior = New System.Windows.Forms.Button()
-        Me.btnMesSiguiente = New System.Windows.Forms.Button()
         Me.btnAceptar = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -414,24 +412,6 @@ Partial Class EstadosGenerales
         Me.lblClientesActivos.TabIndex = 7
         Me.lblClientesActivos.Text = "lblClientesActivos"
         '
-        'btnMesAnterior
-        '
-        Me.btnMesAnterior.Location = New System.Drawing.Point(12, 458)
-        Me.btnMesAnterior.Name = "btnMesAnterior"
-        Me.btnMesAnterior.Size = New System.Drawing.Size(132, 39)
-        Me.btnMesAnterior.TabIndex = 15
-        Me.btnMesAnterior.Text = "Mes Anterior"
-        Me.btnMesAnterior.UseVisualStyleBackColor = True
-        '
-        'btnMesSiguiente
-        '
-        Me.btnMesSiguiente.Location = New System.Drawing.Point(525, 458)
-        Me.btnMesSiguiente.Name = "btnMesSiguiente"
-        Me.btnMesSiguiente.Size = New System.Drawing.Size(132, 39)
-        Me.btnMesSiguiente.TabIndex = 16
-        Me.btnMesSiguiente.Text = "Mes Siguiente"
-        Me.btnMesSiguiente.UseVisualStyleBackColor = True
-        '
         'btnAceptar
         '
         Me.btnAceptar.Location = New System.Drawing.Point(287, 458)
@@ -494,8 +474,6 @@ Partial Class EstadosGenerales
         Me.ClientSize = New System.Drawing.Size(688, 535)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.btnAceptar)
-        Me.Controls.Add(Me.btnMesSiguiente)
-        Me.Controls.Add(Me.btnMesAnterior)
         Me.Controls.Add(Me.Label17)
         Me.Controls.Add(Me.lblClientesActivos)
         Me.Controls.Add(Me.lblMes)
@@ -550,8 +528,6 @@ Partial Class EstadosGenerales
     Friend WithEvents lblMes As Label
     Friend WithEvents Label17 As Label
     Friend WithEvents lblClientesActivos As Label
-    Friend WithEvents btnMesAnterior As Button
-    Friend WithEvents btnMesSiguiente As Button
     Friend WithEvents btnAceptar As Button
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Button2 As Button
