@@ -32,7 +32,7 @@ Public Class AgregarCliente
         inveEr = Val(conexion.obtenerVariableEntera("select cantidad from INVENTARIO where nombreTipo = 'Enrutadores'", "cantidad"))
 
         Try
-            If Me.ValidateChildren And txtNumeroID.Text <> String.Empty And txtNombres.Text <> String.Empty And txtPApellido.Text <> String.Empty And txtTelefono.Text <> String.Empty And txtNumCasa.Text <> String.Empty And Val(txtNumCasa.Text) - Int(Val(txtNumCasa.Text)) = 0 And txtRefDirec.Text <> String.Empty Then
+            If Me.ValidateChildren And txtNumeroID.Text <> String.Empty And txtNombres.Text <> String.Empty And txtPApellido.Text <> String.Empty And txtTelefono.Text <> String.Empty And txtNumCasa.Text <> String.Empty And Val(txtNumCasa.Text) - Int(Val(txtNumCasa.Text)) = 0 Then
 
                 If (conexion.PAOperacionesPersonaCL(numeroIdentidad, nombres, primerApellido, segundoApellido, numeroTelefono, numeroCasa, idSector, referenciasDireccion, idPaquete, pagosCliente, estadoC, 1) = 0) Then
 
