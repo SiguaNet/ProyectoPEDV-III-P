@@ -11,11 +11,11 @@ Public Class InicioSiguaNet
     End Sub
 
     Private Sub InicioSiguaNet_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Conexion.LlenarDGV(DbgClientes, "consultaInformacionClientes")
+        Conexion.LlenarDGV(DgvClientes, "consultaInformacionClientes")
     End Sub
 
-    Private Sub DbgClientes_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DbgClientes.CellContentDoubleClick
-        variablesGlobales.numeroIdentidad = DbgClientes.CurrentRow.Cells(0).Value.ToString()
+    Private Sub DbgClientes_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvClientes.CellContentDoubleClick
+        variablesGlobales.numeroIdentidad = DgvClientes.CurrentRow.Cells(0).Value.ToString()
         Me.Hide()
         FichaCliente.Show()
     End Sub
@@ -67,6 +67,9 @@ Public Class InicioSiguaNet
     End Sub
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
-        Conexion.LlenarDGV(DbgClientes, "consultaInformacionClientes")
+        Conexion.LlenarDGV(DgvClientes, "consultaInformacionClientes")
+
+        Conexion.EjecutarComando("update CLIENTES set estadoC = 'En mora' where pagosCliente < '" & variablesGlobales.cantMesesG & "'")
+
     End Sub
 End Class

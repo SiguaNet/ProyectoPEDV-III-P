@@ -24,7 +24,7 @@ Partial Class InicioSiguaNet
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(InicioSiguaNet))
         Me.btnCerrarSesion = New System.Windows.Forms.Button()
-        Me.DbgClientes = New System.Windows.Forms.DataGridView()
+        Me.DgvClientes = New System.Windows.Forms.DataGridView()
         Me.PanelOpciones = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -34,11 +34,11 @@ Partial Class InicioSiguaNet
         Me.btnFacturas = New System.Windows.Forms.Button()
         Me.btnGestionTickets = New System.Windows.Forms.Button()
         Me.PanelContenido = New System.Windows.Forms.Panel()
+        Me.btnActualizar = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnActualizar = New System.Windows.Forms.Button()
-        CType(Me.DbgClientes, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DgvClientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelOpciones.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.PanelContenido.SuspendLayout()
@@ -55,17 +55,17 @@ Partial Class InicioSiguaNet
         Me.btnCerrarSesion.Text = "Cerrar sesión"
         Me.btnCerrarSesion.UseVisualStyleBackColor = True
         '
-        'DbgClientes
+        'DgvClientes
         '
-        Me.DbgClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DbgClientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.DbgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DbgClientes.Location = New System.Drawing.Point(209, 194)
-        Me.DbgClientes.Margin = New System.Windows.Forms.Padding(4)
-        Me.DbgClientes.Name = "DbgClientes"
-        Me.DbgClientes.RowHeadersWidth = 51
-        Me.DbgClientes.Size = New System.Drawing.Size(1113, 402)
-        Me.DbgClientes.TabIndex = 7
+        Me.DgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgvClientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.DgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvClientes.Location = New System.Drawing.Point(166, 194)
+        Me.DgvClientes.Margin = New System.Windows.Forms.Padding(4)
+        Me.DgvClientes.Name = "DgvClientes"
+        Me.DgvClientes.RowHeadersWidth = 51
+        Me.DgvClientes.Size = New System.Drawing.Size(1156, 413)
+        Me.DgvClientes.TabIndex = 7
         '
         'PanelOpciones
         '
@@ -182,7 +182,7 @@ Partial Class InicioSiguaNet
         Me.PanelContenido.Controls.Add(Me.Label2)
         Me.PanelContenido.Controls.Add(Me.Label4)
         Me.PanelContenido.Controls.Add(Me.PictureBox1)
-        Me.PanelContenido.Controls.Add(Me.DbgClientes)
+        Me.PanelContenido.Controls.Add(Me.DgvClientes)
         Me.PanelContenido.Controls.Add(Me.btnCerrarSesion)
         Me.PanelContenido.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelContenido.Location = New System.Drawing.Point(0, 128)
@@ -190,6 +190,16 @@ Partial Class InicioSiguaNet
         Me.PanelContenido.Name = "PanelContenido"
         Me.PanelContenido.Size = New System.Drawing.Size(1355, 666)
         Me.PanelContenido.TabIndex = 22
+        '
+        'btnActualizar
+        '
+        Me.btnActualizar.Location = New System.Drawing.Point(1149, 138)
+        Me.btnActualizar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnActualizar.Name = "btnActualizar"
+        Me.btnActualizar.Size = New System.Drawing.Size(173, 39)
+        Me.btnActualizar.TabIndex = 32
+        Me.btnActualizar.Text = "Actualizar"
+        Me.btnActualizar.UseVisualStyleBackColor = True
         '
         'Label2
         '
@@ -209,33 +219,23 @@ Partial Class InicioSiguaNet
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(557, 85)
+        Me.Label4.Location = New System.Drawing.Point(518, 81)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(441, 36)
+        Me.Label4.Size = New System.Drawing.Size(492, 36)
         Me.Label4.TabIndex = 30
-        Me.Label4.Text = "Velocidad rapida, todo el tiempo"
+        Me.Label4.Text = "¡La mayor velocidad, todo el tiempo!"
         '
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = Global.InicioSiguaNet.My.Resources.Resources.SIGUANET
-        Me.PictureBox1.Location = New System.Drawing.Point(16, 6)
+        Me.PictureBox1.Location = New System.Drawing.Point(4, 4)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(199, 191)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 8
         Me.PictureBox1.TabStop = False
-        '
-        'btnActualizar
-        '
-        Me.btnActualizar.Location = New System.Drawing.Point(1149, 138)
-        Me.btnActualizar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(173, 39)
-        Me.btnActualizar.TabIndex = 32
-        Me.btnActualizar.Text = "Actualizar"
-        Me.btnActualizar.UseVisualStyleBackColor = True
         '
         'InicioSiguaNet
         '
@@ -249,7 +249,7 @@ Partial Class InicioSiguaNet
         Me.Name = "InicioSiguaNet"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
-        CType(Me.DbgClientes, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DgvClientes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelOpciones.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
@@ -260,7 +260,7 @@ Partial Class InicioSiguaNet
 
     End Sub
     Friend WithEvents btnCerrarSesion As Button
-    Friend WithEvents DbgClientes As DataGridView
+    Friend WithEvents DgvClientes As DataGridView
     Friend WithEvents PanelOpciones As Panel
     Friend WithEvents PanelContenido As Panel
     Friend WithEvents BtnClientes As Button

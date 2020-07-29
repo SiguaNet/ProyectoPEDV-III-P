@@ -86,7 +86,7 @@ Public Class PagosFacturas
         Dim printFont As System.Drawing.Font = New Font("consolas", 9)
         e.Graphics.DrawImage(My.Resources.logoF, 70, 0, 150, 150)
         e.Graphics.DrawString(("SiguaNet"), fuente, Brushes.Black, 100, 140)
-        e.Graphics.DrawString(("La Velocidad Mas Rapida"), printFont, Brushes.Black, 60, 170)
+        e.Graphics.DrawString(("¡La mayor velocidad, todo el tiempo!"), printFont, Brushes.Black, 60, 170)
         e.Graphics.DrawString(("Barrio San Miguel, Siguatepeque"), printFont, Brushes.Black, 30, 200)
         e.Graphics.DrawString(("Tel: 2773-1110"), printFont, Brushes.Black, 90, 220)
         e.Graphics.DrawString("---------------------------------", printFont, Brushes.Black, 5, 240)

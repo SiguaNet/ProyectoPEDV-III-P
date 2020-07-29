@@ -78,24 +78,6 @@ Public Class InicioGestion
 
     End Sub
 
-    'Private Sub btnPaquete_Click(sender As Object, e As EventArgs)
-    '    Try
-    '        If txtIdCli.Text = "" Then
-    '            MessageBox.Show("Por favor ingrese un numero de identidad", "Gestionar", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-
-    '        Else
-    '            limpiar()
-    '            variablesGlobales.numeroIdentidad = txtIdCli.Text
-    '            Me.Hide()
-    '            ActualizarPaquete.Show()
-
-    '        End If
-    '    Catch ex As Exception
-    '        MessageBox.Show("Error", "Gestionar", MessageBoxButtons.OK, MessageBoxIcon.Error)
-
-    '    End Try
-    'End Sub
-
     Private Sub btnTickets_Click(sender As Object, e As EventArgs) Handles btnTickets.Click
 
         Try
