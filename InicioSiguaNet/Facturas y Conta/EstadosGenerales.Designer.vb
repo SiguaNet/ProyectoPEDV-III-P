@@ -445,24 +445,6 @@ Partial Class EstadosGenerales
         '
         'btnMesAnterior
         '
-        Me.btnMesAnterior.Location = New System.Drawing.Point(16, 564)
-        Me.btnMesAnterior.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnMesAnterior.Name = "btnMesAnterior"
-        Me.btnMesAnterior.Size = New System.Drawing.Size(176, 48)
-        Me.btnMesAnterior.TabIndex = 15
-        Me.btnMesAnterior.Text = "Mes Anterior"
-        Me.btnMesAnterior.UseVisualStyleBackColor = True
-        '
-        'btnMesSiguiente
-        '
-        Me.btnMesSiguiente.Location = New System.Drawing.Point(700, 564)
-        Me.btnMesSiguiente.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnMesSiguiente.Name = "btnMesSiguiente"
-        Me.btnMesSiguiente.Size = New System.Drawing.Size(176, 48)
-        Me.btnMesSiguiente.TabIndex = 16
-        Me.btnMesSiguiente.Text = "Mes Siguiente"
-        Me.btnMesSiguiente.UseVisualStyleBackColor = True
-        '
         'btnAceptar
         '
         Me.btnAceptar.Location = New System.Drawing.Point(383, 564)
