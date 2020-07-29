@@ -1,10 +1,11 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Security.Cryptography
 Imports System.Text
+Imports System.IO
 
 Public Class Conexion
 
-    Public conexion As SqlConnection = New SqlConnection("Data Source=DESKTOP-O55QRS2\MSSQLSERVERSAM;Initial Catalog=bd_SiguaNet;Integrated Security=True")
+    Public conexion As SqlConnection = New SqlConnection("Data Source=HACKNEL;Initial Catalog=bd_SiguaNet;Integrated Security=True")
     Public adaptador As SqlDataAdapter
     Public tablaDatos1 As DataTable
     Public lectorVariables As SqlDataReader
@@ -623,6 +624,28 @@ Public Class Conexion
     Public Function fTexto(ByVal str As String) As String
         Return StrConv(str, VbStrConv.ProperCase)
     End Function
+
+    'Public Function escribirTxt(texto)
+    '    Try
+    '        Dim ruta As String = My.Resources.regMeses_txt
+    '        Dim escritor As StreamWriter
+    '        escritor = File.AppendText(ruta)
+    '        escritor.Write(texto)
+    '        escritor.Flush()
+    '        escritor.Close()
+    '    Catch ex As Exception
+    '        MessageBox.Show("Escritura realizada incorrectamente")
+    '        MsgBox(ex.Message)
+    '    End Try
+    'End Function
+
+    'Public Function leerTxt()
+    '    Dim lineA As String = String.Empty
+    '    Using reader As TextReader = New StringReader()
+    '        lineA = reader.ReadLine
+    '        MsgBox(lineA)
+    '    End Using
+    'End Function
 
     Public Sub limpiar(cont As Object)
         For Each control As Control In cont.Controls

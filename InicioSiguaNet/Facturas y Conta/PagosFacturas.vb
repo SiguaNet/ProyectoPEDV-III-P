@@ -31,6 +31,8 @@ Public Class PagosFacturas
                                 If Conexion.PAOperacionesFactura(0, txtIdentidad.Text, String.Format("{0:G}", DateTime.Now), 1) = 0 Then
                                     Conexion.LlenarDGVPorIdentidad(dgvFacturas, "consultaInformacionFacturas", "@numeroIdentidad", txtIdentidad.Text)
                                     HcantEfectivoTotal += valorPago
+                                    HcantEfectivoMes += valorPago
+                                    HcantFacturasMes += 1
                                     impresoraFacturas.Print()
                                     If cant >= variablesGlobales.cantMesesG Then
                                         Conexion.EjecutarComando("update CLIENTES set estadoC = 'Al Dia' where numeroIdentidad = '" & txtIdentidad.Text & "'")

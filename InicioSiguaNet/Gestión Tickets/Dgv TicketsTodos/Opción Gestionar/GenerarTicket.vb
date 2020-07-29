@@ -20,21 +20,6 @@ Public Class GenerarTicket
         estado = "Pendiente"
         prioridad = cmbPrioridad.Text
 
-        If cmbOperaciones.Text = "Actualización" Then
-            idOperacion = 2
-
-        ElseIf cmbOperaciones.Text = "Soporte técnico" Then
-            idOperacion = 3
-
-        ElseIf cmbOperaciones.Text = "Corte por solicitud" Then
-            idOperacion = 4
-            conexion.EjecutarComando("update CLIENTE set estadoC = 'Eliminado' where numeroIdentidad = '" & numeroIdentidad & "'")
-
-        Else
-            idOperacion = 1
-
-        End If
-
         nota = txtNota.Text
         fechaInicio = String.Format("{0:G}", DateTime.Now)
         fechaFin = ""
@@ -45,12 +30,28 @@ Public Class GenerarTicket
                 Dim totalCanti As Integer = cantMesesG - cantPagos
 
                 If totalCanti <= 2 Then
+
+                    If cmbOperaciones.Text = "Actualización" Then
+                        idOperacion = 2
+                        HcantActualizacionesMes += 1
+
+                    ElseIf cmbOperaciones.Text = "Soporte técnico" Then
+                        idOperacion = 3
+                        HcantSoporteMes += 1
+                    ElseIf cmbOperaciones.Text = "Corte por solicitud" Then
+                        idOperacion = 4
+                        conexion.EjecutarComando("update CLIENTE set estadoC = 'Eliminado' where numeroIdentidad = '" & numeroIdentidad & "'")
+                        HcantCortesMes += 1
+                    Else
+                        idOperacion = 1
+
+                    End If
+
                     If (conexion.PAOperacionesGestionTickets(idTicket, numeroIdentidad, idPersonal, estado, prioridad, idOperacion, nota, fechaInicio, fechaFin, 1) = 0) Then
                         conexion.EjecutarComando("update PERSONAL set estado = 'Ocupado' where idPersonal = '" & idPersonal & "'")
                         MessageBox.Show("Ticket registrado exitosamente", "Generar ticket", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         conexion.PAOperacionesFactura(0, numeroIdentidad, fechaInicio, 1)
                         ImprimirTicket.Print()
-
                     Else
                         MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
 

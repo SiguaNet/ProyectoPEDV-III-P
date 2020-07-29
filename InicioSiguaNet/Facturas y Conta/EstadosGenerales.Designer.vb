@@ -53,8 +53,6 @@ Partial Class EstadosGenerales
         Me.lblMes = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.lblClientesActivos = New System.Windows.Forms.Label()
-        Me.btnMesAnterior = New System.Windows.Forms.Button()
-        Me.btnMesSiguiente = New System.Windows.Forms.Button()
         Me.btnAceptar = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.invent.SuspendLayout()
@@ -495,8 +493,6 @@ Partial Class EstadosGenerales
         Me.ClientSize = New System.Drawing.Size(917, 658)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.btnAceptar)
-        Me.Controls.Add(Me.btnMesSiguiente)
-        Me.Controls.Add(Me.btnMesAnterior)
         Me.Controls.Add(Me.Label17)
         Me.Controls.Add(Me.lblClientesActivos)
         Me.Controls.Add(Me.lblMes)
@@ -552,8 +548,6 @@ Partial Class EstadosGenerales
     Friend WithEvents lblMes As Label
     Friend WithEvents Label17 As Label
     Friend WithEvents lblClientesActivos As Label
-    Friend WithEvents btnMesAnterior As Button
-    Friend WithEvents btnMesSiguiente As Button
     Friend WithEvents btnAceptar As Button
     Friend WithEvents Panel3 As Panel
 End Class

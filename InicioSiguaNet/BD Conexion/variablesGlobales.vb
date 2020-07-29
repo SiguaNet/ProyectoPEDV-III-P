@@ -4,11 +4,11 @@
     Public contrasena As String = "admin"
     Public numeroIdentidad As String
     Public tablaDatosG As DataTable
-    Public identidadPersonalEntro As String = "1001200100363"
+    Public identidadPersonalEntro As String
 
 
     'Variables formas gestión tickets
-    Public cantMesesG As Integer = 1
+    Public cantMesesG As Integer = My.Settings.settMesActualP
     Public idTicketAct As Integer
     Public fechaEstablecida As String
     Public idTecnico As Integer
@@ -16,12 +16,12 @@
     Public idOpera As Integer
 
 
-    Public HcodigoHistorial As Integer = 2
+    Public HcodigoHistorial As Integer
     Public HcantAntenasMes As Integer
     Public HcantEnrutadoresMes As Integer
     Public HcantFacturasMes As Integer
-    Public HcantEfectivoTotal As Integer
-    Public HcantEfectivoMes As Integer
+    Public HcantEfectivoTotal As Double
+    Public HcantEfectivoMes As Double 
     Public HcantSoporteMes As Integer
     Public HcantCortesMes As Integer
     Public HcantNuevosMes As Integer

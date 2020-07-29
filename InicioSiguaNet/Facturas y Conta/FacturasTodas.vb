@@ -1,7 +1,7 @@
 ﻿Public Class FacturasTodas
     Dim Conexion As Conexion = New Conexion
     Private Sub FacturasTodas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Conexion.LlenarDGV(dgvFactuTodas, "select f.idFactura as 'ID Factura', f.numeroIdentidadC as 'Numero Identidad', CONCAT(dp.nombres, ' ', dp.primerApellido, ' ', dp.segundoApellido) as 'Nombre', 
+        Conexion.LlenarDGV(dgvFactAll, "select f.idFactura as 'ID Factura', f.numeroIdentidadC as 'Numero Identidad', CONCAT(dp.nombres, ' ', dp.primerApellido, ' ', dp.segundoApellido) as 'Nombre', 
 			pli.nombrePaquete as 'Nombre Paquete', pli.precio as 'Precio', f.fechaPago, f.mesPago as 'Mes Pago'  from FACTURA f
 			inner join CLIENTES cl on f.numeroIdentidadC = cl.numeroIdentidad
 			inner join DATOS_PERSONAS dp on cl.numeroIdentidad = dp.numeroIdentidad
@@ -9,29 +9,28 @@
     End Sub
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
-		Conexion.LlenarDGV(dgvFactuTodas, "select f.idFactura as 'ID Factura', f.numeroIdentidadC as 'Numero Identidad', CONCAT(dp.nombres, ' ', dp.primerApellido, ' ', dp.segundoApellido) as 'Nombre', 
+        Conexion.LlenarDGV(dgvFactAll, "select f.idFactura as 'ID Factura', f.numeroIdentidadC as 'Numero Identidad', CONCAT(dp.nombres, ' ', dp.primerApellido, ' ', dp.segundoApellido) as 'Nombre', 
 			pli.nombrePaquete as 'Nombre Paquete', pli.precio as 'Precio', f.fechaPago, f.mesPago as 'Mes Pago'  from FACTURA f
 			inner join CLIENTES cl on f.numeroIdentidadC = cl.numeroIdentidad
 			inner join DATOS_PERSONAS dp on cl.numeroIdentidad = dp.numeroIdentidad
 			inner join PLANES_INTERNET pli on cl.idPaquete = pli.idPaquete where cl.estadoC <> 'Eliminado'")
-	End Sub
+    End Sub
 
-	Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Close()
+        InicioSiguaNet.Show()
+    End Sub
+
+    Private Sub BtnClientes_Click(sender As Object, e As EventArgs) Handles BtnClientes.Click
         Me.Close()
         InicioSiguaNet.Show()
 
     End Sub
 
-	Private Sub BtnClientes_Click(sender As Object, e As EventArgs) Handles BtnClientes.Click
-		Me.Close()
-		InicioSiguaNet.Show()
-
-	End Sub
-
-	Private Sub btnGestionTickets_Click(sender As Object, e As EventArgs) Handles btnGestionTickets.Click
-		Me.Close()
-		GestionTickets.Show()
-	End Sub
+    Private Sub btnGestionTickets_Click(sender As Object, e As EventArgs) Handles btnGestionTickets.Click
+        Me.Close()
+        GestionTickets.Show()
+    End Sub
 
     Private Sub TimerOcultar_Tick(sender As Object, e As EventArgs) Handles TimerOcultar.Tick
         If PanelOpciones.Height <= 104 Then
@@ -69,5 +68,10 @@
     Private Sub btnInventario_Click(sender As Object, e As EventArgs) Handles btnInventario.Click
         Me.Close()
         AdministracionCRUD.Show()
+    End Sub
+
+    Private Sub btnEstadosGene_Click(sender As Object, e As EventArgs) Handles btnEstadosGene.Click
+        HcodigoHistorial = 2
+        EstadosGenerales.Show()
     End Sub
 End Class
