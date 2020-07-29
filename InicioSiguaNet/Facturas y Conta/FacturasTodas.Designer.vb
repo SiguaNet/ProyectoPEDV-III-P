@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FacturasTodas
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FacturasTodas
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FacturasTodas))
@@ -53,9 +53,10 @@ Partial Class FacturasTodas
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(12, 9)
+        Me.Label1.Location = New System.Drawing.Point(16, 11)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(150, 18)
+        Me.Label1.Size = New System.Drawing.Size(186, 24)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Facturas Procesadas"
         '
@@ -72,8 +73,9 @@ Partial Class FacturasTodas
         Me.PanelOpciones.Controls.Add(Me.Panel3)
         Me.PanelOpciones.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelOpciones.Location = New System.Drawing.Point(0, 0)
+        Me.PanelOpciones.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PanelOpciones.Name = "PanelOpciones"
-        Me.PanelOpciones.Size = New System.Drawing.Size(1033, 104)
+        Me.PanelOpciones.Size = New System.Drawing.Size(1377, 128)
         Me.PanelOpciones.TabIndex = 4
         '
         'btnEstadosGene
@@ -93,9 +95,10 @@ Partial Class FacturasTodas
         Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(461, 107)
+        Me.Button2.Location = New System.Drawing.Point(661, 132)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.Size = New System.Drawing.Size(100, 28)
         Me.Button2.TabIndex = 27
         Me.Button2.Text = "Pagos Facturas"
         Me.Button2.UseVisualStyleBackColor = False
@@ -105,9 +108,10 @@ Partial Class FacturasTodas
         Me.btnActualizar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnActualizar.ForeColor = System.Drawing.Color.White
-        Me.btnActualizar.Location = New System.Drawing.Point(542, 107)
+        Me.btnActualizar.Location = New System.Drawing.Point(769, 132)
+        Me.btnActualizar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(75, 23)
+        Me.btnActualizar.Size = New System.Drawing.Size(100, 28)
         Me.btnActualizar.TabIndex = 2
         Me.btnActualizar.Text = "Actualizar"
         Me.btnActualizar.UseVisualStyleBackColor = False
@@ -117,9 +121,10 @@ Partial Class FacturasTodas
         Me.BtnClientes.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.BtnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnClientes.ForeColor = System.Drawing.Color.White
-        Me.BtnClientes.Location = New System.Drawing.Point(218, 48)
+        Me.BtnClientes.Location = New System.Drawing.Point(291, 59)
+        Me.BtnClientes.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnClientes.Name = "BtnClientes"
-        Me.BtnClientes.Size = New System.Drawing.Size(140, 43)
+        Me.BtnClientes.Size = New System.Drawing.Size(187, 53)
         Me.BtnClientes.TabIndex = 26
         Me.BtnClientes.Text = "Clientes"
         Me.BtnClientes.UseVisualStyleBackColor = False
@@ -129,10 +134,10 @@ Partial Class FacturasTodas
         Me.btnInventario.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnInventario.ForeColor = System.Drawing.Color.White
-        Me.btnInventario.Location = New System.Drawing.Point(645, 47)
-        Me.btnInventario.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnInventario.Location = New System.Drawing.Point(860, 58)
+        Me.btnInventario.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnInventario.Name = "btnInventario"
-        Me.btnInventario.Size = New System.Drawing.Size(143, 44)
+        Me.btnInventario.Size = New System.Drawing.Size(191, 54)
         Me.btnInventario.TabIndex = 23
         Me.btnInventario.Text = "Administración"
         Me.btnInventario.UseVisualStyleBackColor = False
@@ -142,10 +147,10 @@ Partial Class FacturasTodas
         Me.btnFacturas.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnFacturas.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnFacturas.ForeColor = System.Drawing.Color.White
-        Me.btnFacturas.Location = New System.Drawing.Point(506, 47)
-        Me.btnFacturas.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnFacturas.Location = New System.Drawing.Point(675, 58)
+        Me.btnFacturas.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnFacturas.Name = "btnFacturas"
-        Me.btnFacturas.Size = New System.Drawing.Size(135, 43)
+        Me.btnFacturas.Size = New System.Drawing.Size(180, 53)
         Me.btnFacturas.TabIndex = 22
         Me.btnFacturas.Text = "Facturas"
         Me.btnFacturas.UseVisualStyleBackColor = False
@@ -155,10 +160,10 @@ Partial Class FacturasTodas
         Me.btnGestionTickets.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnGestionTickets.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnGestionTickets.ForeColor = System.Drawing.Color.White
-        Me.btnGestionTickets.Location = New System.Drawing.Point(364, 48)
-        Me.btnGestionTickets.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnGestionTickets.Location = New System.Drawing.Point(485, 59)
+        Me.btnGestionTickets.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnGestionTickets.Name = "btnGestionTickets"
-        Me.btnGestionTickets.Size = New System.Drawing.Size(137, 43)
+        Me.btnGestionTickets.Size = New System.Drawing.Size(183, 53)
         Me.btnGestionTickets.TabIndex = 21
         Me.btnGestionTickets.Text = "Gestión de tickets"
         Me.btnGestionTickets.UseVisualStyleBackColor = False
@@ -170,8 +175,9 @@ Partial Class FacturasTodas
         Me.Panel3.Controls.Add(Me.Label1)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1033, 42)
+        Me.Panel3.Size = New System.Drawing.Size(1377, 52)
         Me.Panel3.TabIndex = 20
         '
         'Button1
@@ -183,10 +189,10 @@ Partial Class FacturasTodas
         Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
         Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(999, 2)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button1.Location = New System.Drawing.Point(1334, 4)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(32, 34)
+        Me.Button1.Size = New System.Drawing.Size(43, 42)
         Me.Button1.TabIndex = 19
         Me.Button1.UseVisualStyleBackColor = False
         '
@@ -205,18 +211,20 @@ Partial Class FacturasTodas
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.ForeColor = System.Drawing.Color.White
-        Me.Panel1.Location = New System.Drawing.Point(0, 104)
+        Me.Panel1.Location = New System.Drawing.Point(0, 128)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1033, 546)
+        Me.Panel1.Size = New System.Drawing.Size(1377, 672)
         Me.Panel1.TabIndex = 5
         '
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = Global.InicioSiguaNet.My.Resources.Resources.SIGUANET
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox1.Location = New System.Drawing.Point(4, 4)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(127, 111)
+        Me.PictureBox1.Size = New System.Drawing.Size(111, 90)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 10
         Me.PictureBox1.TabStop = False
@@ -242,12 +250,13 @@ Partial Class FacturasTodas
         '
         'FacturasTodas
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1033, 650)
+        Me.ClientSize = New System.Drawing.Size(1377, 800)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PanelOpciones)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "FacturasTodas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FacturasTodas"

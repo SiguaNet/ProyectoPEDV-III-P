@@ -1,5 +1,15 @@
-﻿Public Class GenerarTicket
+﻿Imports System.Runtime.InteropServices
+Public Class GenerarTicket
     Dim conexion As Conexion = New Conexion
+
+    <DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
+    Private Shared Sub ReleaseCapture()
+    End Sub
+
+    <DllImport("user32.DLL", EntryPoint:="SendMessage")>
+    Private Shared Sub SendMessage(ByVal hWnd As System.IntPtr, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer)
+    End Sub
+
     Private Sub btnGenerar_Click(sender As Object, e As EventArgs) Handles btnGenerar.Click
         Dim idTicket, idPersonal, idOperacion As Integer
         Dim numeroIdentidad, estado, prioridad, nota, fechaInicio, fechaFin As String
@@ -62,7 +72,10 @@
     End Sub
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
-        End
+        conexion.limpiar(Me)
+        Me.Close()
+        InicioGestion.Show()
+
 
     End Sub
 
@@ -103,19 +116,6 @@
 
     End Sub
 
-    Private Sub limpiar()
-        txtNumeroID.Clear()
-        txtNota.Clear()
-        txtTelefonoTec.Clear()
-        txtNombreTec.Clear()
-        cmbPersonal.SelectedIndex = -1
-        cmbOperaciones.SelectedIndex = -1
-        cmbPrioridad.SelectedIndex = -1
-        txtNombreCompleto.Clear()
-        txtTelefono.Clear()
-        txtReferenciasDirec.Clear()
-
-    End Sub
     Private Sub TimerOcultar_Tick(sender As Object, e As EventArgs) Handles TimerOcultar.Tick
         If PanelDatosCliente.Height <= 27 Then
             Me.TimerOcultar.Enabled = False
@@ -162,24 +162,6 @@
 
                     End If
 
-                    'Fin efecto
-
-                    'If (GradientDatos.Height = 24) Then
-
-                    '    GradientDatos.Visible = False
-                    '    GradientDatos.Height = 211
-                    '    PanelDatosCliente.Height = 211
-                    '    TransMostrar.Show(GradientDatos)
-
-                    'Else
-
-                    '    GradientDatos.Visible = False
-                    '    GradientDatos.Height = 24
-                    '    PanelDatosCliente.Height = 24
-                    '    TransOcultar.Show(GradientDatos)
-
-                    'End If
-
                 End If
 
             ElseIf MessageBox.Show("El cliente no existe, ¿Desea ingresarlo?", "Verificación", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.Yes Then
@@ -195,14 +177,14 @@
     End Sub
 
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
-        limpiar()
+        conexion.limpiar(Me)
         Me.Close()
         InicioGestion.Show()
 
     End Sub
 
     Private Sub btnCasa_Click(sender As Object, e As EventArgs) Handles btnCasa.Click
-        limpiar()
+        conexion.limpiar(Me)
         Me.Close()
         GestionTickets.Show()
 
@@ -237,7 +219,7 @@
         Dim printFont As System.Drawing.Font = New Font("consolas", 9)
         e.Graphics.DrawImage(My.Resources.logoF, 70, 0, 150, 150)
         e.Graphics.DrawString(("SiguaNet"), fuente, Brushes.Black, 100, 140)
-        e.Graphics.DrawString(("La Velocidad Mas Rapida"), printFont, Brushes.Black, 60, 170)
+        e.Graphics.DrawString(("¡La mayor velocidad, todo el tiempo!"), printFont, Brushes.Black, 60, 170)
         e.Graphics.DrawString(("Barrio San Miguel, Siguatepeque"), printFont, Brushes.Black, 30, 200)
         e.Graphics.DrawString(("Tel: 2773-1110"), printFont, Brushes.Black, 90, 220)
         e.Graphics.DrawString("---------------------------------", printFont, Brushes.Black, 5, 240)
@@ -257,4 +239,11 @@
 
         e.Graphics.DrawString("Empleado encargado: " & datos(8).ToString, printFont, Brushes.Black, 5, 510)
     End Sub
+
+    Private Sub Panel3_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel3.MouseMove
+        ReleaseCapture()
+        SendMessage(Me.Handle, &H112&, &HF012&, 0)
+
+    End Sub
+
 End Class

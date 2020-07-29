@@ -16,21 +16,21 @@
 			inner join PLANES_INTERNET pli on cl.idPaquete = pli.idPaquete where cl.estadoC <> 'Eliminado'")
     End Sub
 
-	Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()
         InicioSiguaNet.Show()
     End Sub
 
-	Private Sub BtnClientes_Click(sender As Object, e As EventArgs) Handles BtnClientes.Click
-		Me.Close()
-		InicioSiguaNet.Show()
+    Private Sub BtnClientes_Click(sender As Object, e As EventArgs) Handles BtnClientes.Click
+        Me.Close()
+        InicioSiguaNet.Show()
 
-	End Sub
+    End Sub
 
-	Private Sub btnGestionTickets_Click(sender As Object, e As EventArgs) Handles btnGestionTickets.Click
-		Me.Close()
-		GestionTickets.Show()
-	End Sub
+    Private Sub btnGestionTickets_Click(sender As Object, e As EventArgs) Handles btnGestionTickets.Click
+        Me.Close()
+        GestionTickets.Show()
+    End Sub
 
     Private Sub TimerOcultar_Tick(sender As Object, e As EventArgs) Handles TimerOcultar.Tick
         If PanelOpciones.Height <= 104 Then

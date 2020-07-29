@@ -1,5 +1,5 @@
 ﻿Imports System.ComponentModel
-
+Imports System.Runtime.InteropServices
 Public Class InicioGestion
     Dim conexion As Conexion = New Conexion
     Private Sub InicioGestion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -67,7 +67,8 @@ Public Class InicioGestion
     End Sub
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
-        End
+        Me.Close()
+        GestionTickets.Show()
 
     End Sub
 
@@ -76,24 +77,6 @@ Public Class InicioGestion
         GestionTickets.Show()
 
     End Sub
-
-    'Private Sub btnPaquete_Click(sender As Object, e As EventArgs)
-    '    Try
-    '        If txtIdCli.Text = "" Then
-    '            MessageBox.Show("Por favor ingrese un numero de identidad", "Gestionar", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-
-    '        Else
-    '            limpiar()
-    '            variablesGlobales.numeroIdentidad = txtIdCli.Text
-    '            Me.Hide()
-    '            ActualizarPaquete.Show()
-
-    '        End If
-    '    Catch ex As Exception
-    '        MessageBox.Show("Error", "Gestionar", MessageBoxButtons.OK, MessageBoxIcon.Error)
-
-    '    End Try
-    'End Sub
 
     Private Sub btnTickets_Click(sender As Object, e As EventArgs) Handles btnTickets.Click
 
@@ -121,5 +104,19 @@ Public Class InicioGestion
         Else
             Me.ErrorValidacion.SetError(sender, "Ingrese un numero de identidad valido")
         End If
+    End Sub
+
+    <DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
+    Private Shared Sub ReleaseCapture()
+    End Sub
+
+    <DllImport("user32.DLL", EntryPoint:="SendMessage")>
+    Private Shared Sub SendMessage(ByVal hWnd As System.IntPtr, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer)
+    End Sub
+
+    Private Sub Panel3_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel3.MouseMove
+        ReleaseCapture()
+        SendMessage(Me.Handle, &H112&, &HF012&, 0)
+
     End Sub
 End Class

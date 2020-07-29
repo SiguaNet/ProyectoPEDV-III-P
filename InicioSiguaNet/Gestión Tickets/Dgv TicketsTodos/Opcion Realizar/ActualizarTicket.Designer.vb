@@ -29,6 +29,13 @@ Partial Class ActualizarTicket
         Me.btnVolver = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PanelContenido = New System.Windows.Forms.Panel()
+        Me.PanelDatosCliente = New System.Windows.Forms.Panel()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.txtReferenciasDirec = New System.Windows.Forms.TextBox()
+        Me.txtNombreCompleto = New System.Windows.Forms.TextBox()
+        Me.txtTelefono = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.chkEstadoRealizado = New System.Windows.Forms.CheckBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -37,27 +44,20 @@ Partial Class ActualizarTicket
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtNumeroID = New System.Windows.Forms.TextBox()
-        Me.PanelDatosCliente = New System.Windows.Forms.Panel()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.txtReferenciasDirec = New System.Windows.Forms.TextBox()
-        Me.txtNombreCompleto = New System.Windows.Forms.TextBox()
-        Me.txtTelefono = New System.Windows.Forms.TextBox()
         Me.btnVerDatoCliente = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.chkCambioEqui = New System.Windows.Forms.CheckBox()
-        Me.cmbEr = New System.Windows.Forms.ComboBox()
-        Me.cmbAn = New System.Windows.Forms.ComboBox()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.cmbAn = New System.Windows.Forms.ComboBox()
+        Me.cmbEr = New System.Windows.Forms.ComboBox()
+        Me.chkCambioEqui = New System.Windows.Forms.CheckBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.TimerMostrar = New System.Windows.Forms.Timer(Me.components)
         Me.TimerOcultar = New System.Windows.Forms.Timer(Me.components)
         Me.PanelOpciones.SuspendLayout()
         Me.PanelContenido.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
         Me.PanelDatosCliente.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -130,6 +130,88 @@ Partial Class ActualizarTicket
         Me.PanelContenido.Name = "PanelContenido"
         Me.PanelContenido.Size = New System.Drawing.Size(1128, 396)
         Me.PanelContenido.TabIndex = 1
+        '
+        'PanelDatosCliente
+        '
+        Me.PanelDatosCliente.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.PanelDatosCliente.Controls.Add(Me.Label12)
+        Me.PanelDatosCliente.Controls.Add(Me.Label11)
+        Me.PanelDatosCliente.Controls.Add(Me.Label10)
+        Me.PanelDatosCliente.Controls.Add(Me.txtReferenciasDirec)
+        Me.PanelDatosCliente.Controls.Add(Me.txtNombreCompleto)
+        Me.PanelDatosCliente.Controls.Add(Me.txtTelefono)
+        Me.PanelDatosCliente.Location = New System.Drawing.Point(531, 53)
+        Me.PanelDatosCliente.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PanelDatosCliente.Name = "PanelDatosCliente"
+        Me.PanelDatosCliente.Size = New System.Drawing.Size(537, 33)
+        Me.PanelDatosCliente.TabIndex = 44
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.BackColor = System.Drawing.Color.Transparent
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.White
+        Me.Label12.Location = New System.Drawing.Point(19, 30)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(141, 20)
+        Me.Label12.TabIndex = 15
+        Me.Label12.Text = "Nombre completo"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.Transparent
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.White
+        Me.Label11.Location = New System.Drawing.Point(19, 97)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(73, 20)
+        Me.Label11.TabIndex = 14
+        Me.Label11.Text = "Teléfono"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.Transparent
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.White
+        Me.Label10.Location = New System.Drawing.Point(223, 98)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(112, 20)
+        Me.Label10.TabIndex = 13
+        Me.Label10.Text = "Ref. dirección"
+        '
+        'txtReferenciasDirec
+        '
+        Me.txtReferenciasDirec.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtReferenciasDirec.Location = New System.Drawing.Point(221, 129)
+        Me.txtReferenciasDirec.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtReferenciasDirec.Multiline = True
+        Me.txtReferenciasDirec.Name = "txtReferenciasDirec"
+        Me.txtReferenciasDirec.ReadOnly = True
+        Me.txtReferenciasDirec.Size = New System.Drawing.Size(308, 75)
+        Me.txtReferenciasDirec.TabIndex = 12
+        '
+        'txtNombreCompleto
+        '
+        Me.txtNombreCompleto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombreCompleto.Location = New System.Drawing.Point(23, 57)
+        Me.txtNombreCompleto.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtNombreCompleto.Name = "txtNombreCompleto"
+        Me.txtNombreCompleto.ReadOnly = True
+        Me.txtNombreCompleto.Size = New System.Drawing.Size(429, 30)
+        Me.txtNombreCompleto.TabIndex = 10
+        '
+        'txtTelefono
+        '
+        Me.txtTelefono.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTelefono.Location = New System.Drawing.Point(20, 127)
+        Me.txtTelefono.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtTelefono.Name = "txtTelefono"
+        Me.txtTelefono.ReadOnly = True
+        Me.txtTelefono.Size = New System.Drawing.Size(184, 30)
+        Me.txtTelefono.TabIndex = 11
         '
         'GroupBox1
         '
@@ -217,88 +299,6 @@ Partial Class ActualizarTicket
         Me.txtNumeroID.Size = New System.Drawing.Size(236, 30)
         Me.txtNumeroID.TabIndex = 45
         '
-        'PanelDatosCliente
-        '
-        Me.PanelDatosCliente.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.PanelDatosCliente.Controls.Add(Me.Label12)
-        Me.PanelDatosCliente.Controls.Add(Me.Label11)
-        Me.PanelDatosCliente.Controls.Add(Me.Label10)
-        Me.PanelDatosCliente.Controls.Add(Me.txtReferenciasDirec)
-        Me.PanelDatosCliente.Controls.Add(Me.txtNombreCompleto)
-        Me.PanelDatosCliente.Controls.Add(Me.txtTelefono)
-        Me.PanelDatosCliente.Location = New System.Drawing.Point(531, 53)
-        Me.PanelDatosCliente.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.PanelDatosCliente.Name = "PanelDatosCliente"
-        Me.PanelDatosCliente.Size = New System.Drawing.Size(537, 33)
-        Me.PanelDatosCliente.TabIndex = 44
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.BackColor = System.Drawing.Color.Transparent
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(19, 30)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(141, 20)
-        Me.Label12.TabIndex = 15
-        Me.Label12.Text = "Nombre completo"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(19, 97)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(73, 20)
-        Me.Label11.TabIndex = 14
-        Me.Label11.Text = "Teléfono"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.BackColor = System.Drawing.Color.Transparent
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(223, 98)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(112, 20)
-        Me.Label10.TabIndex = 13
-        Me.Label10.Text = "Ref. dirección"
-        '
-        'txtReferenciasDirec
-        '
-        Me.txtReferenciasDirec.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtReferenciasDirec.Location = New System.Drawing.Point(221, 129)
-        Me.txtReferenciasDirec.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtReferenciasDirec.Multiline = True
-        Me.txtReferenciasDirec.Name = "txtReferenciasDirec"
-        Me.txtReferenciasDirec.ReadOnly = True
-        Me.txtReferenciasDirec.Size = New System.Drawing.Size(308, 75)
-        Me.txtReferenciasDirec.TabIndex = 12
-        '
-        'txtNombreCompleto
-        '
-        Me.txtNombreCompleto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombreCompleto.Location = New System.Drawing.Point(23, 57)
-        Me.txtNombreCompleto.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtNombreCompleto.Name = "txtNombreCompleto"
-        Me.txtNombreCompleto.ReadOnly = True
-        Me.txtNombreCompleto.Size = New System.Drawing.Size(429, 30)
-        Me.txtNombreCompleto.TabIndex = 10
-        '
-        'txtTelefono
-        '
-        Me.txtTelefono.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTelefono.Location = New System.Drawing.Point(20, 127)
-        Me.txtTelefono.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtTelefono.Name = "txtTelefono"
-        Me.txtTelefono.ReadOnly = True
-        Me.txtTelefono.Size = New System.Drawing.Size(184, 30)
-        Me.txtTelefono.TabIndex = 11
-        '
         'btnVerDatoCliente
         '
         Me.btnVerDatoCliente.BackColor = System.Drawing.Color.Silver
@@ -324,16 +324,49 @@ Partial Class ActualizarTicket
         Me.GroupBox2.TabIndex = 53
         Me.GroupBox2.TabStop = False
         '
-        'Label5
+        'Label7
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Fugaz One", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(18, 18)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(88, 28)
-        Me.Label5.TabIndex = 48
-        Me.Label5.Text = "Detalles"
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Fugaz One", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(216, 106)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(87, 28)
+        Me.Label7.TabIndex = 53
+        Me.Label7.Text = "Antenas"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Fugaz One", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(52, 106)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(131, 28)
+        Me.Label6.TabIndex = 52
+        Me.Label6.Text = "Enrutadores"
+        '
+        'cmbAn
+        '
+        Me.cmbAn.Enabled = False
+        Me.cmbAn.Font = New System.Drawing.Font("Fugaz One", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbAn.FormattingEnabled = True
+        Me.cmbAn.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
+        Me.cmbAn.Location = New System.Drawing.Point(261, 147)
+        Me.cmbAn.Name = "cmbAn"
+        Me.cmbAn.Size = New System.Drawing.Size(88, 30)
+        Me.cmbAn.TabIndex = 51
+        '
+        'cmbEr
+        '
+        Me.cmbEr.Enabled = False
+        Me.cmbEr.Font = New System.Drawing.Font("Fugaz One", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbEr.FormattingEnabled = True
+        Me.cmbEr.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
+        Me.cmbEr.Location = New System.Drawing.Point(112, 147)
+        Me.cmbEr.Name = "cmbEr"
+        Me.cmbEr.Size = New System.Drawing.Size(88, 30)
+        Me.cmbEr.TabIndex = 50
         '
         'chkCambioEqui
         '
@@ -347,49 +380,16 @@ Partial Class ActualizarTicket
         Me.chkCambioEqui.Text = "Se requirio cambio de equipo"
         Me.chkCambioEqui.UseVisualStyleBackColor = True
         '
-        'cmbEr
+        'Label5
         '
-        Me.cmbEr.Enabled = False
-        Me.cmbEr.Font = New System.Drawing.Font("Fugaz One", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbEr.FormattingEnabled = True
-        Me.cmbEr.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
-        Me.cmbEr.Location = New System.Drawing.Point(112, 147)
-        Me.cmbEr.Name = "cmbEr"
-        Me.cmbEr.Size = New System.Drawing.Size(88, 30)
-        Me.cmbEr.TabIndex = 50
-        '
-        'cmbAn
-        '
-        Me.cmbAn.Enabled = False
-        Me.cmbAn.Font = New System.Drawing.Font("Fugaz One", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbAn.FormattingEnabled = True
-        Me.cmbAn.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
-        Me.cmbAn.Location = New System.Drawing.Point(261, 147)
-        Me.cmbAn.Name = "cmbAn"
-        Me.cmbAn.Size = New System.Drawing.Size(88, 30)
-        Me.cmbAn.TabIndex = 51
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Fugaz One", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(52, 106)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(131, 28)
-        Me.Label6.TabIndex = 52
-        Me.Label6.Text = "Enrutadores"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Fugaz One", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(216, 106)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(87, 28)
-        Me.Label7.TabIndex = 53
-        Me.Label7.Text = "Antenas"
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Fugaz One", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(18, 18)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(88, 28)
+        Me.Label5.TabIndex = 48
+        Me.Label5.Text = "Detalles"
         '
         'ActualizarTicket
         '
@@ -406,10 +406,10 @@ Partial Class ActualizarTicket
         Me.PanelOpciones.PerformLayout()
         Me.PanelContenido.ResumeLayout(False)
         Me.PanelContenido.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.PanelDatosCliente.ResumeLayout(False)
         Me.PanelDatosCliente.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)

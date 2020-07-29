@@ -1,12 +1,21 @@
-﻿Public Class InicioSiguaNet
+﻿Imports System.Runtime.InteropServices
+Public Class InicioSiguaNet
     Dim Conexion As Conexion = New Conexion
 
-    Private Sub InicioSiguaNet_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Conexion.LlenarDGV(DbgClientes, "consultaInformacionClientes")
+    <DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
+    Private Shared Sub ReleaseCapture()
     End Sub
 
-    Private Sub DbgClientes_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DbgClientes.CellContentDoubleClick
-        variablesGlobales.numeroIdentidad = DbgClientes.CurrentRow.Cells(0).Value.ToString()
+    <DllImport("user32.DLL", EntryPoint:="SendMessage")>
+    Private Shared Sub SendMessage(ByVal hWnd As System.IntPtr, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer)
+    End Sub
+
+    Private Sub InicioSiguaNet_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Conexion.LlenarDGV(DgvClientes, "consultaInformacionClientes")
+    End Sub
+
+    Private Sub DbgClientes_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvClientes.CellContentDoubleClick
+        variablesGlobales.numeroIdentidad = DgvClientes.CurrentRow.Cells(0).Value.ToString()
         Me.Hide()
         FichaCliente.Show()
     End Sub
@@ -49,5 +58,18 @@
     Private Sub btnAdmin_Click(sender As Object, e As EventArgs) Handles btnAdmin.Click
         Me.Close()
         AdministracionCRUD.Show()
+    End Sub
+
+    Private Sub Panel3_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel3.MouseMove
+        ReleaseCapture()
+        SendMessage(Me.Handle, &H112&, &HF012&, 0)
+
+    End Sub
+
+    Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
+        Conexion.LlenarDGV(DgvClientes, "consultaInformacionClientes")
+
+        Conexion.EjecutarComando("update CLIENTES set estadoC = 'En mora' where pagosCliente < '" & variablesGlobales.cantMesesG & "'")
+
     End Sub
 End Class

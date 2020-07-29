@@ -1,4 +1,5 @@
-﻿Public Class ActualizarTicket
+﻿Imports System.Runtime.InteropServices
+Public Class ActualizarTicket
     Dim conexion As Conexion = New Conexion
     Dim estado As String
 
@@ -9,7 +10,8 @@
     End Sub
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
-        End
+        Me.Close()
+        RealizarTickets.Show()
 
     End Sub
 
@@ -19,17 +21,25 @@
 
     End Sub
 
+    Private Sub TimerOcultar_Tick(sender As Object, e As EventArgs) Handles TimerOcultar.Tick
+        If PanelDatosCliente.Height <= 27 Then
+            Me.TimerOcultar.Enabled = False
+        Else
+            Me.PanelDatosCliente.Height = PanelDatosCliente.Height - 40
+        End If
+    End Sub
+
+    Private Sub TimerMostrar_Tick(sender As Object, e As EventArgs) Handles TimerMostrar.Tick
+        If PanelDatosCliente.Height >= 180 Then
+            Me.TimerMostrar.Enabled = False
+        Else
+            Me.PanelDatosCliente.Height = PanelDatosCliente.Height + 40
+        End If
+    End Sub
+
     Private Sub btnVerDatoCliente_Click(sender As Object, e As EventArgs) Handles btnVerDatoCliente.Click
         Dim idCliente As String
         idCliente = txtNumeroID.Text
-
-        If PanelDatosCliente.Height = 27 Then
-            TimerMostrar.Enabled = True
-
-        ElseIf PanelDatosCliente.Height = 187 Then
-            TimerOcultar.Enabled = True
-
-        End If
 
         Try
             If (conexion.LlenarTablaPorIdentidad("consultaInformacionCliente", "@numeroIdentidad", idCliente) = 0) Then
@@ -47,9 +57,6 @@
                     txtTelefono.Text = dat(2)
                     txtReferenciasDirec.Text = dat(3)
 
-
-                    'Efecto por mientras
-
                     If PanelDatosCliente.Height = 27 Then
                         TimerMostrar.Enabled = True
 
@@ -58,33 +65,15 @@
 
                     End If
 
-                    'Fin efecto
-
-                    'If (GradientDatos.Height = 24) Then
-
-                    '    GradientDatos.Visible = False
-                    '    GradientDatos.Height = 211
-                    '    PanelDatosCliente.Height = 211
-                    '    TransMostrar.Show(GradientDatos)
-
-                    'Else
-
-                    '    GradientDatos.Visible = False
-                    '    GradientDatos.Height = 24
-                    '    PanelDatosCliente.Height = 24
-                    '    TransOcultar.Show(GradientDatos)
-
-                    'End If
-
                 End If
 
             ElseIf MessageBox.Show("El cliente no existe, ¿Desea ingresarlo?", "Verificación", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.Yes Then
                 Me.Hide()
-                        variablesGlobales.numeroIdentidad = txtNumeroID.Text
-                        AgregarCliente.Show()
+                variablesGlobales.numeroIdentidad = txtNumeroID.Text
+                AgregarCliente.Show()
 
-                    End If
-                Catch ex As Exception
+            End If
+        Catch ex As Exception
             MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
@@ -165,6 +154,16 @@
 
     End Sub
 
+    <DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
+    Private Shared Sub ReleaseCapture()
+    End Sub
 
+    <DllImport("user32.DLL", EntryPoint:="SendMessage")>
+    Private Shared Sub SendMessage(ByVal hWnd As System.IntPtr, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer)
+    End Sub
 
+    Private Sub PanelOpciones_MouseMove(sender As Object, e As MouseEventArgs) Handles PanelOpciones.MouseMove
+        ReleaseCapture()
+        SendMessage(Me.Handle, &H112&, &HF012&, 0)
+    End Sub
 End Class
