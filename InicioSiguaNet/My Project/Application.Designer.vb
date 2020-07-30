@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.InicioSiguaNet.Planes_Internet
+            Me.MainForm = Global.InicioSiguaNet.Tickets
         End Sub
     End Class
 End Namespace
