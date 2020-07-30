@@ -337,6 +337,7 @@
     <None Include="Resources\verContra1.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bd_SiguaNetCo.sql" />
     <Content Include="Login\mensajeCorreo.html" />
     <None Include="Resources\Sectores.jpg" />
     <None Include="Resources\Inventario.jpg" />
