@@ -32,6 +32,8 @@ Partial Class AdministracionCRUD
         Me.btnAdmin = New System.Windows.Forms.Button()
         Me.btnGestionTickets = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.btnCrudClientes = New System.Windows.Forms.Button()
         Me.btnCerrarSesion = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.btnPlanesInter = New System.Windows.Forms.Button()
@@ -43,8 +45,6 @@ Partial Class AdministracionCRUD
         Me.btnEmpleados = New System.Windows.Forms.Button()
         Me.btnVehiculos = New System.Windows.Forms.Button()
         Me.btnInventario = New System.Windows.Forms.Button()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.btnCrudClientes = New System.Windows.Forms.Button()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -181,6 +181,31 @@ Partial Class AdministracionCRUD
         Me.Panel2.Size = New System.Drawing.Size(1384, 629)
         Me.Panel2.TabIndex = 23
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(745, 494)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(141, 39)
+        Me.Label7.TabIndex = 12
+        Me.Label7.Text = "Clientes"
+        '
+        'btnCrudClientes
+        '
+        Me.btnCrudClientes.BackgroundImage = CType(resources.GetObject("btnCrudClientes.BackgroundImage"), System.Drawing.Image)
+        Me.btnCrudClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCrudClientes.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnCrudClientes.Location = New System.Drawing.Point(577, 445)
+        Me.btnCrudClientes.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnCrudClientes.Name = "btnCrudClientes"
+        Me.btnCrudClientes.Size = New System.Drawing.Size(160, 151)
+        Me.btnCrudClientes.TabIndex = 11
+        Me.btnCrudClientes.UseVisualStyleBackColor = True
+        '
         'btnCerrarSesion
         '
         Me.btnCerrarSesion.Location = New System.Drawing.Point(1152, 579)
@@ -206,8 +231,8 @@ Partial Class AdministracionCRUD
         '
         'btnPlanesInter
         '
-        Me.btnPlanesInter.BackgroundImage = Global.InicioSiguaNet.My.Resources.Resources.Sectores
-        Me.btnPlanesInter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnPlanesInter.BackgroundImage = CType(resources.GetObject("btnPlanesInter.BackgroundImage"), System.Drawing.Image)
+        Me.btnPlanesInter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnPlanesInter.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnPlanesInter.Location = New System.Drawing.Point(891, 95)
         Me.btnPlanesInter.Margin = New System.Windows.Forms.Padding(4)
@@ -271,7 +296,7 @@ Partial Class AdministracionCRUD
         'btnSectores
         '
         Me.btnSectores.BackgroundImage = Global.InicioSiguaNet.My.Resources.Resources.Sectores
-        Me.btnSectores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnSectores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnSectores.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnSectores.Location = New System.Drawing.Point(891, 331)
         Me.btnSectores.Margin = New System.Windows.Forms.Padding(4)
@@ -283,7 +308,7 @@ Partial Class AdministracionCRUD
         'btnEmpleados
         '
         Me.btnEmpleados.BackgroundImage = Global.InicioSiguaNet.My.Resources.Resources.Personal
-        Me.btnEmpleados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnEmpleados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnEmpleados.Location = New System.Drawing.Point(577, 208)
         Me.btnEmpleados.Margin = New System.Windows.Forms.Padding(4)
@@ -295,7 +320,7 @@ Partial Class AdministracionCRUD
         'btnVehiculos
         '
         Me.btnVehiculos.BackgroundImage = Global.InicioSiguaNet.My.Resources.Resources.RecursosMotores
-        Me.btnVehiculos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnVehiculos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnVehiculos.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnVehiculos.Location = New System.Drawing.Point(230, 329)
         Me.btnVehiculos.Margin = New System.Windows.Forms.Padding(4)
@@ -307,7 +332,7 @@ Partial Class AdministracionCRUD
         'btnInventario
         '
         Me.btnInventario.BackgroundImage = Global.InicioSiguaNet.My.Resources.Resources.Inventario
-        Me.btnInventario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnInventario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnInventario.Location = New System.Drawing.Point(230, 97)
         Me.btnInventario.Margin = New System.Windows.Forms.Padding(4)
@@ -315,31 +340,6 @@ Partial Class AdministracionCRUD
         Me.btnInventario.Size = New System.Drawing.Size(160, 143)
         Me.btnInventario.TabIndex = 0
         Me.btnInventario.UseVisualStyleBackColor = True
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(745, 494)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(141, 39)
-        Me.Label7.TabIndex = 12
-        Me.Label7.Text = "Clientes"
-        '
-        'btnCrudClientes
-        '
-        Me.btnCrudClientes.BackgroundImage = Global.InicioSiguaNet.My.Resources.Resources.Personal
-        Me.btnCrudClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnCrudClientes.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnCrudClientes.Location = New System.Drawing.Point(577, 445)
-        Me.btnCrudClientes.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnCrudClientes.Name = "btnCrudClientes"
-        Me.btnCrudClientes.Size = New System.Drawing.Size(160, 151)
-        Me.btnCrudClientes.TabIndex = 11
-        Me.btnCrudClientes.UseVisualStyleBackColor = True
         '
         'AdministracionCRUD
         '

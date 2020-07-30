@@ -16,6 +16,7 @@ Public Class InicioSiguaNet
 
     Private Sub DbgClientes_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvClientes.CellContentDoubleClick
         variablesGlobales.numeroIdentidad = DgvClientes.CurrentRow.Cells(0).Value.ToString()
+
         Me.Hide()
         FichaCliente.Show()
     End Sub

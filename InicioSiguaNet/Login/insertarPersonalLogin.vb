@@ -14,7 +14,7 @@ Public Class insertarPersonalLogin
 
     Private Sub btnRegistar_Click(sender As Object, e As EventArgs) Handles btnRegistar.Click
         Dim idVehiculo
-        If cmbIdVehiculo.SelectedItem.ToString <> String.Empty Then
+        If cmbIdVehiculo.SelectedItem <> Nothing Then
             idVehiculo = cmbIdVehiculo.SelectedIndex + 1
         Else
             idVehiculo = DBNull.Value

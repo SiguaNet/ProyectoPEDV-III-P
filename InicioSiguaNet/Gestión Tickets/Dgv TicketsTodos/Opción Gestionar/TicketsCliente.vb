@@ -34,8 +34,4 @@
 
     End Sub
 
-    Private Sub dgvTicketsCliente_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTicketsCliente.CellContentDoubleClick
-
-
-    End Sub
 End Class

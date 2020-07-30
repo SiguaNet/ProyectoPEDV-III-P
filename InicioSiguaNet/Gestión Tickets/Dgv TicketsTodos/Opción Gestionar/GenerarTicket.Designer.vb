@@ -55,6 +55,7 @@ Partial Class GenerarTicket
         Me.TimerOcultar = New System.Windows.Forms.Timer(Me.components)
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.ImprimirTicket = New System.Drawing.Printing.PrintDocument()
+        Me.btnAdelante = New System.Windows.Forms.Button()
         Me.Panel3.SuspendLayout()
         Me.PanelDatosCliente.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -230,6 +231,7 @@ Partial Class GenerarTicket
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.btnAdelante)
         Me.Panel3.Controls.Add(Me.btnCasa)
         Me.Panel3.Controls.Add(Me.btnVolver)
         Me.Panel3.Controls.Add(Me.btnCerrar)
@@ -397,6 +399,23 @@ Partial Class GenerarTicket
         'ImprimirTicket
         '
         '
+        'btnAdelante
+        '
+        Me.btnAdelante.BackColor = System.Drawing.Color.Transparent
+        Me.btnAdelante.BackgroundImage = CType(resources.GetObject("btnAdelante.BackgroundImage"), System.Drawing.Image)
+        Me.btnAdelante.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnAdelante.FlatAppearance.BorderSize = 0
+        Me.btnAdelante.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
+        Me.btnAdelante.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnAdelante.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAdelante.Location = New System.Drawing.Point(758, 4)
+        Me.btnAdelante.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnAdelante.Name = "btnAdelante"
+        Me.btnAdelante.Size = New System.Drawing.Size(65, 65)
+        Me.btnAdelante.TabIndex = 10
+        Me.btnAdelante.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.btnAdelante.UseVisualStyleBackColor = False
+        '
         'GenerarTicket
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -462,4 +481,5 @@ Partial Class GenerarTicket
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents ImprimirTicket As Printing.PrintDocument
     Friend WithEvents btnVolver As Button
+    Friend WithEvents btnAdelante As Button
 End Class

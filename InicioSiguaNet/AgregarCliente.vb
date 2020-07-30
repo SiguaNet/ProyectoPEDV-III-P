@@ -199,5 +199,22 @@ Public Class AgregarCliente
     Private Sub Panel3_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel3.MouseMove
         ReleaseCapture()
         SendMessage(Me.Handle, &H112&, &HF012&, 0)
+
+    End Sub
+
+    Private Sub txtER_Validating(sender As Object, e As CancelEventArgs) Handles txtER.Validating
+        If txtPApellido.Text <> "" Then
+            Me.ErrorValidacion.SetError(sender, "")
+        Else
+            Me.ErrorValidacion.SetError(sender, "Debe de especificar al menos un componente")
+        End If
+    End Sub
+
+    Private Sub txtAN_Validating(sender As Object, e As CancelEventArgs) Handles txtAN.Validating
+        If txtPApellido.Text <> "" Then
+            Me.ErrorValidacion.SetError(sender, "")
+        Else
+            Me.ErrorValidacion.SetError(sender, "Debe de especificar al menos un componente")
+        End If
     End Sub
 End Class

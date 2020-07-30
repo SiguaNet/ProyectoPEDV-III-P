@@ -252,4 +252,9 @@ Public Class GenerarTicket
 
     End Sub
 
+    Private Sub btnAdelante_Click(sender As Object, e As EventArgs) Handles btnAdelante.Click
+        Me.Close()
+        FichaCliente.Show()
+
+    End Sub
 End Class
