@@ -41,34 +41,38 @@ Public Class GenerarTicket
 
                     ElseIf cmbOperaciones.Text = "Corte por solicitud" Then
                         idOperacion = 4
-
                     Else
                         idOperacion = 1
 
                     End If
 
-                    If (conexion.PAOperacionesGestionTickets(idTicket, numeroIdentidad, idPersonal, estado, prioridad, idOperacion, nota, fechaInicio, fechaFin, 1) = 0) Then
-                        conexion.EjecutarComando("update PERSONAL set estado = 'Ocupado' where idPersonal = '" & idPersonal & "'")
-                        MessageBox.Show("Ticket registrado exitosamente", "Generar ticket", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        conexion.PAOperacionesFactura(0, numeroIdentidad, fechaInicio, 1)
-                        ImprimirTicket.Print()
+                    If conexion.obtenerVariableEntera("select count(*) from GESTION_TICKETS where numeroIdentidadC = '" & numeroIdentidad & "' and estado = 'Pendiente'", "") = 0 Then
 
-                        If idOperacion = 4 Then
+                        If (conexion.PAOperacionesGestionTickets(idTicket, numeroIdentidad, idPersonal, estado, prioridad, idOperacion, nota, fechaInicio, fechaFin, 1) = 0) Then
+                            conexion.EjecutarComando("update PERSONAL set estado = 'Ocupado' where idPersonal = '" & idPersonal & "'")
+                            MessageBox.Show("Ticket registrado exitosamente", "Generar ticket", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            conexion.PAOperacionesFactura(0, numeroIdentidad, fechaInicio, 1)
+                            ImprimirTicket.Print()
 
-                            conexion.EjecutarComando("update CLIENTES set estadoC = 'Eliminado' where numeroIdentidad = '" & numeroIdentidad & "'")
-                            conexion.EjecutarComando("update PERSONAL set estado = 'Libre' where idPersonal = '" & idPersonal & "'")
-                            conexion.EjecutarComando("update GESTION_TICKETS set estado = 'Realizado' where numeroIdentidadC = '" & numeroIdentidad & "'")
-                            HcantCortesMes += 1
+                            If idOperacion = 4 Then
+
+                                'conexion.EjecutarComando("update CLIENTES set estadoC = 'Eliminado' where numeroIdentidad = '" & numeroIdentidad & "'")
+                                'conexion.EjecutarComando("update PERSONAL set estado = 'Libre' where idPersonal = '" & idPersonal & "'")
+                                'conexion.EjecutarComando("update GESTION_TICKETS set estado = 'Realizado' where numeroIdentidadC = '" & numeroIdentidad & "'")
+                                HcantCortesMes += 1
+                            End If
+                        Else
+                            MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
                         End If
                     Else
-                        MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        MessageBox.Show("Por favor resuelva los tickets pendientes de " & numeroIdentidad, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
+                Else
+                        MessageBox.Show("La cuenta " & numeroIdentidad & " presenta una mora de " & totalCanti & " meses" & vbCrLf & "¡Por favor realice su pago!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
                     End If
                 Else
-                    MessageBox.Show("La cuenta " & numeroIdentidad & " presenta una mora de " & totalCanti & " meses" & vbCrLf & "¡Por favor realice su pago!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-
-                End If
-            Else
                 MessageBox.Show("Por favor ingrese todos los datos solicitados", "Generar ticket", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
             End If
