@@ -41,4 +41,12 @@
         Me.Close()
         inicioSesion.Show()
     End Sub
+
+    Private Sub btnCrudClientes_Click(sender As Object, e As EventArgs) Handles btnCrudClientes.Click
+        Clientes.Show()
+    End Sub
+
+    Private Sub btnPlanesInter_Click(sender As Object, e As EventArgs) Handles btnPlanesInter.Click
+        Planes_Internet.Show()
+    End Sub
 End Class

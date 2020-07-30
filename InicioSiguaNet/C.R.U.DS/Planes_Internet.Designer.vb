@@ -49,6 +49,7 @@ Partial Class Planes_Internet
         Me.btnIndividual.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.btnIndividual.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnIndividual.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!)
+        Me.btnIndividual.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnIndividual.Location = New System.Drawing.Point(427, 100)
         Me.btnIndividual.Name = "btnIndividual"
         Me.btnIndividual.Size = New System.Drawing.Size(112, 71)
@@ -61,6 +62,7 @@ Partial Class Planes_Internet
         Me.btnTablas.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.btnTablas.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnTablas.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!)
+        Me.btnTablas.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnTablas.Location = New System.Drawing.Point(427, 27)
         Me.btnTablas.Name = "btnTablas"
         Me.btnTablas.Size = New System.Drawing.Size(112, 67)
@@ -85,6 +87,7 @@ Partial Class Planes_Internet
         Me.btnInicio.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.btnInicio.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnInicio.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!)
+        Me.btnInicio.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnInicio.Location = New System.Drawing.Point(427, 504)
         Me.btnInicio.Name = "btnInicio"
         Me.btnInicio.Size = New System.Drawing.Size(112, 41)
@@ -97,6 +100,7 @@ Partial Class Planes_Internet
         Me.btnModificar.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!)
+        Me.btnModificar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnModificar.Location = New System.Drawing.Point(427, 219)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(112, 32)
@@ -109,6 +113,7 @@ Partial Class Planes_Internet
         Me.btnNuevo.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnNuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!)
+        Me.btnNuevo.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnNuevo.Location = New System.Drawing.Point(427, 177)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(112, 31)
@@ -258,7 +263,7 @@ Partial Class Planes_Internet
         Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.btnNuevo)
         Me.Controls.Add(Me.dgvPlanes)
-        Me.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Planes_Internet"
         Me.Text = "Planes_Internet"

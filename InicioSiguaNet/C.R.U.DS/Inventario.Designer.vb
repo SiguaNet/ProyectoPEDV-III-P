@@ -229,7 +229,7 @@ Partial Class Inventario
         Me.Controls.Add(Me.btnNuevo)
         Me.Controls.Add(Me.dgvInventario)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!)
-        Me.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Inventario"

@@ -7,39 +7,6 @@
 
     End Function
 
-    Private Sub btnModificar_Click(sender As Object, e As EventArgs)
-        Dim numeroIdentidad, nombres, primerApellido, segundoApellido, referenciasDireccion, estadoC As String
-        Dim numeroTelefono, numeroCasa, idSector, idPaquete, pagosCliente As Integer
-
-        numeroIdentidad = txtNumeroID.Text
-        nombres = convertirMayusMin(Me.txtNombres.Text)
-        primerApellido = convertirMayusMin(Me.txtPApellido.Text)
-        segundoApellido = convertirMayusMin(Me.txtSApellido.Text)
-        numeroTelefono = txtTelefono.Text
-        numeroCasa = txtNumCasa.Text
-        idSector = cmbBarrios.SelectedIndex + 1
-        referenciasDireccion = LCase(txtRefDirec.Text)
-        idPaquete = cmbPaquetes.SelectedIndex + 1
-        estadoC = cmbEstado.SelectedItem
-        pagosCliente = variablesGlobales.cantMesesG
-
-        Try
-            If Me.ValidateChildren And txtNumeroID.Text <> String.Empty And txtNombres.Text <> String.Empty And txtPApellido.Text <> String.Empty And txtTelefono.Text <> String.Empty And txtNumCasa.Text <> String.Empty And Val(txtNumCasa.Text) - Int(Val(txtNumCasa.Text)) = 0 Then
-
-                If (conexion.PAOperacionesPersonaCL(numeroIdentidad, nombres, primerApellido, segundoApellido, numeroTelefono, numeroCasa, idSector, referenciasDireccion, idPaquete, pagosCliente, estadoC, 2) = 0) Then
-
-                    MessageBox.Show("Modificacion exitosa", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                End If
-
-            Else
-                MessageBox.Show("Error modificacion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End If
-
-        Catch ex As Exception
-            MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-    End Sub
-
     Private Sub btnTablas_Click(sender As Object, e As EventArgs) Handles btnTablas.Click
         conexion.LlenarDGV(dgvClientes, "select * from CLIENTES")
     End Sub
@@ -84,5 +51,38 @@
         cmbBarrios.SelectedIndex = -1
         cmbPaquetes.SelectedIndex = -1
         cmbEstado.SelectedIndex = -1
+    End Sub
+
+    Private Sub btnModificar_Click_1(sender As Object, e As EventArgs) Handles btnModificar.Click
+        Dim numeroIdentidad, nombres, primerApellido, segundoApellido, referenciasDireccion, estadoC As String
+        Dim numeroTelefono, numeroCasa, idSector, idPaquete, pagosCliente As Integer
+
+        numeroIdentidad = txtNumeroID.Text
+        nombres = convertirMayusMin(Me.txtNombres.Text)
+        primerApellido = convertirMayusMin(Me.txtPApellido.Text)
+        segundoApellido = convertirMayusMin(Me.txtSApellido.Text)
+        numeroTelefono = txtTelefono.Text
+        numeroCasa = txtNumCasa.Text
+        idSector = cmbBarrios.SelectedIndex + 1
+        referenciasDireccion = LCase(txtRefDirec.Text)
+        idPaquete = cmbPaquetes.SelectedIndex + 1
+        estadoC = cmbEstado.SelectedItem
+        pagosCliente = variablesGlobales.cantMesesG
+
+        Try
+            If Me.ValidateChildren And txtNumeroID.Text <> String.Empty And txtNombres.Text <> String.Empty And txtPApellido.Text <> String.Empty And txtTelefono.Text <> String.Empty And txtNumCasa.Text <> String.Empty And Val(txtNumCasa.Text) - Int(Val(txtNumCasa.Text)) = 0 Then
+
+                If (conexion.PAOperacionesPersonaCL(numeroIdentidad, nombres, primerApellido, segundoApellido, numeroTelefono, numeroCasa, idSector, referenciasDireccion, idPaquete, pagosCliente, estadoC, 2) = 0) Then
+
+                    MessageBox.Show("Modificacion exitosa", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End If
+
+            Else
+                MessageBox.Show("Error modificacion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 End Class
