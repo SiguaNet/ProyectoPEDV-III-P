@@ -33,43 +33,45 @@ Public Class AgregarCliente
 
         Try
             If Me.ValidateChildren And txtNumeroID.Text <> String.Empty And txtNombres.Text <> String.Empty And txtPApellido.Text <> String.Empty And txtTelefono.Text <> String.Empty And txtNumCasa.Text <> String.Empty And Val(txtNumCasa.Text) - Int(Val(txtNumCasa.Text)) = 0 Then
+                If cantAn < inveAn Or cantEr < inveEr Then
+                    If (conexion.PAOperacionesPersonaCL(numeroIdentidad, nombres, primerApellido, segundoApellido, numeroTelefono, numeroCasa, idSector, referenciasDireccion, idPaquete, pagosCliente, estadoC, 1) = 0) Then
 
-                If (conexion.PAOperacionesPersonaCL(numeroIdentidad, nombres, primerApellido, segundoApellido, numeroTelefono, numeroCasa, idSector, referenciasDireccion, idPaquete, pagosCliente, estadoC, 1) = 0) Then
+                        If conexion.PAOperacionesFactura(0, numeroIdentidad, String.Format("{0:G}", DateTime.Now), 1) = 0 Then
+                            MessageBox.Show("Cliente ingresado satisfactoriamente", "Registro cliente", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-                    If conexion.PAOperacionesFactura(0, numeroIdentidad, String.Format("{0:G}", DateTime.Now), 1) = 0 Then
-                        MessageBox.Show("Cliente ingresado satisfactoriamente", "Registro cliente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            If (conexion.PAOperacionesGestionTickets(idTicket, numeroIdentidad, idPersonal, estado, prioridad, idOperacion, nota, fechaInicio, fechaFin, 1) = 0) Then
+                                conexion.EjecutarComando("update PERSONAL set estado = 'Ocupado' where idPersonal = '" & idPersonal & "'")
+                                MessageBox.Show("Ticket registrado exitosamente", "Generar ticket", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                totalAn = inveAn - cantAn
+                                totalEr = inveEr - cantEr
 
-                        If (conexion.PAOperacionesGestionTickets(idTicket, numeroIdentidad, idPersonal, estado, prioridad, idOperacion, nota, fechaInicio, fechaFin, 1) = 0) Then
-                            conexion.EjecutarComando("update PERSONAL set estado = 'Ocupado' where idPersonal = '" & idPersonal & "'")
-                            MessageBox.Show("Ticket registrado exitosamente", "Generar ticket", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                            totalAn = inveAn - cantAn
-                            totalEr = inveEr - cantEr
+                                conexion.PAOperacionesInventario(1, "Antenas", totalAn, 2)
+                                conexion.PAOperacionesInventario(2, "Enrutadores", totalEr, 2)
+                                conexion.limpiar(Me.GroupBox1)
+                                conexion.limpiar(Me.GroupBox2)
+                                conexion.limpiar(Me.GroupBox3)
+                                conexion.limpiar(Me.GroupBox4)
+                                cmbBarrios.SelectedIndex = -1
+                                cmbPaquetes.SelectedIndex = -1
+                                cmbPersonal.SelectedIndex = -1
 
-                            conexion.PAOperacionesInventario(1, "Antenas", totalAn, 2)
-                            conexion.PAOperacionesInventario(2, "Enrutadores", totalEr, 2)
-                            conexion.limpiar(Me.GroupBox1)
-                            conexion.limpiar(Me.GroupBox2)
-                            conexion.limpiar(Me.GroupBox3)
-                            conexion.limpiar(Me.GroupBox4)
-                            cmbBarrios.SelectedIndex = -1
-                            cmbPaquetes.SelectedIndex = -1
-                            cmbPersonal.SelectedIndex = -1
+                            Else
+                                MessageBox.Show("Error al registrar ticket", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            End If
+                            HcantEfectivoTotal += conexion.obtenerVariableDecimal("select pli.precio from PLANES_INTERNET pli  inner join CLIENTES c ON pli.idPaquete = c.idPaquete inner join FACTURA f on c.numeroIdentidad = f.numeroIdentidadC where c.numeroIdentidad = '" & numeroIdentidad & "'", "precio")
+                            HcantEfectivoMes = conexion.obtenerVariableDecimal("select pli.precio from PLANES_INTERNET pli  inner join CLIENTES c ON pli.idPaquete = c.idPaquete inner join FACTURA f on c.numeroIdentidad = f.numeroIdentidadC where c.numeroIdentidad = '" & numeroIdentidad & "'", "precio")
+                            HcantNuevosMes += 1
+                            HcantFacturasMes += 1
 
                         Else
-                            MessageBox.Show("Error al registrar ticket", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            MessageBox.Show("Error al registrar cliente", "Registro cliente", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         End If
-                        HcantEfectivoTotal += conexion.obtenerVariableDecimal("select pli.precio from PLANES_INTERNET pli  inner join CLIENTES c ON pli.idPaquete = c.idPaquete inner join FACTURA f on c.numeroIdentidad = f.numeroIdentidadC where c.numeroIdentidad = '" & numeroIdentidad & "'", "precio")
-                        HcantEfectivoMes = conexion.obtenerVariableDecimal("select pli.precio from PLANES_INTERNET pli  inner join CLIENTES c ON pli.idPaquete = c.idPaquete inner join FACTURA f on c.numeroIdentidad = f.numeroIdentidadC where c.numeroIdentidad = '" & numeroIdentidad & "'", "precio")
-                        HcantNuevosMes += 1
-                        HcantFacturasMes += 1
-
-                    Else
-                        MessageBox.Show("Error al registrar cliente", "Registro cliente", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End If
+                Else
+                    MessageBox.Show("La cantidad de enrutadores en inventario es insuficiente", "Registro cliente", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
-
             Else
-                MessageBox.Show("Por favor ingrese todos los datos solicitados", "Registro cliente", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    MessageBox.Show("Por favor ingrese todos los datos solicitados", "Registro cliente", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
 
         Catch ex As Exception

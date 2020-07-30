@@ -39,7 +39,7 @@ Public Class InicioGestion
 
                 End If
             Else
-                MessageBox.Show("¡Por favor ingrese un número de identidad valido!", "Verificación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+                MessageBox.Show("¡Por favor ingrese un número de identidad valido!", "Verificación", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             End If
 
         Catch ex As Exception

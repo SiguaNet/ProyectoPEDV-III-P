@@ -99,35 +99,41 @@ Public Class ActualizarTicket
         prioridad = "Baja"
         idOperacion = variablesGlobales.idOpera
 
+        inveAn = Val(conexion.obtenerVariableEntera("select cantidad from INVENTARIO where nombreTipo = 'Antenas'", "cantidad"))
+        inveEr = Val(conexion.obtenerVariableEntera("select cantidad from INVENTARIO where nombreTipo = 'Enrutadores'", "cantidad"))
+        cantAn = Val(cmbAn.Text)
+        cantEr = Val(cmbEr.Text)
+
         Try
             If txtNumeroID.Text = "" Then
                 MessageBox.Show("No se ha retornado el numero de identidad", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
             ElseIf estado = "Realizado" Then
                 prioridad = "Baja"
-                If (conexion.PAOperacionesGestionTickets(idTicket, numeroIdentidad, idPersonal, estado, prioridad, idOperacion, nota, fechaInicio, fechaFin, 2) = 0) Then
-                    conexion.EjecutarComando("update PERSONAL set estado = 'Libre' where idPersonal = '" & idPersonal & "'")
+                If inveAn > cantAn Or inveEr > cantEr Then
+                    If (conexion.PAOperacionesGestionTickets(idTicket, numeroIdentidad, idPersonal, estado, prioridad, idOperacion, nota, fechaInicio, fechaFin, 2) = 0) Then
+                        conexion.EjecutarComando("update PERSONAL set estado = 'Libre' where idPersonal = '" & idPersonal & "'")
 
-                    cantAn = Val(cmbAn.Text)
-                    cantEr = Val(cmbEr.Text)
+                        If idOperacion = 4 Then
+                            conexion.EjecutarComando("update CLIENTES set estadoC = 'Eliminado' where numeroIdentidad = '" & numeroIdentidad & "'")
+                        End If
 
-                    inveAn = Val(conexion.obtenerVariableEntera("select cantidad from INVENTARIO where nombreTipo = 'Antenas'", "cantidad"))
-                    inveEr = Val(conexion.obtenerVariableEntera("select cantidad from INVENTARIO where nombreTipo = 'Enrutadores'", "cantidad"))
+                        totalAn = inveAn - cantAn
+                        totalEr = inveEr - cantEr
 
-                    totalAn = inveAn - cantAn
-                    totalEr = inveEr - cantEr
+                        conexion.PAOperacionesInventario(1, "Antenas", totalAn, 2)
+                        conexion.PAOperacionesInventario(2, "Enrutadores", totalEr, 2)
 
-                    conexion.PAOperacionesInventario(1, "Antenas", totalAn, 2)
-                    conexion.PAOperacionesInventario(2, "Enrutadores", totalEr, 2)
+                        MessageBox.Show("Operacion y ticket actualizado exitosamente", "Actualizar ticket", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-                    MessageBox.Show("Operacion y ticket actulizado exitosamente", "Actualizar ticket", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
+                    Else
+                        MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
                 Else
-                    MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-
+                    MessageBox.Show("La cantidad de inventario es insuficiente!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
             Else
-                MessageBox.Show("El estado de la operacion está en pendiente", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    MessageBox.Show("El estado de la operacion está en pendiente", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
             End If
 
