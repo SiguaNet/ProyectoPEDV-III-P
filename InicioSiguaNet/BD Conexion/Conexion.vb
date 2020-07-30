@@ -5,7 +5,7 @@ Imports System.IO
 
 Public Class Conexion
 
-    Public conexion As SqlConnection = New SqlConnection("Data Source=DESKTOP-O55QRS2\MSSQLSERVERSAM;Initial Catalog=bd_SiguaNet;Integrated Security=True")
+    Public conexion As SqlConnection = New SqlConnection("Data Source=DESKTOP-SRS9O5V\SQLSERVER;Initial Catalog=bd_SiguaNet;Integrated Security=True")
     Public adaptador As SqlDataAdapter
     Public tablaDatos1 As DataTable
     Public lectorVariables As SqlDataReader
@@ -358,6 +358,40 @@ Public Class Conexion
         End Try
     End Function
 
+    'Funcion para insertar/modificar planes
+    Function PAOperacionesPlanes(ByVal idPaquete As Integer, ByVal nombrePaquete As String, ByVal velocidad As Integer, ByVal precio As Double, ByVal opcion As Integer)
+        Try
+            conexion.Close()
+            Dim comando As SqlCommand = conexion.CreateCommand()
+            comando.CommandText = "OperacionesPlanesInternet"
+            comando.CommandType = CommandType.StoredProcedure
+
+            comando.Parameters.AddWithValue("@idPaquete", idPaquete)
+            comando.Parameters.AddWithValue("@nombrePaquete", nombrePaquete)
+            comando.Parameters.AddWithValue("@velocidad", velocidad)
+            comando.Parameters.AddWithValue("@precio", precio)
+            If opcion = 1 Then
+                comando.Parameters.AddWithValue("@codigoOP", 1)
+            ElseIf opcion = 2 Then
+                comando.Parameters.AddWithValue("@codigoOP", 2)
+            End If
+
+            conexion.Open()
+            If comando.ExecuteNonQuery() Then
+                conexion.Close()
+                Return 0
+            Else
+                MessageBox.Show("Error de Insercion/Modificacion Planes", "Error de Insercion/Modificacion", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                conexion.Close()
+                Return 1
+            End If
+        Catch ex As Exception
+            conexion.Close()
+            MessageBox.Show("Error de Base de datos! " & vbCrLf + ex.ToString)
+            Return 1
+        End Try
+    End Function
+
     'Funcion para insertar en vehiculos
     Function PAOperacionesRecursosMotores(ByVal idVehiculo As Integer, ByVal matricula As String, ByVal modelo As String, ByVal opcion As Integer)
         Try
@@ -390,22 +424,28 @@ Public Class Conexion
             Return 1
         End Try
     End Function
-    'Funcion para eliminar vehiculos
-    Function PAEliminarRecursosMotores(ByVal idVehiculo As Integer)
+    'Funcion para insertar/modificar sectores
+    Function PAOperacionesSectores(ByVal idSector As Integer, ByVal barrios As String, ByVal opcion As Integer)
         Try
             conexion.Close()
             Dim comando As SqlCommand = conexion.CreateCommand()
-            comando.CommandText = "BorrarRecursosMotores"
+            comando.CommandText = "OperacionesSectores"
             comando.CommandType = CommandType.StoredProcedure
 
-            comando.Parameters.AddWithValue("@idVehiculo", idVehiculo)
+            comando.Parameters.AddWithValue("@idSector", idSector)
+            comando.Parameters.AddWithValue("@barrio", barrios)
+            If opcion = 1 Then
+                comando.Parameters.AddWithValue("@codigoOP", 1)
+            ElseIf opcion = 2 Then
+                comando.Parameters.AddWithValue("@codigoOP", 2)
+            End If
 
             conexion.Open()
             If comando.ExecuteNonQuery() Then
                 conexion.Close()
                 Return 0
             Else
-                MessageBox.Show("Error de Eliminacion de Recurso", "Error de Eliminacion", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Error de Insercion Sector", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 conexion.Close()
                 Return 1
             End If

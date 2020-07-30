@@ -97,16 +97,34 @@
     <Compile Include="C.R.U.DS\AdministracionCRUD.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="C.R.U.DS\Clientes.Designer.vb">
+      <DependentUpon>Clientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="C.R.U.DS\Clientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="C.R.U.DS\Inventario.Designer.vb">
       <DependentUpon>Inventario.vb</DependentUpon>
     </Compile>
     <Compile Include="C.R.U.DS\Inventario.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="C.R.U.DS\Planes_Internet.Designer.vb">
+      <DependentUpon>Planes_Internet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="C.R.U.DS\Planes_Internet.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="C.R.U.DS\Sectores.Designer.vb">
       <DependentUpon>Sectores.vb</DependentUpon>
     </Compile>
     <Compile Include="C.R.U.DS\Sectores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C.R.U.DS\Tickets.Designer.vb">
+      <DependentUpon>Tickets.vb</DependentUpon>
+    </Compile>
+    <Compile Include="C.R.U.DS\Tickets.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Facturas y Conta\EstadosGenerales.Designer.vb">
@@ -245,11 +263,20 @@
     <EmbeddedResource Include="C.R.U.DS\AdministracionCRUD.resx">
       <DependentUpon>AdministracionCRUD.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="C.R.U.DS\Clientes.resx">
+      <DependentUpon>Clientes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="C.R.U.DS\Inventario.resx">
       <DependentUpon>Inventario.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="C.R.U.DS\Planes_Internet.resx">
+      <DependentUpon>Planes_Internet.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="C.R.U.DS\Sectores.resx">
       <DependentUpon>Sectores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C.R.U.DS\Tickets.resx">
+      <DependentUpon>Tickets.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Facturas y Conta\EstadosGenerales.resx">
       <DependentUpon>EstadosGenerales.vb</DependentUpon>

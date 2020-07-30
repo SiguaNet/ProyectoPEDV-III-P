@@ -15,8 +15,12 @@
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         Try
-            conexion.PAOperacionesRecursosMotores(txtVehiculo.Text, txtMatricula.Text, txtModelo.Text, 1)
-            MessageBox.Show("Recurso se añadio exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            If conexion.PAOperacionesRecursosMotores(txtVehiculo.Text, txtMatricula.Text, txtModelo.Text, 1) = 0 Then
+
+                MessageBox.Show("Recurso se añadio exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                MessageBox.Show("Error al añadir recurso", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
         Catch ex As Exception
             MessageBox.Show("Error", "Error de insercion", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -25,8 +29,12 @@
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         Try
-            conexion.PAOperacionesRecursosMotores(txtVehiculo.Text, txtMatricula.Text, txtModelo.Text, 2)
-            MessageBox.Show("Recurso se modifico exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            If conexion.PAOperacionesRecursosMotores(txtVehiculo.Text, txtMatricula.Text, txtModelo.Text, 2) = 0 Then
+
+                MessageBox.Show("Recurso se modifico exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                MessageBox.Show("Error al modificar recurso", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
         Catch ex As Exception
             MessageBox.Show("Error", "Error de modificacion", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -34,15 +42,19 @@
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         Try
-            conexion.PAEliminarRecursosMotores(txtVehiculo.Text)
-            MessageBox.Show("Recurso se elimino exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            If conexion.EjecutarComando("delete from RECURSOS_MOTORES where idVehiculo = '" & Val(txtVehiculo.Text) & "'") = 0 Then
+
+                MessageBox.Show("Recurso se elimino exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                MessageBox.Show("Error al eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
         Catch ex As Exception
-            MessageBox.Show("Error", "Error de eliminacion", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error al eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
     Private Sub btnInicio_Click(sender As Object, e As EventArgs) Handles btnInicio.Click
-        InicioSiguaNet.Show()
+        AdministracionCRUD.Show()
         Me.Hide()
     End Sub
 
