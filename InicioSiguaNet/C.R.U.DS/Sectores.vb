@@ -10,7 +10,7 @@
 
     Private Sub btnInicio_Click(sender As Object, e As EventArgs) Handles btnInicio.Click
         AdministracionCRUD.Show()
-        Me.Hide()
+        Me.Close()
     End Sub
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click

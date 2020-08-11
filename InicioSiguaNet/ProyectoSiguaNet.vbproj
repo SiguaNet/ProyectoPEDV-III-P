@@ -366,6 +366,7 @@
   <ItemGroup>
     <Content Include="bd_SiguaNetCo.sql" />
     <Content Include="Login\mensajeCorreo.html" />
+    <None Include="Resources\toppng.com-ticket-icon-tickets-vector-icon-1501x1252.png" />
     <None Include="Resources\Sectores.jpg" />
     <None Include="Resources\Inventario.jpg" />
     <None Include="Resources\Personal.jpg" />

@@ -37,7 +37,7 @@
 
     Private Sub btnInicio_Click(sender As Object, e As EventArgs) Handles btnInicio.Click
         AdministracionCRUD.Show()
-        Me.Hide()
+        Me.Close()
     End Sub
 
     Private Sub dgvRecursos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPlanes.CellClick

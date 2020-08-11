@@ -51,6 +51,7 @@ Partial Class FichaCliente
         Me.Label6 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -138,6 +139,7 @@ Partial Class FichaCliente
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.Button2)
         Me.Panel2.Controls.Add(Me.txtCortado)
         Me.Panel2.Controls.Add(Me.Button5)
         Me.Panel2.Controls.Add(Me.BtnAgregar)
@@ -393,6 +395,16 @@ Partial Class FichaCliente
         Me.btnCerrar.TabIndex = 8
         Me.btnCerrar.UseVisualStyleBackColor = False
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(452, 636)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(168, 39)
+        Me.Button2.TabIndex = 19
+        Me.Button2.Text = "Inicio"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'FichaCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -446,4 +458,5 @@ Partial Class FichaCliente
     Friend WithEvents Label6 As Label
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents txtCortado As TextBox
+    Friend WithEvents Button2 As Button
 End Class

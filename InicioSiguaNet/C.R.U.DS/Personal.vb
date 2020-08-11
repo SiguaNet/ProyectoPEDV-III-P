@@ -19,7 +19,7 @@
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         Try
-            If conexion.PAOperacionesUsuarioPersonal(txtID.Text, txtNombres.Text, txtPrimer.Text, txtSegundo.Text, Val(txtTelefono.Text),
+            If conexion.PAOperacionesUsuarioPersonal(txtIdentidad.Text, txtNombres.Text, txtPrimer.Text, txtSegundo.Text, Val(txtTelefono.Text),
                                         Val(txtCasa.Text), cmbSector.SelectedIndex + 1, txtReferencia.Text, cmbVehiculo.SelectedIndex + 1, cmbEstado.Text, 1) = 0 Then
 
                 MessageBox.Show("Usuario se añadio exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -33,7 +33,7 @@
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         Try
-            If conexion.PAOperacionesUsuarioPersonal(txtID.Text, txtNombres.Text, txtPrimer.Text, txtSegundo.Text, Val(txtTelefono.Text),
+            If conexion.PAOperacionesUsuarioPersonal(txtIdentidad.Text, txtNombres.Text, txtPrimer.Text, txtSegundo.Text, Val(txtTelefono.Text),
                                         Val(txtCasa.Text), cmbSector.SelectedIndex + 1, txtReferencia.Text, cmbVehiculo.SelectedIndex + 1, cmbEstado.Text, 2) = 0 Then
 
                 MessageBox.Show("Usuario se modifico exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -47,7 +47,7 @@
 
     Private Sub btnInicio_Click(sender As Object, e As EventArgs) Handles btnInicio.Click
         AdministracionCRUD.Show()
-        Me.Hide()
+        Me.Close()
     End Sub
     Private Sub dgvPersonal_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPersonal.CellClick
         conexion.llenarTextBox(txtID, "select idPersonal from PERSONAL where numeroIdentidad = '" & dgvPersonal.CurrentCell.Value.ToString & "'", "idPersonal")

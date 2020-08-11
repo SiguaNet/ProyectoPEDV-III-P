@@ -130,6 +130,9 @@
   <data name="SIGUANET" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SIGUANET.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Sectores" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sectores.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Personal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Personal.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -145,7 +148,7 @@
   <data name="RecursosMotores" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RecursosMotores.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Sectores" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sectores.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="toppng.com-ticket-icon-tickets-vector-icon-1501x1252" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\toppng.com-ticket-icon-tickets-vector-icon-1501x1252.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

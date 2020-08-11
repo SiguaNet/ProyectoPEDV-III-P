@@ -2,7 +2,7 @@
     Dim conexion As Conexion = New Conexion()
     Private Sub btnInicio_Click(sender As Object, e As EventArgs) Handles btnInicio.Click
         AdministracionCRUD.Show()
-        Me.Hide()
+        Me.Close()
     End Sub
 
     Private Sub btnTablas_Click(sender As Object, e As EventArgs) Handles btnTablas.Click

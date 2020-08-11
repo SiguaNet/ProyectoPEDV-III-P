@@ -113,7 +113,7 @@ Partial Class Tickets
         '
         Me.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbEstado.FormattingEnabled = True
-        Me.cmbEstado.Items.AddRange(New Object() {"Al dia", "En mora", "Eliminado"})
+        Me.cmbEstado.Items.AddRange(New Object() {"Pendiente", "Realizado"})
         Me.cmbEstado.Location = New System.Drawing.Point(181, 103)
         Me.cmbEstado.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cmbEstado.Name = "cmbEstado"

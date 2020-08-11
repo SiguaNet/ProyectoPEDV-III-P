@@ -39,6 +39,8 @@ Partial Class PagosFacturas
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
         CType(Me.dgvFacturas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
@@ -75,7 +77,7 @@ Partial Class PagosFacturas
         Me.dgvFacturas.AllowUserToDeleteRows = False
         Me.dgvFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvFacturas.Location = New System.Drawing.Point(72, 315)
-        Me.dgvFacturas.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dgvFacturas.Margin = New System.Windows.Forms.Padding(4)
         Me.dgvFacturas.Name = "dgvFacturas"
         Me.dgvFacturas.ReadOnly = True
         Me.dgvFacturas.RowHeadersWidth = 51
@@ -85,7 +87,7 @@ Partial Class PagosFacturas
         'txtIdentidad
         '
         Me.txtIdentidad.Location = New System.Drawing.Point(233, 170)
-        Me.txtIdentidad.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtIdentidad.Margin = New System.Windows.Forms.Padding(4)
         Me.txtIdentidad.Name = "txtIdentidad"
         Me.txtIdentidad.Size = New System.Drawing.Size(200, 22)
         Me.txtIdentidad.TabIndex = 4
@@ -93,7 +95,7 @@ Partial Class PagosFacturas
         'btnBuscar
         '
         Me.btnBuscar.Location = New System.Drawing.Point(463, 167)
-        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(100, 28)
         Me.btnBuscar.TabIndex = 5
@@ -105,7 +107,7 @@ Partial Class PagosFacturas
         Me.cmbMesPago.FormattingEnabled = True
         Me.cmbMesPago.Items.AddRange(New Object() {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"})
         Me.cmbMesPago.Location = New System.Drawing.Point(709, 170)
-        Me.cmbMesPago.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbMesPago.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbMesPago.Name = "cmbMesPago"
         Me.cmbMesPago.Size = New System.Drawing.Size(200, 24)
         Me.cmbMesPago.TabIndex = 6
@@ -113,7 +115,7 @@ Partial Class PagosFacturas
         'btnPagar
         '
         Me.btnPagar.Location = New System.Drawing.Point(756, 214)
-        Me.btnPagar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnPagar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnPagar.Name = "btnPagar"
         Me.btnPagar.Size = New System.Drawing.Size(113, 34)
         Me.btnPagar.TabIndex = 7
@@ -175,7 +177,7 @@ Partial Class PagosFacturas
         Me.Panel3.Controls.Add(Me.Label4)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1067, 55)
         Me.Panel3.TabIndex = 22
@@ -196,6 +198,25 @@ Partial Class PagosFacturas
         Me.Button2.TabIndex = 20
         Me.Button2.UseVisualStyleBackColor = False
         '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(863, 507)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(113, 34)
+        Me.Button3.TabIndex = 23
+        Me.Button3.Text = "Inicio"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(414, 225)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.TabIndex = 24
+        Me.Button4.Text = "Button4"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'PagosFacturas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -203,6 +224,8 @@ Partial Class PagosFacturas
         Me.BackgroundImage = Global.InicioSiguaNet.My.Resources.Resources.MenuGeneral
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1067, 554)
+        Me.Controls.Add(Me.Button4)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.btnPagar)
@@ -213,7 +236,7 @@ Partial Class PagosFacturas
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "PagosFacturas"
         Me.Text = "PagosFacturas"
         CType(Me.dgvFacturas, System.ComponentModel.ISupportInitialize).EndInit()
@@ -240,4 +263,6 @@ Partial Class PagosFacturas
     Friend WithEvents Button1 As Button
     Friend WithEvents Label4 As Label
     Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button4 As Button
 End Class

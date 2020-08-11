@@ -49,4 +49,8 @@
     Private Sub btnPlanesInter_Click(sender As Object, e As EventArgs) Handles btnPlanesInter.Click
         Planes_Internet.Show()
     End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Tickets.Show()
+    End Sub
 End Class

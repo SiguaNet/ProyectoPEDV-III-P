@@ -131,4 +131,14 @@ Public Class PagosFacturas
         ReleaseCapture()
         SendMessage(Me.Handle, &H112&, &HF012&, 0)
     End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        InicioSiguaNet.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Dim cant As Integer = Val(Conexion.obtenerVariableEntera("select pagosCliente FROM CLIENTES where numeroIdentidad = '" & txtIdentidad.Text & "'", "pagosCliente")) + 1
+        MessageBox.Show(cant)
+    End Sub
 End Class
